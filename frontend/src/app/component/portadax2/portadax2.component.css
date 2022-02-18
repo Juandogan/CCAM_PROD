@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+.base{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.texto{font-family: 'Jockey One', sans-serif; font-size: 25px; color:rgba(59, 59, 59, 0.726);
+    font-size: 20px;
+    line-height: 25px;
+}

@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Jockey+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Oswald:wght@200&display=swap');
+.fondo{background-color: rgb(184, 184, 184);margin:0px; padding:0px; }
+.texto{font-family: 'Jockey One', sans-serif; font-size: 25px; color:rgba(59, 59, 59, 0.726);}
+.textoTableTitulo{font-family: 'Jockey One', sans-serif; font-size: 20px; color:rgba(59, 59, 59, 0.726);}
+.textoInput{margin-left:3px; margin-bottom: 0px;font-size: 15px;}
+ select, textarea, input{background-color: rgba(143, 143, 143, 0.158);}
+.textoChico{font-size: 12px; margin-left:4px; color:rgba(32, 32, 32, 0.719); margin-top:-10px}
+.textoInputBajo{margin-left:5px; margin-bottom: 0px;font-size:10px; color:rgba(82, 82, 82, 0.404)}    

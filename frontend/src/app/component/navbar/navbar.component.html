@@ -1,0 +1,87 @@
+<div class="barra barraTexto" >
+  
+    <div class="flex-container">
+      <h4 class="roboto suscribirse margenL" >Suscribirse | Contactar</h4>
+      <h4 class="textBarraNegra  margenL quitar800" style="left:180px; color:rgb(255, 255, 255); position: absolute;" >✉ ¿Quienes somos?</h4>
+      <h4 class="textBarraNegra  margenL quitar800" style="left:340px; color:rgb(255, 255, 255); position: absolute;" >✉ ¿Como formar parte del CCAM?</h4>
+      
+      <div class="quitar800 margenR" style="margin-top:4px ; ">
+   <mat-icon aria-hidden="false" class="margenR"aria-label="Example home icon" style="margin-right: 165px; margin-top:1px">search</mat-icon>
+      <input  class="margenR"  placeholder="Buscar"  type="text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >
+         
+        
+      <img src="../../../assets/icoInsta.png" alt="" style="margin-top:-17px; margin-right: 2px;" width="29px">
+       <mat-icon>facebook</mat-icon>
+       <mat-icon style="margin-left:5px">markunread</mat-icon> 
+       
+      
+    
+    </div>
+      </div>
+
+</div>
+
+<div class="fondo" style="background-image: url('../../../assets/fondotrasparente.png');">
+ <div class="logo margenL">
+ <img  src="../../../assets/logo.png"  alt="" width="180px" height="100%" style="margin-left:-40px;   margin-top:5px;
+ margin-bottom: 15px; object-fit: cover;">  
+</div>
+   <h1 class="textLogo textlogoCentro margenL" >CENTRO CULTURAL</h1>
+   <h1 class="textLogo textlogoAbajo margenL ">ARGENTINO DE MONTAÑA</h1>
+ 
+
+
+<div style="float:right">
+    
+ <!-- <img src="../../../assets/logo sponsors2.jpg" width="33%" alt="" >  -->
+
+</div>
+</div>
+
+<div style="border-top:2px solid rgb(179, 179, 179);">
+    <div style="background-color: #dfdfdf;">
+        <ul>
+          <li >
+            <div class="flex-container1 margenL">
+                   <a>
+                       <!-- <mat-icon style="float:left; margin-top:4px; margin-right: 0px" >stars</mat-icon>  -->
+
+                       <span [routerLinkActive]="'activo'"  
+                       [routerLinkActiveOptions]="{exact:  true}" routerLink='/' class="texto quitar800" style="margin-left:-20px">┋ HOME</span>
+                       <span class="texto anima " [matMenuTriggerFor]="settingsMenu1"  matRipple [matRippleUnbounded]=true >MONTAÑISMO▼</span>                   
+                       <span class="texto quitar800" [matMenuTriggerFor]="settingsMenu" >HISTORIA▼</span>                   
+                       <span class="texto quitar800 ">ANTROPOLOGIA(22)</span>
+                       <span class="texto quitar800">MEDIO AMBIENTE </span>
+                       <span class="texto quitar800">EDUCACION</span>
+                       <span class="texto quitar800">ARTE</span>
+                       <span class="texto quitar800">MUSEO</span>
+                       <span class="texto quitar800 ">INSTITUCIONES</span>
+                       <span [routerLinkActive]="'activo'" routerLink="gestor" class="texto quitar800">ADMIN</span>
+
+                   </a>
+           </div>
+          </li>
+        </ul>
+      </div>
+
+
+ </div>   
+
+
+ <mat-menu #settingsMenu class="customize3">
+  <menu mat-menu-item class="customize2 ">▪ EXPEDICIONES</menu>
+  <menu mat-menu-item class="customize2 ">▪ BIOGRAFÏAS</menu>
+  <menu mat-menu-item class="customize2 ">▪ HECHOS</menu>
+</mat-menu>
+
+
+
+<mat-menu #settingsMenu1 class="customize">
+  <menu mat-menu-item class="customize2 ">▪ ESCALADA EN ROCA</menu>
+  <menu mat-menu-item class="customize2 ">▪ ESCALADA EN HIELO</menu>
+  <menu mat-menu-item class="customize2">▪ ASCENSOS</menu>
+  <menu mat-menu-item class="customize2">▪ TREKKING</menu>
+  <menu mat-menu-item class="customize2">▪ SENDERISMO</menu>
+  <menu mat-menu-item class="customize2">▪ ESPELEOLOGIA</menu>
+  <menu mat-menu-item class="customize2">▪ MOUNTAIN BIKE</menu>
+</mat-menu>

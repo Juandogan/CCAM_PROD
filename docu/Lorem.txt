@@ -1,0 +1,46 @@
+IPV4: 168.197.48.178
+
+168.197.48.178
+root
+YpTT7ChabJzR
+
+
+La ip del servidor FTP es la siguiente: 190.103.178.42
+User: nati2009
+Clave: 58dRD7zgF
+
+…or create a new repository on the command line
+echo "# CCAM" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Juandogan/CCAM.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/Juandogan/CCAM.git
+git branch -M main
+git push -u origin main
+
+---- Servidor install  nginx --- 
+sudo apt update
+sudo apt install nginx
+
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
+
+
+server_name {
+listen 80;
+
+location / {
+root /home/CCAM/client;
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header Host $http_host;
+proxy_set_header X-NginX-Proxy true;
+proxy_pass http://127.0.0.1:3000; #Aquí la magia
+proxy_redirect off;
+}
+}
+
+systemctl restart nginx
