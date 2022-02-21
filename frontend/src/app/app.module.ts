@@ -27,6 +27,7 @@ import { Portadax2Component } from './component/portadax2/portadax2.component';
 import { EditorComponent } from './component/editor/editor.component';
 import { CarouselComponent } from './component/carousel/carousel.component';
 import { CardBajoPortadaComponent } from './component/card-bajo-portada/card-bajo-portada.component';
+import { CardBajopublix3Component } from './component/card-bajopublix3/card-bajopublix3.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CardBajoPortadaComponent } from './component/card-bajo-portada/card-baj
     Portadax2Component,
     EditorComponent,
     CarouselComponent,
-    CardBajoPortadaComponent
+    CardBajoPortadaComponent,
+    CardBajopublix3Component
   ],
   imports: [
     BrowserModule,

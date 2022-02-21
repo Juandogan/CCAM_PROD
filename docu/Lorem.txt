@@ -4,7 +4,6 @@ IPV4: 168.197.48.178
 root
 YpTT7ChabJzR
 
-
 La ip del servidor FTP es la siguiente: 190.103.178.42
 User: nati2009
 Clave: 58dRD7zgF
@@ -44,3 +43,5 @@ proxy_redirect off;
 }
 
 systemctl restart nginx
+
+

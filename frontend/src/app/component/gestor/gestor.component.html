@@ -1,4 +1,5 @@
 
+
 <div *ngIf="!this.crudService.cambioPantalla">
   
 
@@ -9,32 +10,44 @@
 
 <div *ngIf="this.crudService.cambioPantalla" class="fondo"  >
   <br>
+  <div *ngIf="loader2"  style="text-align: center; margin-top:70px; ">
+
+    <div class="loadingio-spinner-dual-ring-on59w8cl9ef">
+      <div class="ldio-rgwl833la6s"  >
+      <div></div><div><div></div></div>
+      </div></div>
+  
+  
+  </div>
+  
       
-    <div class="margenL margenR">
+    <div *ngIf="!loader2" class="margenL margenR">
 <!-- 
         <h2>Hola, Juan Ignacio</h2>
         <button class="btn btn-dark mb-4" >New</button> -->
         <br><br>
-<div class="input-group mb-3" style="width: 400px;">
+<div   class="input-group mb-3" style="width: 400px;">
     <input type="text" class="form-control" placeholder="Buscar en CCAM" aria-label="Recipient's username" aria-describedby="basic-addon2">
     <div class="input-group-append">
       <button class="btn  btn-dark" type="button">Buscar</button>
     </div>
     <div>
-      <button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >New</button>
+      <button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Crear publicación</button>
     </div>
   </div>
   
 <h5 class="textoChico" >Buscando en un total de {{this.cantArt}} Artículos</h5>
 <br>
-    <table class="table table-primary"  >
+
+    <table  class="table table-primary"  >
         <thead class="thead-dark">
           <tr>
             <!-- <th scope="col">#</th> -->
             <th scope="col" style="width:7%;">Categoria</th>
             <th scope="col">Titulo</th>
             <th scope="col">Creación</th>
-            <th scope="col" style="width:5%;"class="text-center">Head</th>
+            <th scope="col">Portada</th>
+            <th scope="col" style="width:5%;"class="text-center">Ficha</th>
             <th scope="col" style="width:5%;"class="text-center">Articulo</th>
             <th scope="col" style="width:5%;"class="text-center">Borrar</th>
             <th scope="col" style="width:5%;"class="text-center">Vistas</th>
@@ -43,11 +56,14 @@
           </tr>
         </thead>
         <tbody>
+          
           <tr *ngFor="let articulo of articulos.reverse()" style="transition: 0.2s all  ease-out; " [style.backgroundColor]="activo? 'white' : 'grey'">
             <!-- <th scope="row">1</th> -->
+            
             <td > <span class="badge badge-danger">{{articulo.categoria}}</span></td>
             <td class="textoTableTitulo" > * {{articulo.titulo | truncate:'100'}}</td>
             <td>{{ articulo.fecha | date: 'dd/MM/yy' }}</td>
+            <td>daad</td> 
             <td class="text-center">
             <a data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true">
            <mat-icon style="cursor:pointer">edit</mat-icon> 
@@ -55,7 +71,7 @@
             <td class="text-center">                        
               <a  (click)="id = articulo._id" (click)='editarArticulo(articulo)'(click)="this.crudService.cambioPantalla = false" > <mat-icon  style="color: green; cursor:pointer">article</mat-icon>
               </a> </td>
-
+            
               <td class="text-center">                        
                 <a data-toggle="modal" data-target="#exampleModalCenter" (click)="id = articulo._id">
                   <div *ngIf="loader">
@@ -67,7 +83,8 @@
 
                   </a>
                   
-                  <td class="text-center">{{articulo.vistas}}</td>   
+                  <td class="text-center">{{articulo.vistas}}</td>  
+              
           </tr>
           
         </tbody>
@@ -180,7 +197,7 @@
 
       <div class="modal-footer" style="background-color: rgba(255, 255, 255, 0.253);">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary"  (click)="agregarPublicacion()"   data-dismiss="modal" >Guardar</button>
+        <button type="button" class="btn btn-danger"  (click)="agregarPublicacion()"   data-dismiss="modal" >Guardar</button>
       </div>
     </div>
   </div>
@@ -205,8 +222,8 @@
       <h4>Esta seguro que desea eliminar el articulo?</h4>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-warning" (click)="eliminarArticulo(id)" (click)="activo = !activo" data-dismiss="modal">Eliminar</button>
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="eliminarArticulo(id)" (click)="activo = !activo" data-dismiss="modal">Eliminar</button>
       </div>
     </div>
   </div>

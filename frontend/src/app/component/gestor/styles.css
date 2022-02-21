@@ -30,6 +30,7 @@ main .ck-editor[role='application'] .ck.ck-content,
 	line-height: 1.6em;
 	min-height: var(--ck-sample-editor-min-height);
 	padding: 1.5em 2em;
+	height: 400px;
 }
 
 main .ck-editor[role='application'] {
@@ -40,6 +41,7 @@ main .ck-editor[role='application'] {
 	background: #fff;
 	border: 1px solid hsl(0, 0%, 70%);
 	width: 100%;
+
 }
 
 /* Because of sidebar `position: relative`, Edge is overriding the outline of a focused editor. */
@@ -55,12 +57,20 @@ main .ck-editor[role='application'] {
     position: relative;
 	width: 100%;
 	justify-content: center;
+	
 }
 
 /* --------- DECOUPLED (DOCUMENT) BUILD. ---------------------------------------------*/
 body[data-editor='DecoupledDocumentEditor'] .document-editor__toolbar {
 	width: 100%;
 }
+
+
+.ck-editor__editable {
+  height: 500px;
+}
+
+
 
 body[data-editor='DecoupledDocumentEditor'] .collaboration-demo__editable,
 body[data-editor='DecoupledDocumentEditor'] .row-editor .editor {
@@ -86,6 +96,7 @@ body[data-editor='DecoupledDocumentEditor'] .row-editor {
 	border: 1px solid hsl(0, 0%, 77%);
 	/* Limit the max-height of the editor to avoid scrolling from bottom to top to see the toolbar. */
 	max-height: 700px;
+
 }
 
 body[data-editor='DecoupledDocumentEditor'] .sidebar {
@@ -273,9 +284,10 @@ body[data-editor='InlineEditor'] .collaboration-demo__row {
 	z-index: 1;
 }
 .ck-editor__editable {
-    min-height: 500px;
+    height: 500px;
 }
 
+ 
 .collaboration-demo__share button[data-tooltip]::before {
 	content: attr(data-tooltip);
     padding: 5px 15px;

@@ -20,6 +20,7 @@ export class GestorComponent implements OnInit {
   activo=true; //estilo 
   cambioPantalla = true;
   loader = true;
+  loader2 = true
 cantArt:number = 0
  public titulo:string = "";
  public subtitulo:string = "";
@@ -48,6 +49,7 @@ pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta lue
   this.articulos = res as Articulos[]; // guardo resultados de la peticion en variable productos del este componente.
   console.log(this.articulos)
   this.cantArt = this.articulos.length
+ this.loader2 = false
     });//fin de subscribe
   } //fin de pedirProductos
 
@@ -86,7 +88,8 @@ this.crudService.unArticulo.nota = this.nota
 
 
 eliminarArticulo(id:any){
-this.crudService.deleteArticulo(id).subscribe(res =>{this.crudService.snack(res);   this.pedirArticulos(); this.activo = true})
+  
+this.crudService.deleteArticulo(id).subscribe(res =>{this.crudService.snack(res);   this.pedirArticulos(); this.activo = true;})
 
 }
 
