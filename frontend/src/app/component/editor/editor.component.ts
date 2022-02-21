@@ -24,7 +24,7 @@ export class EditorComponent implements OnInit {
 
      simpleUpload: {
        // The URL that the images are uploaded to.
-       uploadUrl: "http://localhost:3000/upload",
+       uploadUrl: "http://168.197.50.191/upload",
           // Headers sent along with the XMLHttpRequest to the upload server.
        headers: {
          'X-CSRF-TOKEN': 'CSFR-Token',
@@ -52,7 +52,7 @@ export class EditorComponent implements OnInit {
     this.Editor.create( document.querySelector( '.document-editor__editable' ), { 
      
       simpleUpload: {
-      uploadUrl: "http://localhost:3000/upload",
+      uploadUrl: "http://168.197.50.191/upload",
          
       headers: {
         'X-CSRF-TOKEN': 'CSFR-Token',
