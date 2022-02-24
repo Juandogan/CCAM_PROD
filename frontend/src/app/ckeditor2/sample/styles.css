@@ -30,22 +30,29 @@ main .ck-editor[role='application'] .ck.ck-content,
 	line-height: 1.6em;
 	min-height: var(--ck-sample-editor-min-height);
 	padding: 1.5em 2em;
+	
 }
+
+
 
 main .ck-editor[role='application'] {
 	overflow: auto;
+	
 }
 
 .ck.ck-editor__editable {
 	background: #fff;
 	border: 1px solid hsl(0, 0%, 70%);
 	width: 100%;
+	
 }
 
 /* Because of sidebar `position: relative`, Edge is overriding the outline of a focused editor. */
 .ck.ck-editor__editable {
 	position: relative;
 	z-index: var(--ck-sample-editor-z-index);
+	
+
 }
 
 .editor-container {
@@ -55,6 +62,7 @@ main .ck-editor[role='application'] {
     position: relative;
 	width: 100%;
 	justify-content: center;
+	
 }
 
 /* --------- DECOUPLED (DOCUMENT) BUILD. ---------------------------------------------*/
