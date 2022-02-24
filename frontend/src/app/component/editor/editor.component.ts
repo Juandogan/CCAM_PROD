@@ -50,7 +50,7 @@ export class EditorComponent implements OnInit {
   ngOnInit(): void {
 
     this.Editor.create( document.querySelector( '.document-editor__editable' ), { 
-     
+
       simpleUpload: {
       uploadUrl: "http://168.197.50.191/upload",
          

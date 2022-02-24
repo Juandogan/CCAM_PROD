@@ -10,7 +10,7 @@ export class CardBajoPortadaComponent implements OnInit {
   @Input('data') data : any ;
 
 
-  constructor() {
+  constructor() { 
 
 
    }

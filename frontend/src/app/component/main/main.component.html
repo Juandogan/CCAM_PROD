@@ -2,23 +2,23 @@
   <br>
   <div class="row fondoRow">
 
-    <div class="col-9 fondoCol">
+    <div *ngIf="loader" style="display:block; margin:auto; margin-top:100px; ">
+      <div class="loadingio-spinner-dual-ring-on59w8cl9ef" aria-setsize="">
+        <div class="ldio-rgwl833la6s">
+          <div></div>
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div *ngIf="!loader"  class="col-9 fondoCol">
 
       <!-- CARROUSLE -->
       <app-carousel [items]="carrouselData" [height]="200"></app-carousel>
 
       <div class="row row2" style="margin-left: -20px;">
 
-        <div *ngIf="loader" style="display:block; margin:auto; margin-top:100px; ">
-          <div class="loadingio-spinner-dual-ring-on59w8cl9ef" aria-setsize="">
-            <div class="ldio-rgwl833la6s">
-              <div></div>
-              <div>
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div *ngFor="let articulo of articulos" class="col-6" style="padding-right: 0px; padding-left: 20px;">
 
@@ -50,7 +50,7 @@
     <!-- INICIO "2DO BLOQUE" -->
     <div class="row">
       
-      <div  class="col-9" style="margin-top: 20px;" >
+      <div  class="col-9" style="margin-top: 20px; padding-right: 5px;"  >
         <app-card-bajopublix3 [data]="articulos"></app-card-bajopublix3>
       </div>
       

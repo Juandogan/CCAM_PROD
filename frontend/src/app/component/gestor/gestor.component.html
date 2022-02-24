@@ -57,7 +57,7 @@
         </thead>
         <tbody>
           
-          <tr *ngFor="let articulo of articulos.reverse()" style="transition: 0.2s all  ease-out; " [style.backgroundColor]="activo? 'white' : 'grey'">
+          <tr *ngFor="let articulo of articulos" style="transition: 0.2s all  ease-out; " [style.backgroundColor]="activo? 'white' : 'grey'">
             <!-- <th scope="row">1</th> -->
             
             <td > <span class="badge badge-danger">{{articulo.categoria}}</span></td>
@@ -110,10 +110,11 @@
       </div>
 
       <div *ngIf="cambioPantalla" class="modal-body" >
-     
+ 
 <div class="row mt-4">
     <div class="col-6">
         <h5 class="textoInput">Categoría</h5>
+ 
         <select  [(ngModel)]="this.categoria" class="form-control form-control-sm" style="width: 100%; height: 38px;">
           <option>· Montañismo · Escalada en Roca</option>
           <option>· Montañismo · Escalada en Hielo</option>
@@ -186,12 +187,33 @@
             <input [(ngModel)]="this.edicionFotografia" class="form-control" id="message-text" >
           </div>
   </div>
+
+
+  <div class="col-6">
+
+    <div style="margin-top:20px">
+      <div>
+   
+        <h6 style ="margin-bottom:-2px">Imagen Portada Desktop</h6>
+      
+        <input type="file"  style="width: 260px; overflow: none"  (change)="onFileChange($event); ">
+        
+        <button class="btn-sm btn btn-dark btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
+      </div> 
+
+
+</div>
+
+
+
+
+
 </div>               
         <h4></h4>
   
       </div>
 
-
+  
  
 
 

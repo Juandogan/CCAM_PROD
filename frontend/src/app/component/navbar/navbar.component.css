@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+.textFont{font-family: 'Yanone Kaffeesatz', sans-serif;  font-weight: 700;}
 
 .textBarraNegra {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -14,10 +16,10 @@
 
 
 .textLogo{
-  font-family: 'Train One', cursive;
-  letter-spacing: -2px;
-   font-size: 30px; color: rgba(204, 109, 83, 0.884);
-   text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.4);  
+  font-family: 'Squada One', cursive;
+   font-size: 40px; color: rgba(204, 109, 83, 0.884);
+   letter-spacing: -1px;
+   text-shadow: 2px 2px 3px rgba(150, 150, 150, 0.4);  
   }
 .barra{
     background-color: rgb(51, 51, 51);
@@ -58,10 +60,10 @@
   
 }
 ::ng-deep .customize3 {
-  background: rgb(255, 255, 255);
+  background: rgb(241, 109, 0);
   margin-top:-12px;
   margin-left: -40px;
-  font-family: 'Jockey One', sans-serif; font-size: 13px; color:rgba(0, 0, 0, 0.527); margin-right: 17px; text-shadow: 1px 1px 5px #a8a8a849;
+  font-family: 'Jockey One', sans-serif; font-size: 13px; color:rgb(255, 255, 255); margin-right: 17px; text-shadow: 1px 1px 5px #a8a8a849;
   transition: all 100ms ease-in;cursor: pointer;
   
 
@@ -77,8 +79,8 @@
 }
 input{height: 22px; margin-right:110px; position: absolute; right: 95px; top:6px; border-radius: 2px; outline: none; width: 150px;}
 
-.textlogoCentro{top:60px; left: 120px; position: absolute; font-size:25px}
-.textlogoAbajo{top:90px; left: 120px; position: absolute; font-size:25px}
+.textlogoCentro{top:55px; left: 118px; position: absolute;  }
+.textlogoAbajo{top:95px; left: 118px; position: absolute;  }
  
 .anima:hover{
   

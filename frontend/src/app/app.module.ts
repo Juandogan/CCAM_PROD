@@ -8,6 +8,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { MainComponent } from './component/main/main.component';
 import { GestorComponent } from './component/gestor/gestor.component';
 import { CrudService } from './service/crud.service';
+import { ResolveNotaService } from './service/resolve-nota.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
@@ -28,6 +29,9 @@ import { EditorComponent } from './component/editor/editor.component';
 import { CarouselComponent } from './component/carousel/carousel.component';
 import { CardBajoPortadaComponent } from './component/card-bajo-portada/card-bajo-portada.component';
 import { CardBajopublix3Component } from './component/card-bajopublix3/card-bajopublix3.component';
+import { FooterCardComponent } from './component/footer-card/footer-card.component';
+import { ArticuloComponent } from './component/articulo/articulo.component';
+import { SanetizerPipe } from './pipes/sanetizer.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,10 @@ import { CardBajopublix3Component } from './component/card-bajopublix3/card-bajo
     EditorComponent,
     CarouselComponent,
     CardBajoPortadaComponent,
-    CardBajopublix3Component
+    CardBajopublix3Component,
+    FooterCardComponent,
+    ArticuloComponent,
+    SanetizerPipe
   ],
   imports: [
     BrowserModule,
@@ -56,7 +63,7 @@ import { CardBajopublix3Component } from './component/card-bajopublix3/card-bajo
     
     
   ],
-  providers: [CrudService],
+  providers: [CrudService, ResolveNotaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

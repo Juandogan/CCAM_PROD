@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Staatliches&display=swap');
+
+
+.clasePrincipal{display: flex; justify-content: left; margin-left:0px; margin-top:-0px }
+
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto&display=swap');
+
+img{
+
+  filter:brightness(-0.1);
+  filter:sepia(3);
+
+
+}
+
+
+
+.sombra{box-shadow: 3px 1px 9px 1px rgba(0,0,0,0.71) }
+.categoria{ 
+    color:orange;
+    font-weight: 600;
+    font-size: 14px;
+ 
+  
+  }
+
+  
+.parrafo{font-family: Roboto;
+    color:white;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-top:-10px
+}
+.robotoBlack{font-family: Roboto;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 28px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    margin-top:15px;  
+    text-shadow: 2px 2px 2px  rgb(58, 58, 58);
+    }
+
+    p{font-size: 20px; font-weight: 300;
+    line-height: 25px;
+    }
+
+    

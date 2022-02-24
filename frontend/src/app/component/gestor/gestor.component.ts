@@ -11,7 +11,7 @@ import { CrudService } from 'src/app/service/crud.service';
   styleUrls: ['./gestor.component.css']
 })   
 export class GestorComponent implements OnInit {
-  
+  public uploadedFiles: Array<File> = [];
 
     
   public fechaPublicacion =new Date();  
@@ -22,6 +22,8 @@ export class GestorComponent implements OnInit {
   loader = true;
   loader2 = true
 cantArt:number = 0
+
+
  public titulo:string = "";
  public subtitulo:string = "";
  public nota:string = "";
@@ -29,8 +31,22 @@ cantArt:number = 0
  public categoria:string = "";
  public fotografia:string = "";
  public edicionFotografia:string = "";
+ public ocultar=true;
+ public ocultar2=true;
+ public loading:boolean = true;
+ public loading2:boolean = false;
+ public loading3:boolean = false;
+ public loading4:boolean = false;
+ public loading5:boolean = false;
+ public archivoShow:boolean = false
+ 
+ tituloShow=false;
+ subtituloShow=false;
+ descripcionShow=false;
 
+ imagenShow=false;
 
+ tituloImagenShow = false;
   constructor(public crudService:CrudService) { 
 
 
@@ -49,6 +65,7 @@ pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta lue
   this.articulos = res as Articulos[]; // guardo resultados de la peticion en variable productos del este componente.
   console.log(this.articulos)
   this.cantArt = this.articulos.length
+  this.articulos = this.articulos.reverse()
  this.loader2 = false
     });//fin de subscribe
   } //fin de pedirProductos
@@ -58,6 +75,17 @@ test(){
   console.log(this.titulo)
 }
 
+fnOcultar(){
+  this.ocultar2=true
+  this.loading3=false
+  this.imagenShow=true
+};
+
+fnOcultar2(){
+  this.ocultar=true
+  this.loading5=false
+  this.archivoShow=true
+};
 agregarPublicacion(){
 this.crudService.unArticulo.categoria = this.categoria;
 this.crudService.unArticulo.titulo = this.titulo;
@@ -128,6 +156,49 @@ cut(value){
 
  return corte
 };
+
+onUpload(){
+  let formData = new FormData();
+  console.log("formdata", formData)
+   for (let i = 0 ; i  < this.uploadedFiles.length; i++ ){
+
+  var hoa =   formData.append("archivos", this.uploadedFiles[i], this.uploadedFiles[i].name)
+console.log('que me pasa',hoa)
+   }
+   this.crudService.uploadFile(formData).subscribe(res => {
+     var ass  = String(res);
+     this.crudService.unArticulo.imagen1 = ass ;
+
+     console.log(ass);
+     this.ocultar2 = false
+     this.loading2=false;
+     this.loading3=true;
+   })
+
+ };
+
+ onUpload2(){
+   let formData = new FormData();
+    for (let i = 0 ; i  < this.uploadedFiles.length; i++ ){
+
+      formData.append("archivos", this.uploadedFiles[i])
+
+    }
+    this.crudService.uploadFile(formData).subscribe(res => {
+      var ass  = String(res);
+      this.crudService.unArticulo.imagen1 = ass ;
+
+      this.ocultar=false
+      this.loading4=false;
+      this.loading5=true;
+    })
+
+  };
+
+ onFileChange(e){
+
+   this.uploadedFiles = e.target.files;
+ };
 
 };
 

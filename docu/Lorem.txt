@@ -1,8 +1,7 @@
-IPV4: 168.197.48.178
 
-168.197.48.178
+
 root
-YpTT7ChabJzR
+jJ9HLp5xG7Gc
 
 La ip del servidor FTP es la siguiente: 190.103.178.42
 User: nati2009
