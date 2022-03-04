@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Staatliches&display=swap');
 
 .colOut{padding:0px; margin: 0px;}
-img{object-fit: cover; height: 300px;}
+img{object-fit: cover; height: 200px;}
 .fondoCard{background-color: rgb(51, 51, 51);}
 .ajusteCard{margin-left:10px; align-items: left;}
 

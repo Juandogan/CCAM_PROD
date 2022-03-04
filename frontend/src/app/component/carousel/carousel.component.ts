@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Articulos } from 'src/app/models/articulos';
 
 import { Carousel } from '../../models/carousel';
 
@@ -13,7 +14,8 @@ export class CarouselComponent implements OnInit {
    */
   @Input() height = 400;
   @Input() isFullScreen = false;
-  @Input() items: Carousel[] = [];
+  @Input() items: Articulos[] = [];
+  @Input('data') data : any ;
 
   /**
    * Final Properties
@@ -29,10 +31,22 @@ export class CarouselComponent implements OnInit {
     this.items.map( ( i, index ) => {
       i.id = index;
       i.marginLeft = 0;
+
     });
     
-  
+    for(let i = 1; i < this.data.length + 1 ; ++i){
 
+      let segundos = i * 8000
+      setTimeout(() => {this.setNext()}, segundos); 
+      
+    }
+
+    
+
+  }
+
+  cronometro(){
+    setTimeout(() => this.setNext(), 2000);
   }
 
   setCurrentPosition(position: number) {

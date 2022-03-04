@@ -1,22 +1,22 @@
-<div>
+<div style="margin-top:20px">
 <div class="row">
     <div class="col-9">
         
 
  <div class="row colOut ajusteCard" style="margin-left:35px;">
     <div class="col-4 colOut">
-        <div class="card" >
-            <img class="card-img-top" src="../../../assets/foto.jpg" alt="Card image cap">
+        <div class="card" style="border: none;">
+            <img class="card-img-top" src="{{data[0]?.imagen1}}" alt="Card image cap">
             <div class="card-body fondoCard" style="text-align: left;">
-                <h5 class="categoria">{{cut(data[1]?.categoria)}}</h5>
-              <p class="titulo">{{data[1]?.titulo}}</p>
+                <h5 class="categoria">{{cut(data[0]?.categoria)}}</h5>
+              <p class="titulo">{{data[0]?.titulo}}</p>
               
             </div>
           </div>
     </div>
     <div class="col-4 colOut">
-        <div class="card ajusteCard" >
-            <img class="card-img-top" src="../../../assets/image 31.png" alt="Card image cap">
+        <div class="card ajusteCard" style="border: none;">
+            <img class="card-img-top" src="{{data[1]?.imagen1}}" alt="Card image cap">
             <div class="card-body fondoCard" style="text-align: left;">
               <h5 class="categoria">{{cut(data[1]?.categoria)}}</h5>
               <p class="titulo">{{data[1]?.titulo}}</p>
@@ -25,11 +25,11 @@
           </div>
     </div>
     <div class="col-4 colOut">
-        <div class="card ajusteCard" >
-            <img class="card-img-top" src="../../../assets/eduardo.jpg" alt="Card image cap">
+        <div class="card ajusteCard"style="border: none;" >
+            <img class="card-img-top" src="{{data[2]?.imagen1}}" alt="Card image cap">
             <div class="card-body fondoCard" style="text-align: left;">
-              <h5 class="categoria">{{cut(data[0]?.categoria)}}</h5>
-              <p class="titulo" >{{data[0]?.titulo}}</p>
+              <h5 class="categoria">{{cut(data[2]?.categoria)}}</h5>
+              <p class="titulo" >{{data[2]?.titulo}}</p>
 
             </div>
           </div>

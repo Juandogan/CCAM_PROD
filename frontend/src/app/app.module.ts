@@ -39,6 +39,7 @@ import { FormaParteComponent } from './component/forma-parte/forma-parte.compone
 import { BuscadorComponent } from './component/buscador/buscador.component';
 import { ArticuloRelacionadoComponent } from './component/articulo-relacionado/articulo-relacionado.component';
 import { SubidasComponent } from './component/subidas/subidas.component';
+import { Filtrox2Pipe } from './pipes/filtrox2.pipe';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { SubidasComponent } from './component/subidas/subidas.component';
     FormaParteComponent,
     BuscadorComponent,
     ArticuloRelacionadoComponent,
-    SubidasComponent
+    SubidasComponent,
+    Filtrox2Pipe
   ],
   imports: [
     BrowserModule,
