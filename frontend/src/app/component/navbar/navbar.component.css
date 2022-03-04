@@ -59,8 +59,10 @@
 
   
 }
+
+
 ::ng-deep .customize3 {
-  background: rgb(241, 109, 0);
+  background: rgb(255, 255, 255);
   margin-top:-12px;
   margin-left: -40px;
   font-family: 'Jockey One', sans-serif; font-size: 13px; color:rgb(255, 255, 255); margin-right: 17px; text-shadow: 1px 1px 5px #a8a8a849;
@@ -91,7 +93,7 @@ input{height: 22px; margin-right:110px; position: absolute; right: 95px; top:6px
 .anima:active {
   
   background-color: rgba(0, 0, 0, 0.055); border-radius: 10%;
-  color:white
+  color:rgb(255, 255, 255)
 
 }
 

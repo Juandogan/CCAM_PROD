@@ -1,0 +1,56 @@
+<div class="margenArreglo" style="margin-top:20px; margin-left:250px; margin-right: 250px">
+
+
+
+
+          <form  #Form="ngForm" >
+
+              <h5 style ="margin-bottom:-4px"> Seleccione la categoría de su publicación</h5>
+         
+                  <div>
+                    
+                  </div>
+
+
+
+<div>
+                <div style="margin-top:20px">
+                  <div *ngIf="ocultar2">
+                    <h6 style ="margin-bottom:-2px">Imagen Portada Desktop</h6>
+                    <input type="file"  style="width: 260px; overflow: none"  (change)="onFileChange($event); ">
+                    <button class="btn-sm btn btn-dark btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
+                  </div>
+                    <div *ngIf="this.loading2">
+                           <div>
+                              <img src="../../../assets/loading4.gif"  width="50px" alt="">
+                          </div>
+
+                   </div>
+                 </div>
+
+                 <div *ngIf="this.loading3">
+                    <h6 style="color:green">✓ Imagen Portada Desktop subida!<span style="color:blue" (click)="fnOcultar()"> Deshacer</span></h6>
+
+                  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <button type="button" class="btn btn-dark mt-4" >Save</button> -->
+
+</form>
+
+ <button >Guardar</button>
+
+
+
+
+
+
+</div>

@@ -1,12 +1,12 @@
 <div class="barra barraTexto" >
   
     <div class="flex-container">
-      <h4 class="roboto suscribirse margenL" >Suscribirse | Contactar</h4>
-      <h4 class="textBarraNegra  margenL quitar800" style="left:180px; color:rgb(255, 255, 255); position: absolute;" >✉ ¿Quienes somos?</h4>
-      <h4 class="textBarraNegra  margenL quitar800" style="left:340px; color:rgb(255, 255, 255); position: absolute;" >✉ ¿Como formar parte del CCAM?</h4>
+      <h4 class="roboto suscribirse margenL" routerLink="suscripcion" >Suscribirse | Contactar</h4>
+      <h4 class="textBarraNegra  margenL quitar800" style="left:180px; color:rgb(255, 255, 255); position: absolute;" routerLink="quienesSomos" >✉ ¿Quienes somos?</h4>
+      <h4 class="textBarraNegra  margenL quitar800" style="left:340px; color:rgb(255, 255, 255); position: absolute;"routerLink="formaParte" >✉ ¿Como formar parte del CCAM?</h4>
       
       <div class="quitar800 margenR" style="margin-top:4px ; ">
-   <mat-icon aria-hidden="false" class="margenR"aria-label="Example home icon" style="margin-right: 165px; margin-top:1px">search</mat-icon>
+   <mat-icon aria-hidden="false" class="margenR"aria-label="Example home icon" style="margin-right: 165px; margin-top:1px" routerLink="subidas">search</mat-icon>
       <input  class="margenR"  placeholder="Buscar"  type="text" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >
          
         
@@ -77,11 +77,14 @@
 
 
 <mat-menu #settingsMenu1 class="customize">
-  <menu mat-menu-item class="customize2 ">▪ ESCALADA EN ROCA</menu>
-  <menu mat-menu-item class="customize2 ">▪ ESCALADA EN HIELO</menu>
+  <menu mat-menu-item class="customize2">▪ ESCALADA EN ROCA</menu>
+  <menu mat-menu-item class="customize2">▪ ESCALADA EN HIELO</menu>
   <menu mat-menu-item class="customize2">▪ ASCENSOS</menu>
   <menu mat-menu-item class="customize2">▪ TREKKING</menu>
   <menu mat-menu-item class="customize2">▪ SENDERISMO</menu>
   <menu mat-menu-item class="customize2">▪ ESPELEOLOGIA</menu>
   <menu mat-menu-item class="customize2">▪ MOUNTAIN BIKE</menu>
 </mat-menu>
+
+
+

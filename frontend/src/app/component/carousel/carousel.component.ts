@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+
 import { Carousel } from '../../models/carousel';
 
 @Component({
@@ -29,6 +30,9 @@ export class CarouselComponent implements OnInit {
       i.id = index;
       i.marginLeft = 0;
     });
+    
+  
+
   }
 
   setCurrentPosition(position: number) {
@@ -37,6 +41,8 @@ export class CarouselComponent implements OnInit {
   }
 
   setNext() {
+
+     
     let finalPercentage = 0;
     let nextPosition = this.currentPosition + 1;
     if (nextPosition <= this.items.length - 1) {

@@ -162,17 +162,21 @@ onUpload(){
   console.log("formdata", formData)
    for (let i = 0 ; i  < this.uploadedFiles.length; i++ ){
 
-  var hoa =   formData.append("archivos", this.uploadedFiles[i], this.uploadedFiles[i].name)
-console.log('que me pasa',hoa)
+   formData.append("archivos", this.uploadedFiles[i], this.uploadedFiles[i].name)
+
    }
    this.crudService.uploadFile(formData).subscribe(res => {
-     var ass  = String(res);
-     this.crudService.unArticulo.imagen1 = ass ;
+      var link = Object.values(res) 
+     console.log(link)
+     
+    this.crudService.unArticulo.imagen1 = String(link) ;
+     
 
-     console.log(ass);
+     
      this.ocultar2 = false
      this.loading2=false;
      this.loading3=true;
+     
    })
 
  };

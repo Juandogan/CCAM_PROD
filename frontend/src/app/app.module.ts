@@ -32,6 +32,13 @@ import { CardBajopublix3Component } from './component/card-bajopublix3/card-bajo
 import { FooterCardComponent } from './component/footer-card/footer-card.component';
 import { ArticuloComponent } from './component/articulo/articulo.component';
 import { SanetizerPipe } from './pipes/sanetizer.pipe';
+import { TripleCardComponent } from './component/triple-card/triple-card.component';
+import { SuscripcionComponent } from './component/suscripcion/suscripcion.component';
+import { QuienesSomosComponent } from './component/quienes-somos/quienes-somos.component';
+import { FormaParteComponent } from './component/forma-parte/forma-parte.component';
+import { BuscadorComponent } from './component/buscador/buscador.component';
+import { ArticuloRelacionadoComponent } from './component/articulo-relacionado/articulo-relacionado.component';
+import { SubidasComponent } from './component/subidas/subidas.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +54,14 @@ import { SanetizerPipe } from './pipes/sanetizer.pipe';
     CardBajopublix3Component,
     FooterCardComponent,
     ArticuloComponent,
-    SanetizerPipe
+    SanetizerPipe,
+    TripleCardComponent,
+    SuscripcionComponent,
+    QuienesSomosComponent,
+    FormaParteComponent,
+    BuscadorComponent,
+    ArticuloRelacionadoComponent,
+    SubidasComponent
   ],
   imports: [
     BrowserModule,

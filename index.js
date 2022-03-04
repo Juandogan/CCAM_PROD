@@ -2,6 +2,7 @@ const express = require ('express');
 const app = express(); // API
 
 
+
 //https
 const fs = require('fs');
 const https = require('https');
@@ -14,30 +15,17 @@ const morgan = require ('morgan'); // middleware Morgan muestra las peticiones e
 const cors = require ('cors');     // autorizacion de cxn entre servidores
 const { mongoose } = require('./database'); //mongodb
 
+
 //var fs = require('fs');
 //var https = require('https');
 
 
-//var body_parser = require('body-parser');
-// CREATE SERVER socket.IO
-//const serverSocketIo = express(); 
+// MULTIPAR
 const multiPartMiddleware = multipart({
     uploadDir: './subidas'
 
 });
 
-
-
-//const serverHttp = require('http').Server(serverSocketIo);
-//const io = require('socket.io')(serverHttp);
-//serverHttp.listen(  3001, () =>{
-//console.log('***** SocketIO port: 3001')
-        
-  //  })
-         
-    
-// CONFIG SOCKET.IO     
-  
 
     
 // CREATE API
@@ -53,36 +41,28 @@ app.use(cors('http://168.197.50.191/'));
 app.use(bodyParser.json({limit: '200mb'}));
 app.use(bodyParser.urlencoded({limit: '200mb', extended: true}));
 
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({
- //   extended : true
-//}));
-//app.use(body_parser.urlencoded({extended:true}));
-//app.use(cors({origin:'http://localhost:4200'}));
-//app.use(cors({origin:'http://167.99.0.153:4200'}));
+app.post('/upload', multiPartMiddleware, (req,res)=>{        
+    var link = req.files['archivos'].path       
+    var url = 'http://168.197.50.191/upload/'+ link.slice(8) 
 
-app.post('/upload', multiPartMiddleware, (req,res)=>{
-        
-    var link = req.files.upload.path
-      
-var url = 'http://168.197.50.191/upload/'+ link.slice(8) 
-console.log({'url': url })
+    console.log({'url': url })
     res.json({'url':url });
     
-    
+
+
 });
 
 // Routes http://
 //app.use('/', express.static('client', {redirect:false}))
 app.use('/',express.static('client', {redirect:false}));
 
+
+
 app.use('/articulos',require('./routes/productos.routes'))
 app.use('/upload', express.static(path.resolve('./subidas')))
-app.get('*', function(req, res, next)
-{res.sendFile(path.resolve('client/index.html'));
+
+app.get('*', function(req, res, next){res.sendFile(path.resolve('client/index.html'));
 }) 
-
-
 
 //const PUERTO = 3000 ;
 

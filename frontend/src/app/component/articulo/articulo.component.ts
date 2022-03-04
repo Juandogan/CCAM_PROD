@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
   selector: 'app-articulo',
   templateUrl: './articulo.component.html',
   styleUrls: ['./articulo.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
 })
 export class ArticuloComponent implements OnInit {
 
@@ -18,11 +18,13 @@ export class ArticuloComponent implements OnInit {
   nota:any
 
   ngOnInit(): void {
-
+    window.scroll(0,0)
     this.ruta.data.subscribe((data)=>{
       this.nota = Object.entries(data).map(i => i[1]);
       
 })
+
+
   }
 
 
@@ -38,5 +40,10 @@ export class ArticuloComponent implements OnInit {
 
 
    };
- 
+
+   cut(value:any){
+    var corte = value.slice(2)
+
+   return corte
+ }; 
 }

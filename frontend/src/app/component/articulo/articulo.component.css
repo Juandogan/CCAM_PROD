@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@574&display=swap');
 .categoria{ 
     color:rgb(243, 178, 0);
     font-weight: 600;
     font-size: 14px;
-margin-top: 20px;
+    margin-top: 20px;
   
-  }.robotoBlack{font-family: Roboto;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 28px;
-    letter-spacing: 0px;
-    text-align: left;
-    color: rgb(61, 61, 61);
-    margin-top:5px;  
-    text-shadow: 1px 1px 0px  rgba(58, 58, 58, 0.356);
-    }
+  }
+  
+.titulo{font-size:35px; line-height: 50px; font-family: 'Rubik', sans-serif;
+  letter-spacing: -1px;margin-top:-10px;
+  color:rgb(68, 68, 68)
+}
+
+.subtitulo{margin-top:-10px; font-size: 18px;  font-family: 'Roboto', sans-serif; line-height: 26px};
 
     .image-style-side{float:right; padding:10px; }
+
+    
+.clasePrincipal{display: flex; justify-content: left; margin-left:0px; margin-top:-0px }
+.primerIcon{display:flex ; align-items: flex-start; margin-top:-5px; margin-left:-10px; margin-right: 5px}
 
 

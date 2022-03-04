@@ -15,7 +15,7 @@ import {MatSnackBarConfig} from '@angular/material/snack-bar';
 export class CrudService {
 
   readonly URL_API  = "http://168.197.50.191/articulos";
-  readonly URL_API2 = "http://168.197.50.191/upload";
+  readonly URL_API2 = "http://localhost:3000/upload";
   
   cambioPantalla = true;
   Articulos:Articulos[]=[];
@@ -39,9 +39,9 @@ export class CrudService {
 
 
   //CRUD  
-    uploadFile(formData){
-      console.log('Bandera', formData)
-      return this.http.post('/upload' , formData)   // en produccion poner '/upload' por this.URL_API2
+   uploadFile(formData){
+  console.log('Bandera', formData)
+   return this.http.post('/upload' , formData)   // en produccion poner '/upload' por this.URL_API2
 
     }
 
