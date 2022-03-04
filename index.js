@@ -46,7 +46,7 @@ app.post('/upload', multiPartMiddleware, (req,res)=>{
    
     var link = req.files['archivos'].path
       
-var url = 'http://localhost:3000/upload/'+ link.slice(8) 
+var url = 'http://168.197.50.191:3000/upload/'+ link.slice(8) 
 console.log({'url': url })
     res.json({'url':url });
     
@@ -57,7 +57,7 @@ app.post('/upload2', multiPartMiddleware, (req,res)=>{
    
     var link = req.files.upload.path
       
-var url = 'http://localhost:3000/upload/'+ link.slice(8) 
+var url = 'http://168.197.50.191/upload/'+ link.slice(8) 
 console.log({'url': url })
     res.json({'url':url });
     
