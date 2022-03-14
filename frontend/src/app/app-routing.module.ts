@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { ArticuloComponent } from './component/articulo/articulo.component';
+import { BuscadorComponent } from './component/buscador/buscador.component';
 import { FormaParteComponent } from './component/forma-parte/forma-parte.component';
 import { GestorComponent } from './component/gestor/gestor.component';
 import { MainComponent } from './component/main/main.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'subidas', component:  SubidasComponent },
   {path:'formaParte', component:  FormaParteComponent },
   {path:'gestor', component:  GestorComponent },
+  {path:'buscador', component:  BuscadorComponent, resolve: {data: ResolveNotaService} },
   {path:'articulo/:_id', component: ArticuloComponent, resolve: {data: ResolveNotaService}},
   
 ];

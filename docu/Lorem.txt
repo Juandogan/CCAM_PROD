@@ -20,6 +20,8 @@ git remote add origin https://github.com/Juandogan/CCAM.git
 git branch -M main
 git push -u origin main
 
+jahmAguirre
+
 ---- Servidor install  nginx --- 
 sudo apt update
 sudo apt install nginx
@@ -43,4 +45,22 @@ proxy_redirect off;
 
 systemctl restart nginx
 
+
+CERRANDO PUERTO POR PID
+[root@vps-2402670-x /home/CCAM_PROD] # sudo netstat -tupln
+Conexiones activas de Internet (solo servidores)
+Proto  Recib Enviad Dirección local         Dirección remota       Estado       PID/Program name
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               ESCUCHAR    3154/nginx: master
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               ESCUCHAR    638/systemd-resolve
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               ESCUCHAR    21320/sshd
+tcp        0      0 0.0.0.0:25              0.0.0.0:*               ESCUCHAR    1037/master
+tcp        0      0 0.0.0.0:5347            0.0.0.0:*               ESCUCHAR    21320/sshd
+tcp6       0      0 :::22                   :::*                    ESCUCHAR    21320/sshd
+tcp6      12      0 :::3000                 :::*                    ESCUCHAR    20926/node
+tcp6       0      0 :::25                   :::*                    ESCUCHAR    1037/master
+tcp6       0      0 :::5347                 :::*                    ESCUCHAR    21320/sshd
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           638/systemd-resolve
+udp        0      0 168.197.50.191:68       0.0.0.0:*                           505/systemd-network
+udp        0      0 0.0.0.0:161             0.0.0.0:*                           670/snmpd
+MATA EL PUERTO -   kill -9 20926  // y numer de pid
 

@@ -10,15 +10,22 @@
   
 .titulo{font-size:35px; line-height: 50px; font-family: 'Rubik', sans-serif;
   letter-spacing: -1px;margin-top:-10px;
-  color:rgb(68, 68, 68)
+  color:rgb(68, 68, 68);
 }
 
-.subtitulo{margin-top:-10px; font-size: 18px;  font-family: 'Roboto', sans-serif; line-height: 26px};
+.subtitulo{margin-top:-10px; font-size: 18px;  font-family: 'Roboto', sans-serif; line-height: 26px;}
 
     .image-style-side{float:right; padding:10px; }
 
     
-.clasePrincipal{display: flex; justify-content: left; margin-left:0px; margin-top:-0px }
-.primerIcon{display:flex ; align-items: flex-start; margin-top:-5px; margin-left:-10px; margin-right: 5px}
+.clasePrincipal{display: flex; justify-content: left; margin-left:0px; margin-top:-0px; }
+
+.primerIcon{
+  display:flex; 
+  align-items: flex-start; 
+  margin-top:-5px; 
+  margin-left:-10px; 
+  margin-right: 5px
+}
 
 

@@ -20,14 +20,15 @@ export class GestorComponent implements OnInit {
   activo=true; //estilo 
   cambioPantalla = true;
   loader = true;
-  loader2 = true
-cantArt:number = 0
-
+  loader2 = true;
+cantArt:number = 0;
+filterPost=""
 
  public titulo:string = "";
  public subtitulo:string = "";
  public nota:string = "";
  public autor:string = "";
+ public hash:string = "";
  public categoria:string = "";
  public fotografia:string = "";
  public edicionFotografia:string = "";
@@ -96,6 +97,7 @@ this.crudService.unArticulo.fotografia = this.fotografia
 this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
 this.crudService.unArticulo.nota = this.nota
 
+
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
   if( this.crudService.unArticulo._id)
   {
@@ -159,13 +161,14 @@ cut(value){
 
 onUpload(){
   let formData = new FormData();
-  console.log("formdata", formData)
+  
    for (let i = 0 ; i  < this.uploadedFiles.length; i++ ){
 
    formData.append("archivos", this.uploadedFiles[i], this.uploadedFiles[i].name)
 
    }
    this.crudService.uploadFile(formData).subscribe(res => {
+    console.log("formdata", formData)
       var link = Object.values(res) 
      console.log(link)
      

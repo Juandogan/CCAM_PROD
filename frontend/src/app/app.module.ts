@@ -21,7 +21,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 
 
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { Portadax2Component } from './component/portadax2/portadax2.component';
@@ -40,7 +40,9 @@ import { BuscadorComponent } from './component/buscador/buscador.component';
 import { ArticuloRelacionadoComponent } from './component/articulo-relacionado/articulo-relacionado.component';
 import { SubidasComponent } from './component/subidas/subidas.component';
 import { Filtrox2Pipe } from './pipes/filtrox2.pipe';
-
+import { CardMobileComponent } from './component/card-mobile/card-mobile.component';
+import { BuscarPipe } from './pipes/buscar.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,9 @@ import { Filtrox2Pipe } from './pipes/filtrox2.pipe';
     BuscadorComponent,
     ArticuloRelacionadoComponent,
     SubidasComponent,
-    Filtrox2Pipe
+    Filtrox2Pipe,
+    CardMobileComponent,
+    BuscarPipe
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,9 @@ import { Filtrox2Pipe } from './pipes/filtrox2.pipe';
     FormsModule,
     MatSnackBarModule,
     MatRippleModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
     
     
   ],

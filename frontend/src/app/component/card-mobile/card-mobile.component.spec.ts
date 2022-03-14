@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SuscripcionComponent } from './suscripcion.component';
+import { CardMobileComponent } from './card-mobile.component';
 
-describe('SuscripcionComponent', () => {
-  let component: SuscripcionComponent;
-  let fixture: ComponentFixture<SuscripcionComponent>;
+describe('CardMobileComponent', () => {
+  let component: CardMobileComponent;
+  let fixture: ComponentFixture<CardMobileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SuscripcionComponent ]
+      declarations: [ CardMobileComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SuscripcionComponent);
+    fixture = TestBed.createComponent(CardMobileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

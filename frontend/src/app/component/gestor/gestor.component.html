@@ -11,12 +11,12 @@
   <br>
   <div *ngIf="loader2"  style="text-align: center; margin-top:70px; ">
 
-    <div class="loadingio-spinner-dual-ring-on59w8cl9ef">
-      <div class="ldio-rgwl833la6s"  >
+    <div class="loadingio-spinner-dual-ring-jqg38uhhax"><div class="ldio-n970spnnnqh">
       <div></div><div><div></div></div>
       </div></div>
   
-  
+  <br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
   </div>
   
       
@@ -24,20 +24,24 @@
 <!-- 
         <h2>Hola, Juan Ignacio</h2>
         <button class="btn btn-dark mb-4" >New</button> -->
-        <br><br>
-<div   class="input-group mb-3" style="width: 400px;">
-    <input type="text" class="form-control" placeholder="Buscar en CCAM" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="btn  btn-dark" type="button">Buscar</button>
+        
+      
+<div   class="input-group mb-3 " style="width: 400px;margin-top:20px;">
+    <input type="text" name="filterPost" [(ngModel)]="filterPost" class="form-control" placeholder="Buscar en CCAM" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div style="float:left " style="margin-left: 100px;">
+     
     </div>
-    <div>
-      <button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Crear publicación</button>
-    </div>
+    
+
   </div>
   
 <h5 class="textoChico" >Buscando en un total de {{this.cantArt}} Artículos</h5>
 <br>
+<div style="margin-left:-15px; margin-top:-15px; margin-bottom: 20px;">
 
+<button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Crear publicación</button>
+    <button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Publicidad</button>      
+  </div>
     <table  class="table table-primary"  >
         <thead class="thead-dark">
           <tr>
@@ -56,12 +60,12 @@
         </thead>
         <tbody>
           
-          <tr *ngFor="let articulo of articulos" style="transition: 0.2s all  ease-out; " [style.backgroundColor]="activo? 'white' : 'grey'">
+          <tr *ngFor="let articulo of articulos|buscar:filterPost " style="transition: 0.2s all  ease-out; " [style.backgroundColor]="activo? 'white' : 'grey'">
             <!-- <th scope="row">1</th> -->
             
             <td > <span class="badge badge-danger">{{articulo.categoria}}</span></td>
             <td class="textoTableTitulo" > * {{articulo.titulo | truncate:'100'}}</td>
-            <td>{{ articulo.fecha | date: 'dd/MM/yy' }}</td>
+            <td> {{articulo.fecha}}</td>
             <td>daad</td> 
             <td class="text-center">
             <a data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true">
@@ -103,7 +107,7 @@
     <div class="modal-content ">
       <div class="modal-header" style="background-color: rgba(95, 158, 160, 0.253); " >
        
-        <h5 class="texto mt-1" id="exampleModalLabel">Crear publicación - Encabezado 1/2</h5>
+        <h5 class="texto mt-1" id="exampleModalLabel">PUBLICACIÓN - FICHA</h5>
         <button style="outline: none;" type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="limpiar()">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -111,7 +115,7 @@
 
       <div *ngIf="cambioPantalla" class="modal-body" >
           
-<div class="row mt-4">
+<div class="row mt-1">
     <div class="col-6">
         <h5 class="textoInput">Categoría</h5>
       
@@ -150,10 +154,17 @@
 
     <div class="col-6">
       <div class="form-group">
+        <h5 class="textoInput">#Tags</h5>
+        <input [(ngModel)]="this.hash" class="form-control" id="message-text" style="width:100%">
+      </div>
+    </div>
+<!-- 
+    <div class="col-6">
+      <div class="form-group">
         <h5 class="textoInput">Autor</h5>
         <input [(ngModel)]="this.autor" class="form-control" id="message-text" style="width:100%">
       </div>
-    </div>
+    </div> -->
 
 </div>
         
@@ -168,13 +179,20 @@
 
           <div class="form-group">
             <h5 class="textoInput">Subtítulo</h5>
-            <textarea [(ngModel)]="this.subtitulo" class="form-control" id="message-text"></textarea>
+            <textarea [(ngModel)]="this.subtitulo" rows="5" class="form-control" id="message-text"></textarea>
             <div  class="textoInputBajo" >
               {{this.subtitulo.length}} de 200 Máx.
             </div> 
           </div>
 
 <div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <h5 class="textoInput">Autor</h5>
+      <input [(ngModel)]="this.edicionFotografia" class="form-control" id="message-text" >
+    </div>
+</div>
+
   <div class="col-6">
           <div class="form-group">
             <h5 class="textoInput">Fotografía</h5>
@@ -192,11 +210,12 @@
   <div class="col-6">
 
 
-    <div style="margin-top:20px">
+    <div style="margin-top:10px">
       <div *ngIf="ocultar2">
-        <h6 style ="margin-bottom:-2px">Imagen Portada Desktop</h6>
-        <input type="file"  style="width: 260px; overflow: none"  (change)="onFileChange($event); ">
+        <h6 style ="margin-bottom:-2px">IMAGEN DE PORTADA  400x560</h6>
+        <input type="file"  style="width: 80%; overflow: none"  (change)="onFileChange($event); ">
         <button class="btn-sm btn btn-dark btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
+        <br><br><br>
       </div>
         <div *ngIf="this.loading2">
                <div>
@@ -217,7 +236,7 @@
 
 </div>               
         <h4></h4>
-  
+  <br><br><br>
     </div>
   
   

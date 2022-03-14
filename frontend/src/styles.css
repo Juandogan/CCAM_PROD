@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Staatliches&display=swap');
 
-
+html{overflow: scroll;overflow-x: hidden; }
 body{margin:0px; padding:0px}
 .margen{
     margin-left: 100px;
@@ -50,6 +50,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     overflow-wrap: break-word;
     overflow: hidden;/*si no se declara añade los ... pero muestra todo el texto*/
   }
+
+  .truncar4 {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow-wrap: break-word;
+    overflow: hidden;/*si no se declara añade los ... pero muestra todo el texto*/
+  }
+
 
          
 
@@ -104,6 +114,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
   
   @media (max-width:1000px)
-  {.margenL{ margin-left: 0px; }
-  .margenR{margin-right: 0px; } 
+  {.margenL{ margin-left: 1.5%; }
+  .margenR{margin-right: 1.5%; margin-top:0px} 
+  
+  } 
+   @media (max-width:800px)
+  {.margenL{ margin-left: 0%; }
+  .margenR{margin-right: 0%; } 
   }

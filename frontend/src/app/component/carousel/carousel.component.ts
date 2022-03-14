@@ -35,10 +35,11 @@ export class CarouselComponent implements OnInit {
     });
     
     for(let i = 1; i < this.data.length + 1 ; ++i){
-
+ 
       let segundos = i * 8000
       setTimeout(() => {this.setNext()}, segundos); 
-      
+  
+
     }
 
     
@@ -53,6 +54,8 @@ export class CarouselComponent implements OnInit {
     this.currentPosition = position;
     this.items.find(i => i.id === 0).marginLeft = -100 * position;
   }
+
+
 
   setNext() {
 

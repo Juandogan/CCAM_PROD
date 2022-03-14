@@ -1,27 +1,36 @@
 <div class="fondo margenL margenR" style="text-align: center;">
   <div *ngIf="loader" style="display:block; margin:auto; margin-top:100px; ">
-    <div class="loadingio-spinner-dual-ring-on59w8cl9ef" aria-setsize="">
-      <div class="ldio-rgwl833la6s">
-        <div></div>
-        <div>
-          <div></div>
-        </div>
-      </div>
-    </div>
+
+    <div class="loadingio-spinner-dual-ring-jqg38uhhax"><div class="ldio-n970spnnnqh">
+      <div></div><div><div></div></div>
+      </div></div>
+   
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
   </div> 
   <br>
-  <div class="row fondoRow">
+  <div class="row fondoRow" >
 
   
-    <div *ngIf="!loader"  class="col-9 fondoCol">
+    <div *ngIf="!loader"  class="col-12	col-sm-12	col-md-9 col-lg-9	col-xl-9 fondoCol ">
 
       <!-- CARROUSLE -->
-      <app-carousel [items]="articulos" [data]="articulos" [height]="200"></app-carousel>
-
+      <div class="margenRCorreccion">
+   <app-carousel [items]="articulos" [data]="articulos" [height]="200"></app-carousel> 
+     <div *ngFor="let articulo of articulos" class="cardMobile" > 
+   <app-card-mobile  [data]="articulo"></app-card-mobile> 
+   <br>
+   
+  </div>
+  <div class="onlyMobile" style="margin-top:-25px" >
+    <img src="../../../assets/publiMobile.PNG" alt="" style="object-fit: cover; width: 100%;">
+   </div>
+ 
+    </div>
       <div class="row row2" style="margin-left: -20px;">
 
 
-        <div *ngFor="let articulo of articulos|filtrox2" class="col-6" style="padding-right: 0px; padding-left: 20px;">
+        <div *ngFor="let articulo of articulos|filtrox2" class="col-6 quitar600" style="padding-right: 0px; padding-left: 20px;">
 
           <app-card-bajo-portada [data]='articulo'></app-card-bajo-portada>
 
@@ -35,7 +44,7 @@
     </div>
    
    
-    <div *ngIf="!loader" class="col-3" style="margin-top: 0px;">
+    <div *ngIf="!loader" class="col-3 quitar810" style="margin-top: 0px;">
 
       <img src="../../../assets/publi2.PNG" width="100%" height="260px" alt="" style="margin-top:20px;
       object-fit: cover;
@@ -43,11 +52,12 @@
             <img src="../../../assets/image 26.png" width="100%"  alt=""
             style="margin-top:10px; object-fit: cover; height: 235px;
             ">
-            
-            <img src="../../../assets/Captura1.PNG" width="100%"  alt=""
-            style="margin-top:15px; object-fit: cover; height: 466px;
-            ">
-      
+            <div style="margin-top:20px; text-align: left;">
+          <!-- <h5 *ngIf="!loader"  style="font-size: 15px; color: whitesmoke;"><b>| ÚLTIMA EDICIÓN </b> </h5> -->
+             <img src="../../../assets/revistamontaña.PNG" width="100%"  alt=""
+             style="margin-top:0px; object-fit:cover; height: 450px; 
+             ">
+      </div>
 <!--       
       <img src="../../../assets/image 26.png" width="100%" height="200px" alt=""
         style="margin-top:10px; object-fit: cover;"> -->
@@ -55,16 +65,16 @@
 
 
     </div>
-    <img *ngIf="!loader" src="../../../assets/image 12.png" alt="" style="height: 350px; margin-left:20px; margin-top:20px; width: 97%; ">
+    <img class="quitar600" *ngIf="!loader" src="../../../assets/image 12.png" alt="" style="height: 350px; margin-left:20px; margin-top:20px; width: 97%; ">
 
     <!-- INICIO "2DO BLOQUE" -->
-    <div *ngIf="!loader" class="row">
+    <div *ngIf="!loader" class="row quitar600">
       
       <div  class="col-9" style="margin-top: 20px; padding-right: 5px;"  >
         <app-card-bajopublix3 [data]="articulos"></app-card-bajopublix3>
       </div>
       
-      <div class="col-3" style="padding-right:30px;margin-top:20px">
+      <div class="col-3 quitar810" style="padding-right:30px;margin-top:20px">
         <img src="../../../assets/Captura1.PNG" width="100%" height="400px" alt="">
         <img src="../../../assets/publi.PNG" width="100%" height="330px" alt=""
           style="margin-top:10px; object-fit: cover;">
@@ -77,13 +87,17 @@
       <br>
       <app-triple-card [data]="articulos" style="margin-top:20px"></app-triple-card>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
     </div>
 <!-- FIN "2DO BLOQUE" -->
 
-
+<div *ngIf="!loader"  style=" background-color: rgb(32, 32, 32);width: 100%; text-align: left;" >
+  
+  <h1 style="margin-top:10px; margin-left:10px; color: wheat;">CENTRO CULTURAL ARGENTINO DE MONTAÑA - 2022</h1>
+  <br><br><br><br>
+  </div>
 
 
   </div>
-  
-</div>
+ 
+</div> 

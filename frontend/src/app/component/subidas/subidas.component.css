@@ -19,8 +19,9 @@ input, textarea, select {border-radius: 5px;
     color: rgb(0, 0, 0); /*Color texto*/
     margin-top:10px;
     margin-left:3px;
-            }  ;
-a:hover{cursor:pointer}
+            }  
+
+a:hover{cursor:pointer;}
 
 .text {
         
@@ -34,4 +35,6 @@ a:hover{cursor:pointer}
 {   
     .margenArreglo{margin-left:5px!important; margin-right: 5px!important;}
   .mtSeries{margin-top:100px!important}
-};
+}
+
+
