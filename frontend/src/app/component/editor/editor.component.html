@@ -4,18 +4,21 @@
         <br>
 
        
-        <div class="text-right" >
+        <!-- <div class="text-center"> -->
+        
+          <div class="text-right" style="margin-top:-15px">
+            <mat-icon style="margin-top:-4px; margin-left:4px" (click)="scrollCenter()">vertical_align_center</mat-icon>
             
-            <mat-icon *ngIf="loader" (click)="loader=false" (click)="agregarPublicacion()" style="color:black; cursor:pointer; font-size:30px;margin-right: 10px;">save</mat-icon>    
+            <mat-icon *ngIf="loader" (click)="loader=false" (click)="agregarPublicacion()" style="color:brown; cursor:pointer; font-size:30px;margin-right: 10px;">save</mat-icon>    
         
             <img *ngIf="!loader" src="../../../assets/loader.gif" width="40px" alt="" style="margin-top:-22px">
         
-        <mat-icon  (click)="this.crudService.cambioPantalla = true" style="font-size:30px; cursor:pointer; color:black">close</mat-icon>
+        <mat-icon  (click)="this.crudService.cambioPantalla = true" (click)="scrollReset()"  style="font-size:30px; cursor:pointer; color:brown;">close</mat-icon>
         <!-- data-toggle="modal" data-target="#exampleModalCenter"  -->
     </div> 
     <div class="editor">
     
-      <div class="document-editor__toolbar"></div>
+      <div class="document-editor__toolbar" ></div>
       <div class="document-editor__editable-container" >
           <div  class="document-editor__editable"  [innerHTML] = "(this.art)|sanetizer">
 

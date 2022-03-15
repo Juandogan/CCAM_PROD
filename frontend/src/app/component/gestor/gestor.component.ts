@@ -13,10 +13,12 @@ import { CrudService } from 'src/app/service/crud.service';
 export class GestorComponent implements OnInit {
   public uploadedFiles: Array<File> = [];
 
-    
+
   public fechaPublicacion =new Date();  
-  articulos: Articulos[] = []
-  id=""
+  password = false; 
+  password1 = "";
+  articulos: Articulos[] = [] 
+  id:string = ""
   activo=true; //estilo 
   cambioPantalla = true;
   loader = true;
@@ -55,11 +57,15 @@ filterPost=""
   }
 
   ngOnInit(): void {
-    this.pedirArticulos()
-	
+    this.pedirArticulos()	 
       
   }
+  checkPassword(value){
+    if(value==="admin"){
+      this.password = true
 
+    } else{this.password = false}
+  }
 
 pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta luego guardo la data en el front en el servicio y en este componente.
   this.crudService.getArticulos().subscribe(res =>{
@@ -90,7 +96,7 @@ fnOcultar2(){
 agregarPublicacion(){
 this.crudService.unArticulo.categoria = this.categoria;
 this.crudService.unArticulo.titulo = this.titulo;
-this.crudService.unArticulo.fecha =   String(this.fechaPublicacion)
+this.crudService.unArticulo.fechaCreate =  String(this.fechaPublicacion);
 this.crudService.unArticulo.subtitulo = this.subtitulo;
 this.crudService.unArticulo.autor = this.autor
 this.crudService.unArticulo.fotografia = this.fotografia
@@ -102,7 +108,7 @@ this.crudService.unArticulo.nota = this.nota
   if( this.crudService.unArticulo._id)
   {
   this.crudService.modificarArticulo(this.crudService.unArticulo)
-  .subscribe(res => { this.crudService.snack('Guardado!')});
+  .subscribe(res => { this.crudService.snack('Modificado!')});
 }
   else  {
      this.crudService.unArticulo.vistas = 0

@@ -1,13 +1,13 @@
 .card{width: 100%;background-color: rgb(54, 54, 54); border-radius: 2px; -webkit-box-shadow: 3px 3px 9px 1px rgba(0,0,0,0.71); 
-    box-shadow: 3px 3px 9px 1px rgba(0,0,0,0.71); margin:0px!important }
+    box-shadow: 3px 3px 9px 1px rgba(0,0,0,0.71); margin:0px!important; min-height: 470px; }
 
 
 
-.parrafo{font-family: Roboto;
-    color:white;
-  font-size: 14px;
+.parrafo{font-family:Georgia, 'Times New Roman', Times, serif;
+      color:rgb(219, 219, 219);
+  font-size: 15px;
   font-style: normal;
-  font-weight: 200;
+  font-weight:200;
   line-height: 20px;
   letter-spacing: 0em;
   text-align: left;

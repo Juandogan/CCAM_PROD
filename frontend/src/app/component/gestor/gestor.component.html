@@ -1,3 +1,4 @@
+<div *ngIf="password">
 
 <div *ngIf="!this.crudService.cambioPantalla">
   
@@ -64,8 +65,8 @@
             <!-- <th scope="row">1</th> -->
             
             <td > <span class="badge badge-danger">{{articulo.categoria}}</span></td>
-            <td class="textoTableTitulo" > * {{articulo.titulo | truncate:'100'}}</td>
-            <td> {{articulo.fecha}}</td>
+            <td class="textoTableTitulo" > {{articulo.titulo | truncate:'100'}}</td>
+            <td> {{articulo.fechaCreate | date: 'dd/MM/yy'}}</td>
             <td>daad</td> 
             <td class="text-center">
             <a data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true">
@@ -99,6 +100,19 @@
 <br><br><br><br><br><br>
 
 
+</div>
+
+</div> <!-- finde pasword -->
+
+
+<div *ngIf="!password"> <!-- sipassword no funciona -->
+  <div class="margenL" style="margin-top:20px">
+  <h4>ingrese usuario</h4>
+<input type="text">
+<h4 name="password" [(ngModel)]="this.password1" >Contraseña</h4>
+<input type="password">
+<button (click)="checkPassword('admin')">Ingresar</button>
+</div>
 </div>
 
 <div class="modal fade bd-example-modal-lg " style="background-color: rgba(95, 158, 160, 0.253);"  id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 

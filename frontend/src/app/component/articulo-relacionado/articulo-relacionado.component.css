@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@574&display=swap');
+.categoria{ 
+    margin-left:-15px;
+    margin-top:-30px;
+    color:rgb(243, 178, 0);
+    font-weight: 600;
+    font-size: 14px;
+    
+  
+  }
+  
+.titulo{font-size:20px; line-height: 20px; font-family: 'Rubik', sans-serif;
+  letter-spacing: -1px;margin-top:-10px;
+  margin-left:-15px;
+  color:rgb(68, 68, 68);
+}
+
+.subtitulo{margin-top:-10px; font-size: 18px;  font-family: 'Roboto', sans-serif; line-height: 26px;}
+
+   
+.card{border:none}
+ 
+
+

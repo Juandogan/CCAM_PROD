@@ -1,12 +1,12 @@
 export class Articulos {
 
-    constructor(_id ='', fecha ='', titulo='', tituloImagen='', subtitulo='', nota='', imagen1='', imagen2=''
+    constructor(_id ='', fechaCreate ='', titulo='', tituloImagen='', subtitulo='', nota='', imagen1='', imagen2=''
     ,imagen3='',fotografia='', edicionFotografia='',autor='', likes=0,categoria='', vistas=0,hash='' ){
 
 
         
 this._id = _id;
-this.fecha = fecha
+this.fechaCreate = fechaCreate
 this.titulo = titulo
 this.subtitulo = subtitulo
 this.nota = nota
@@ -29,8 +29,8 @@ this.hash = hash
     marginLeft?:number;
 
     _id: string
-    fecha:string;
-
+    fechaCreate:string;
+    
     titulo:string;
     subtitulo:string;
     hash:string;

@@ -100,4 +100,11 @@ agregarPublicacion(){
         })
     }
   };
+
+  scrollCenter(){
+    window.scroll(0,165)
+  }
+  scrollReset(){
+    window.scroll(0,0)
+  }
 }

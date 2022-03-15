@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Staatliches&display=swap');
 
 .colOut{padding:0px; margin: 0px;}
-img{object-fit: cover; height: 200px;}
-.fondoCard{background-color: rgb(51, 51, 51);}
+img{object-fit: cover; height: 300px;}
+.fondoCard{background-color: rgb(51, 51, 51); min-height: 200px;}
 .ajusteCard{margin-left:10px; align-items: left;}
 
 .sombra{box-shadow: 3px 1px 9px 1px rgba(0,0,0,0.71); border:none }
@@ -24,6 +24,6 @@ img{object-fit: cover; height: 200px;}
     text-align: left;
     color: rgb(255, 255, 255);
     margin-top:15px;  
-    text-shadow: 2px 2px 2px  rgb(58, 58, 58);
+    text-shadow: 3px 3px 2px  rgb(58, 58, 58);
     margin-top:-5px;
     }

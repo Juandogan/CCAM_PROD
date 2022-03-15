@@ -33,10 +33,7 @@ export class ArticuloComponent implements OnInit {
   saltos(data){
 
      var aux2 = data.split('<img ').join('<img style="width:100%;"')
-     
-
-    console.log(aux2)
-    return (aux2)
+            return (aux2)
 
 
    };

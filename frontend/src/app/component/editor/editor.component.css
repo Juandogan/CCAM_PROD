@@ -197,4 +197,4 @@ Preserve the relative scale, though. */
 .margenR{margin-right: 0px; } 
 }
  
-:host ::ng-deep .ck-editor__editable_inline { min-height: 850px; width: 900px;}
+:host ::ng-deep .ck-editor__editable_inline { height: 650px; width: 900px;}

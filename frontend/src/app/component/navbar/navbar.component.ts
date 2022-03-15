@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   searchTerm$ = new Subject<string>();
   buscar:any
   buscarMensaje:string = ""
-
+  claseAnima = false;
 public color = "rgb(33,33,33)"
 
 
