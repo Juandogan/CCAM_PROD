@@ -11,7 +11,8 @@
         <img class="card-img-top sombra"src="{{not.imagen1}}" alt="" height="200px" style="object-fit: cover;">
         <div class="card-body">
             <h6 class="categoria"><b>{{cut(not?.categoria)}}</b></h6>
-          <h1 class="card-title titulo" >{{not?.titulo}}</h1>
+            <a routerLink="../articulo/{{not?._id}}">
+          <h1 class="card-title titulo">{{not?.titulo}}</h1></a>
           <p class="card-text" style="margin-top:-10px">{{not?.subtitulo}}</p>          
         </div>
       </div>

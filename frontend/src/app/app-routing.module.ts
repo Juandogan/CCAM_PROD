@@ -7,6 +7,7 @@ import { GestorComponent } from './component/gestor/gestor.component';
 import { MainComponent } from './component/main/main.component';
 import { QuienesSomosComponent } from './component/quienes-somos/quienes-somos.component';
 import { SubidasComponent } from './component/subidas/subidas.component';
+import { CategoriaComponent } from './component/categoria/categoria.component';
 import { SuscripcionComponent } from './component/suscripcion/suscripcion.component';
 import { ResolveNotaService } from './service/resolve-nota.service';
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'gestor', component:  GestorComponent },
   {path:'buscador', component:  BuscadorComponent, resolve: {data: ResolveNotaService} },
   {path:'articulo/:_id', component: ArticuloComponent, resolve: {data: ResolveNotaService}},
+  {path:'categoria/:categoria', component: CategoriaComponent, resolve: {data: ResolveNotaService}}
   
 ];
 

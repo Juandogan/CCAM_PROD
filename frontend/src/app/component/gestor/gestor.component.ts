@@ -34,6 +34,7 @@ filterPost=""
  public categoria:string = "";
  public fotografia:string = "";
  public edicionFotografia:string = "";
+ public likes = 0
  public ocultar=true;
  public ocultar2=true;
  public loading:boolean = true;
@@ -74,6 +75,7 @@ pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta lue
   this.cantArt = this.articulos.length
   this.articulos = this.articulos.reverse()
  this.loader2 = false
+  
     });//fin de subscribe
   } //fin de pedirProductos
 
@@ -97,11 +99,12 @@ agregarPublicacion(){
 this.crudService.unArticulo.categoria = this.categoria;
 this.crudService.unArticulo.titulo = this.titulo;
 this.crudService.unArticulo.fechaCreate =  String(this.fechaPublicacion);
-this.crudService.unArticulo.subtitulo = this.subtitulo;
+ this.crudService.unArticulo.subtitulo = this.subtitulo;
 this.crudService.unArticulo.autor = this.autor
 this.crudService.unArticulo.fotografia = this.fotografia
 this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
 this.crudService.unArticulo.nota = this.nota
+this.crudService.unArticulo.likes = 1
 
 
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)

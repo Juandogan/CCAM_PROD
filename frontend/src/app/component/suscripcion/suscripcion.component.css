@@ -1,8 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+ 
 
-.font{margin-left:20px; font-family: 'Patua One', cursive;font-size: 60px; color:brown; line-height: 45px;}
-.font2{margin-left:20px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: 18px; color:rgb(77, 77, 77); line-height:22px;}
-input{background-color: rgba(0, 225, 255, 0.055);}
+.font{
+     margin-left:20px;
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+     font-size: 50px;
+     font-weight: 600;
+     line-height: 45px;
+     letter-spacing: -3px;
+    }
+
+.font2{
+    margin-left:20px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px; 
+    color:rgb(77, 77, 77);
+    line-height:28px;
+    }
+
+input{
+    background-color: rgba(0, 225, 255, 0.055);
+    }
+
+
 .item{font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 1000;
     font-size: 12px; }

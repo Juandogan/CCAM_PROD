@@ -1,4 +1,4 @@
-<div *ngIf="password">
+<!-- <div *ngIf="password"> -->
 
 <div *ngIf="!this.crudService.cambioPantalla">
   
@@ -48,9 +48,9 @@
           <tr>
             <!-- <th scope="col">#</th> -->
             <th scope="col" style="width:7%;">Categoria</th>
-            <th scope="col">Titulo</th>
+            <th scope="col" style="text-align: center;">Titulo</th>
             <th scope="col">Creación</th>
-            <th scope="col">Portada</th>
+            <th scope="col">Vistas</th>
             <th scope="col" style="width:5%;"class="text-center">Ficha</th>
             <th scope="col" style="width:5%;"class="text-center">Articulo</th>
             <th scope="col" style="width:5%;"class="text-center">Borrar</th>
@@ -67,7 +67,7 @@
             <td > <span class="badge badge-danger">{{articulo.categoria}}</span></td>
             <td class="textoTableTitulo" > {{articulo.titulo | truncate:'100'}}</td>
             <td> {{articulo.fechaCreate | date: 'dd/MM/yy'}}</td>
-            <td>daad</td> 
+             <td style="text-align: center">{{articulo.vistas}}</td> 
             <td class="text-center">
             <a data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true">
            <mat-icon style="cursor:pointer">edit</mat-icon> 
@@ -102,10 +102,10 @@
 
 </div>
 
-</div> <!-- finde pasword -->
+ 
 
 
-<div *ngIf="!password"> <!-- sipassword no funciona -->
+<!-- <div *ngIf="!password"> 
   <div class="margenL" style="margin-top:20px">
   <h4>ingrese usuario</h4>
 <input type="text">
@@ -113,7 +113,7 @@
 <input type="password">
 <button (click)="checkPassword('admin')">Ingresar</button>
 </div>
-</div>
+</div> -->
 
 <div class="modal fade bd-example-modal-lg " style="background-color: rgba(95, 158, 160, 0.253);"  id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
   <div class="modal-dialog modal-lg"  role="document">

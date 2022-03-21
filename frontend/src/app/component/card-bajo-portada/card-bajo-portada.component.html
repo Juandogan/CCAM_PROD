@@ -2,10 +2,10 @@
     <img class="card-img-top" src={{data?.imagen1}} alt="Card image cap">
     <div class="card-body">
         <div>
-            <h5 class="categoria ">HISTORIA</h5>
+            <h5 class="categoria ">{{cut(data?.categoria)}}</h5>
         </div>
         <a routerLink="../articulo/{{data?._id}}" class="robotoBlack">
-        <h1 class="robotoBlack" >{{data?.titulo}}</h1>
+        <h1 class="titulo" >{{data?.titulo}}</h1>
     </a>
         <p class="card-text parrafo">
             

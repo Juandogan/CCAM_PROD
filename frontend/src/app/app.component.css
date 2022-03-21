@@ -1,0 +1,8 @@
+.z{zoom:0.9}
+
+
+@media (max-width: 860px)
+{ 
+  .z{
+  zoom: 0.85}
+}

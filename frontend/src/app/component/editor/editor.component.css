@@ -40,16 +40,22 @@
     background: var(--ck-color-base-foreground);
     background-color: rgb(110, 110, 110);
     /* Make it possible to scroll the "page" of the edited content. */
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    font-weight: 300;
+ 
+    font-size: 18px; 
+ 
+    color:rgb(68, 68, 68);
     overflow-y:none;
     
 }
 
- 
+
 
 
 .document-editor__editable-container .ck-editor__editable {
     /* Set the dimensions of the "page". */
-    width: 80%;
+    width: 180%;
     min-height: 10cm; 
 
     /* Keep the "page" off the boundaries of the container. */
@@ -58,7 +64,7 @@
     border: 1px hsl( 0,0%,82.7% ) solid;
     border-radius: var(--ck-border-radius);
     background: white;
-
+    
     /* The "page" should cast a slight shadow (3D illusion). */
     box-shadow: 0 0 5px hsla( 0,0%,0%,.1 );
 
@@ -68,7 +74,8 @@
 
 .document-editor .ck-content,
 .document-editor .ck-heading-dropdown .ck-list .ck-button__label {
-    font: 16px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: 16px/1.6  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 document-editor .ck-heading-dropdown .ck-list .ck-button__label {
@@ -86,8 +93,10 @@ Preserve the relative scale, though. */
 /* Set the styles for "Heading 1". */
 .document-editor .ck-content h2,
 .document-editor .ck-heading-dropdown .ck-heading_heading1 .ck-button__label {
-    font-size: 2.18em;
+    font-size: 5.18em;
     font-weight: normal;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+    
 }
 
 .document-editor .ck-content h2 {
@@ -102,10 +111,13 @@ Preserve the relative scale, though. */
     font-size: 1.75em;
     font-weight: normal;
     color: hsl( 203, 100%, 50% );
+
+
 }
 
 .document-editor .ck-heading-dropdown .ck-heading_heading2.ck-on .ck-button__label {
     color: var(--ck-color-list-button-on-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Set the styles for "Heading 2". */
@@ -197,4 +209,4 @@ Preserve the relative scale, though. */
 .margenR{margin-right: 0px; } 
 }
  
-:host ::ng-deep .ck-editor__editable_inline { height: 650px; width: 900px;}
+:host ::ng-deep .ck-editor__editable_inline { height: 650px; width: 960px;}

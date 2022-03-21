@@ -19,4 +19,10 @@ export class CardBajoPortadaComponent implements OnInit {
     console.log(this.data)
   }
 
+  cut(value:any){
+    var corte = value.slice(2)
+ 
+   return corte
+ }; 
+
 }

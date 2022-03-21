@@ -43,6 +43,7 @@ import { Filtrox2Pipe } from './pipes/filtrox2.pipe';
 import { CardMobileComponent } from './component/card-mobile/card-mobile.component';
 import { BuscarPipe } from './pipes/buscar.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CategoriaComponent } from './component/categoria/categoria.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +68,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SubidasComponent,
     Filtrox2Pipe,
     CardMobileComponent,
-    BuscarPipe
+    BuscarPipe,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,

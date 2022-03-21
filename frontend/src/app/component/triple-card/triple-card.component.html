@@ -4,32 +4,35 @@
         
 
  <div class="row colOut ajusteCard" style="margin-left:35px;">
-    <div class="col-4 colOut">
-        <div class="card" style="border: none;">
+    <div class="col-4 colOut" style="padding:5px">
+        <div class="card" style="border: none; border-radius: 10px;">
             <img class="card-img-top" src="{{data[0]?.imagen1}}" alt="Card image cap">
             <div class="card-body fondoCard" style="text-align: left;">
                 <h5 class="categoria">{{cut(data[0]?.categoria)}}</h5>
-              <p class="titulo">{{data[0]?.titulo}}</p>
+              <h1 class="titulo">{{data[0]?.titulo}}</h1>
+              <p class="subtitulo">{{data[0]?.subtitulo}}</p>
               
             </div>
           </div>
     </div>
-    <div class="col-4 colOut">
+    <div class="col-4 colOut" style="padding:5px">
         <div class="card ajusteCard" style="border: none;">
             <img class="card-img-top" src="{{data[1]?.imagen1}}" alt="Card image cap">
             <div class="card-body fondoCard" style="text-align: left;">
               <h5 class="categoria">{{cut(data[1]?.categoria)}}</h5>
-              <p class="titulo">{{data[1]?.titulo}}</p>
+              <h1 class="titulo">{{data[1]?.titulo}}</h1>
+              <p class="subtitulo">{{data[1]?.subtitulo}}</p>
               
             </div>
           </div>
     </div>
-    <div class="col-4 colOut">
+    <div class="col-4 colOut" style="padding:5px">
         <div class="card ajusteCard"style="border: none;" >
             <img class="card-img-top" src="{{data[2]?.imagen1}}" alt="Card image cap">
             <div class="card-body fondoCard" style="text-align: left;">
-              <h5 class="categoria">{{cut(data[2]?.categoria)}}</h5>
-              <p class="titulo" >{{data[2]?.titulo}}</p>
+              <h5 class="categoria">{{cut(data[1]?.categoria)}}</h5>
+              <h1 class="titulo">{{data[2]?.titulo}}</h1>
+              <p class="subtitulo">{{data[2]?.subtitulo}}</p>
 
             </div>
           </div>

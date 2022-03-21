@@ -15,5 +15,9 @@ export class CardBajopublix3Component implements OnInit {
 
   ngOnInit(): void {
   }
-
+  cut(value:any){
+    var corte = value.slice(2)
+ 
+   return corte
+ }; 
 }
