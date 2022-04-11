@@ -1,0 +1,236 @@
+<div class ="row margenes"  >
+<div class="col-6">
+
+  <br>
+          <h1>CREAR |<span> CABECERA</span></h1>
+          <hr>
+    <div class="row">
+        <div class="col-6">
+            <h5 class="textoInput">Categoría</h5>
+          
+            <select  [(ngModel)]="this.categoria" class="form-control form-control-sm" style="width: 100%; height: 38px;">
+              <option>· Montañismo · Escalada en Roca</option>
+              <option>· Montañismo · Escalada en Hielo</option>
+              <option>· Montañismo · Treaking</option>
+              <option>· Montañismo · Senderismo</option>
+              <option>· Montañismo · Treaking</option>
+              <option>· Montañismo · Espeleología</option>
+              <option>· Historia · Expediciones</option>
+              <option>· Historia · Biografías</option>
+              <option>· Historia · Hechos</option>
+    
+              <option>· Antropología</option>
+              <option>· Medio Ambiente</option>
+              <option>· Medio Ambiente · Flora</option>
+              <option>· Medio Ambiente · Fauna</option> 
+              <option>· Medio Ambiente · Plantas Medicinales</option> 
+              <option>· Medio Ambiente · Impacto Ambiental</option> 
+    
+              <option>· Educacion · Seguridad</option>
+              <option>· Educacion · Entrenamiento</option>
+              <option>· Educacion · Medicina Natural</option>
+    
+              <option>· Arte · Literatura</option>
+              <option>· Arte · Fotografía</option>
+              <option>· Arte · Cine</option>
+              <option>· Arte · Música</option>
+              <option>· Museo</option>
+              <option>· Instituciones</option>
+              
+    
+            </select>
+        </div>
+    
+        <div class="col-6">
+          <div class="form-group">
+            <h5 class="textoInput">#Tags</h5>
+            <input [(ngModel)]="this.hash" class="form-control" id="message-text" style="width:100%">
+          </div>
+        </div>
+    <!-- 
+        <div class="col-6">
+          <div class="form-group">
+            <h5 class="textoInput">Autor</h5>
+            <input [(ngModel)]="this.autor" class="form-control" id="message-text" style="width:100%">
+          </div>
+        </div> -->
+    
+    </div>
+                       
+              <div class="form-group">
+                <h5 class="textoInput">Título</h5>
+                <input [(ngModel)]="this.titulo" class="form-control" id="titulo">
+                     <!-- <div  class="textoInputBajo" >
+                   {{this.titulo.length}} de 200 Máx.
+                </div>  -->
+              </div>
+              <div class="form-group">
+                <h5 class="textoInput">Título Alternativo</h5>
+                <input [(ngModel)]="this.tituloAlt" class="form-control" id="tituloAlt">
+                     <!-- <div  class="textoInputBajo" >
+                   {{this.titulo.length}} de 200 Máx.
+                </div>  -->
+              </div>
+              <div class="form-group">
+                <h5 class="textoInput">Subtítulo</h5>
+                <textarea [(ngModel)]="this.subtitulo" rows="2" class="form-control" id="message-text"></textarea>
+                <!-- <div  class="textoInputBajo" >
+                  {{this.subtitulo.length}} de 200 Máx.
+                </div>  -->
+              </div>
+    
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <h5 class="textoInput">Autor</h5>
+          <input [(ngModel)]="this.autor" class="form-control" id="message-text" >
+        </div>
+    </div>
+    
+      <div class="col-6">
+              <div class="form-group">
+                <h5 class="textoInput">Fotografía</h5>
+                <input [(ngModel)]="this.fotografia"class="form-control" id="message-text">
+             </div>
+      </div>
+      <div class="col-6">
+              <div class="form-group">
+                <h5 class="textoInput">Edición de fotografía</h5>
+                <input [(ngModel)]="this.edicionFotografia" class="form-control" id="message-text" >
+              </div>
+      </div>
+    
+     
+      <div class="col-6">
+    
+    
+        <div style="margin-top:10px">
+          <div *ngIf="ocultar2">
+            <h6 style ="margin-bottom:-2px">IMAGEN DE PORTADA  400x560</h6>
+            <input type="file"  style="width: 80%; overflow: none"  (change)="onFileChange($event); ">
+            <button class="btn-sm btn btn-danger btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
+            <br><br><br>
+          </div>
+            <div *ngIf="this.loading2" > 
+                   <div> 
+                      <img src="../../../assets/loading4.gif"  width="50px" alt="" style="margin-top:-65px">
+                      
+                  </div>
+               </div>
+           
+           <div *ngIf="this.loading3">
+            <h6 style="color:green">✓ Imagen Portada Desktop subida!<span style="color:blue" (click)="fnOcultar()"> Deshacer</span></h6>
+              </div>
+         </div>
+    
+    
+    
+    
+    
+    </div>               
+            <h4></h4>
+      <br><br><br><br><br>
+        </div>
+      
+      
+    
+    
+         
+      <!-- Modal -->
+    
+          
+        </div>
+
+        <div class="col-6">
+          <br>
+          <h1><h1>ARTÍCULOS |<span> RELACIONADOS</span></h1></h1>
+<hr>
+<h5 class="textoInput" style="margin-left:25px" >Buscar</h5>
+<div class="input-group" >
+  <input  [(ngModel)]="this.busqueda" id="busqueda" style="margin-left:20px;" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-danger" type="button" (click)="pedirUnArticulo()">Buscar</button>
+  </div>
+  
+</div>
+
+          <div  class="form-group mt-3" >
+            
+            
+            <input  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" >
+            
+            <div style="float:left">
+            <h1 style="color:brown;   margin-top:-40px">1</h1> 
+          </div>
+                 <!-- <div  class="textoInputBajo" >
+               {{this.titulo.length}} de 200 Máx.
+            </div>  -->
+          </div>
+          <div class="form-group mt-3">
+            
+            
+            <input  [(ngModel)]="this.resultadoTitulo2" class="form-control" id="titulo" style="margin-left:20px" >
+            <div style="float:left">
+            <h1 style="color:rgb(0, 0, 0);   margin-top:-40px">2</h1> 
+          </div>
+                 <!-- <div  class="textoInputBajo" >
+               {{this.titulo.length}} de 200 Máx.
+            </div>  -->
+          </div>
+          <div class="form-group mt-3">
+            
+            
+            <input  [(ngModel)]="this.resultadoTitulo3" class="form-control" id="titulo" style="margin-left:20px" >
+            <div style="float:left">
+            <h1 style="color:brown;  margin-top:-40px">3</h1> 
+          </div>
+                 <!-- <div  class="textoInputBajo" >
+               {{this.titulo.length}} de 200 Máx.
+            </div>  -->
+          </div>
+          <div class="form-group mt-3">
+            
+            
+            <input  [(ngModel)]="resultadoTitulo4" class="form-control" id="titulo" style="margin-left:20px" >
+            <div style="float:left">
+            <h1 style="color:rgb(0, 0, 0);margin-top:-40px">4</h1> 
+          </div>
+                 <!-- <div  class="textoInputBajo" >
+               {{this.titulo.length}} de 200 Máx.
+            </div>  -->
+          </div>
+          <div class="form-group mt-3">
+            
+            
+            <input  [(ngModel)]="this.resultadoTitulo5" class="form-control" id="titulo" style="margin-left:20px" >
+            <div style="float:left">
+            <h1 style="color:brown;   margin-top:-40px">5</h1> 
+          </div>
+                 <!-- <div  class="textoInputBajo" >
+               {{this.titulo.length}} de 200 Máx.
+            </div>  -->
+          </div>
+          <div class="form-group mt-3">
+            
+            
+            <input  [(ngModel)]="this.resultadoTitulo6" class="form-control" id="titulo" style="margin-left:20px" >
+            <div style="float:left">
+            <h1 style="color:rgb(0, 0, 0);   margin-top:-40px">6</h1> 
+          </div>
+                 <!-- <div  class="textoInputBajo" >
+               {{this.titulo.length}} de 200 Máx.
+            </div>  -->
+          </div>
+
+        </div>
+       
+      </div>
+
+      <div class="modal-footer " style="background-color: rgba(255, 255, 255, 0.253);width: 100%; position: fixed; bottom:0px">
+        
+        <button type="button" s class="btn btn-secondary" data-dismiss="modal" routerLink="../gestor">Cerrar</button>
+        <button type="button" class="btn btn-danger"  
+        (click)="agregarPublicacion()"   data-dismiss="modal"
+        style="margin-right:210px"
+        >Guardar</button>
+      </div>

@@ -12,23 +12,17 @@ import { Location } from '@angular/common';
 export class ArticuloComponent implements OnInit {
 
   constructor(private ruta:ActivatedRoute, public crudService:CrudService,private location: Location) { }
+
   nota:any
   auxContador:number
+
   ngOnInit(): void {
-    window.scroll(0,0)
-    this.ruta.data.subscribe((data)=>{
+      window.scroll(0,0)
+      this.ruta.data.subscribe((data)=>{
       this.nota = Object.entries(data).map(i => i[1]);
       this.auxContador =  this.nota[0].vistas
+      })};
 
-       
-})
-
-
-  }
-
-
-
-  
   saltos(data){
   var aux2 = data.split('<h2>').join(`<h2 style="
                                       font-weight: 700; 
@@ -88,7 +82,7 @@ export class ArticuloComponent implements OnInit {
   this.crudService.unArticulo.imagen3 = this.nota[0].imagen3
   this.crudService.unArticulo.categoria = this.nota[0].categoria;
   this.crudService.unArticulo.titulo = this.nota[0].titulo;
-  this.crudService.unArticulo.fechaCreate =  String(this.nota[0].fechaPublicacion);
+  this.crudService.unArticulo.fecha  =  String(this.nota[0].fechaPublicacion);
   this.crudService.unArticulo.subtitulo = this.nota[0].subtitulo;
   this.crudService.unArticulo.autor = this.nota[0].autor
   this.crudService.unArticulo.fotografia = this.nota[0].fotografia
@@ -103,7 +97,7 @@ export class ArticuloComponent implements OnInit {
         }
   
 
-
+ 
 
   
 

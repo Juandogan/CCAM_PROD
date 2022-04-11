@@ -10,6 +10,7 @@ import { SubidasComponent } from './component/subidas/subidas.component';
 import { CategoriaComponent } from './component/categoria/categoria.component';
 import { SuscripcionComponent } from './component/suscripcion/suscripcion.component';
 import { ResolveNotaService } from './service/resolve-nota.service';
+import { EditorCabeceraComponent  } from './component/editor-cabecera/editor-cabecera.component';
 const routes: Routes = [
 
   {path:'', component:  MainComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'subidas', component:  SubidasComponent },
   {path:'formaParte', component:  FormaParteComponent },
   {path:'gestor', component:  GestorComponent },
+  {path:'editorCabecera', component:  EditorCabeceraComponent },
   {path:'buscador', component:  BuscadorComponent, resolve: {data: ResolveNotaService} },
   {path:'articulo/:_id', component: ArticuloComponent, resolve: {data: ResolveNotaService}},
   {path:'categoria/:categoria', component: CategoriaComponent, resolve: {data: ResolveNotaService}}

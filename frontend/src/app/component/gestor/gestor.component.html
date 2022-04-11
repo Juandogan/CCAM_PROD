@@ -40,7 +40,10 @@
 <br>
 <div style="margin-left:-15px; margin-top:-15px; margin-bottom: 20px;">
 
-<button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Crear publicación</button>
+<button class="btn btn-danger ml-3" data-toggle="modal" 
+routerLink="../editorCabecera" 
+data-target="#exampleModal" (click)="limpiar()">Crear publicación</button>
+
     <button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Publicidad</button>      
   </div>
     <table  class="table table-primary"  >
@@ -48,9 +51,9 @@
           <tr>
             <!-- <th scope="col">#</th> -->
             <th scope="col" style="width:7%;">Categoria</th>
-            <th scope="col" style="text-align: center;">Titulo</th>
+            <th scope="col">Titulo</th>
             <th scope="col">Creación</th>
-            <th scope="col">Vistas</th>
+            <th scope="col">Ultima Mod.</th>
             <th scope="col" style="width:5%;"class="text-center">Ficha</th>
             <th scope="col" style="width:5%;"class="text-center">Articulo</th>
             <th scope="col" style="width:5%;"class="text-center">Borrar</th>
@@ -66,8 +69,9 @@
             
             <td > <span class="badge badge-danger">{{articulo.categoria}}</span></td>
             <td class="textoTableTitulo" > {{articulo.titulo | truncate:'100'}}</td>
-            <td> {{articulo.fechaCreate | date: 'dd/MM/yy'}}</td>
-             <td style="text-align: center">{{articulo.vistas}}</td> 
+            <td> {{articulo.fecha| date: 'dd/MM/yy'}}</td>
+
+            <td>{{articulo.fechaMod| date: 'dd/MM/yy'}}</td> 
             <td class="text-center">
             <a data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true">
            <mat-icon style="cursor:pointer">edit</mat-icon> 
@@ -115,8 +119,9 @@
 </div>
 </div> -->
 
-<div class="modal fade bd-example-modal-lg " style="background-color: rgba(95, 158, 160, 0.253);"  id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
-  <div class="modal-dialog modal-lg"  role="document">
+
+<div class="modal fade bd-example-modal-lg " style=" background-color: rgba(95, 158, 160, 0.253);"  id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+  <div class="modal-dialog modal-lg"  role="document" >
 
     <div class="modal-content ">
       <div class="modal-header" style="background-color: rgba(95, 158, 160, 0.253); " >
@@ -172,13 +177,7 @@
         <input [(ngModel)]="this.hash" class="form-control" id="message-text" style="width:100%">
       </div>
     </div>
-<!-- 
-    <div class="col-6">
-      <div class="form-group">
-        <h5 class="textoInput">Autor</h5>
-        <input [(ngModel)]="this.autor" class="form-control" id="message-text" style="width:100%">
-      </div>
-    </div> -->
+ 
 
 </div>
         
@@ -260,8 +259,7 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-danger"  (click)="agregarPublicacion()"   data-dismiss="modal" >Guardar</button>
       </div>
-  <!-- Modal -->
-
+ 
       
     </div>
     
@@ -269,14 +267,25 @@
 
 
 </div>
-</div>
+</div> 
 
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+
+<!-- final de formulario -->
+
+
+
+
+
+
+
+<div class="modal fade modal-open " id="exampleModalCenter" tabindex="1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+style="overscroll-behavior:inherit"
+>
+  <div class="modal-dialog modal-dialog-centered modal-open " role="document">
+    <div class="modal-content modal-open ">
+      <div class="modal-header ">
         <h5 class="texto mt-1" id="exampleModalLabel">Eliminar</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

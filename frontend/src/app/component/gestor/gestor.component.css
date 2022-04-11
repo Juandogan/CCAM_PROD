@@ -8,7 +8,9 @@
 .textoChico{font-size: 12px; margin-left:4px; color:rgba(32, 32, 32, 0.719); margin-top:-10px}
 .textoInputBajo{margin-left:5px; margin-bottom: 0px;font-size:10px; color:rgba(82, 82, 82, 0.404)}    
 
-
+ .modal-open {
+  overflow:hidden;}
+  
 
 @keyframes ldio-n970spnnnqh {
   0% { transform: rotate(0) }

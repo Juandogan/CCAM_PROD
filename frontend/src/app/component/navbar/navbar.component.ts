@@ -1,8 +1,9 @@
-import { ThrowStmt } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 
 import {Subject} from 'rxjs';
 import { BuscadorObservableService } from 'src/app/service/buscador-observable.service';
+import { LoadingObservableService } from 'src/app/service/loading-observable.service';
 
 
 @Component({
@@ -19,17 +20,24 @@ public color = "rgb(33,33,33)"
 
 
 
-  constructor(private oservable:BuscadorObservableService) { }
+  constructor(private oservable:BuscadorObservableService, private observableLoading:LoadingObservableService) { }
 
   ngOnInit(): void {
 
   }
 
+
+
   pasar(va){
-    console.log(this.buscar)
+    
     this.oservable.buscarString$.emit(this.buscar)
 
 
+  }
+
+  loading(){
+
+    this.observableLoading.loading$.emit(true)
   }
 
   filterList(): void {

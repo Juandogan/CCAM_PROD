@@ -6,7 +6,7 @@
   .ajusteCard{margin-left:10px; align-items: left;}
 
   .sombra{box-shadow: 3px 1px 9px 1px rgba(0,0,0,0.71); border:none }
-
+  .alturaMin{min-height:700px}
 
   .categoria{ 
       color:orange;

@@ -1,8 +1,18 @@
-<div class="margenL margenR"> 
-<div class="row mt-2"  >
+<div class="margenL margenR" > 
+  <div *ngIf="this.aux" style="display:block; margin:auto; margin-top:100px; text-align: center;">
+
+    <div class="loadingio-spinner-dual-ring-jqg38uhhax"><div class="ldio-n970spnnnqh">
+      <div></div><div><div></div></div>
+      </div></div>
+   
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+  </div> 
+
+<div *ngIf="!this.aux"  class="row mt-2"  >
 
   
-    <div  class="col-12	col-sm-12	col-md-9 col-lg-9	col-xl-9 fondoCol ">
+    <div  class="col-12	col-sm-12	col-md-9 col-lg-9	col-xl-9 fondoCol " style="background-color: rgb(255, 255, 255);margin-top:20px">
       <h1 class=" titulo mt-3">{{this.categoria}}</h1>
      <hr>
      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus inventore aliquid fugit error recusandae voluptas nemo vel perspiciatis doloremque, molestiae id iure voluptatem quibusdam asperiores eius cumque a cupiditate deleniti.
@@ -13,8 +23,8 @@
          <div class="col-3">
             <div  class="card" >
                 <img class="card-img-top sombra" src="{{nota[0]?.imagen1}}" alt="" height="150px" style="object-fit: cover;">
-                <div class="card-body">
-                    <h6 class="categoria"><b>Historia</b></h6>
+                <div class="card-body"  >
+                    <h6 class="categoria"><b>{{nota[0]?.categoria}}</b></h6>
                     <a routerLink="../articulo/{{nota[1]?._id}}">
                   <h1 class="card-title titulo">{{nota[1]?.titulo}}</h1></a>
                   <!-- <p class="card-text" style="margin-top:-10px">{{nota[1]?.subtitulo}}</p>           -->

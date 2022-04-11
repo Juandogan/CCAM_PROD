@@ -44,6 +44,7 @@ import { CardMobileComponent } from './component/card-mobile/card-mobile.compone
 import { BuscarPipe } from './pipes/buscar.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoriaComponent } from './component/categoria/categoria.component';
+import { EditorCabeceraComponent } from './component/editor-cabecera/editor-cabecera.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +70,8 @@ import { CategoriaComponent } from './component/categoria/categoria.component';
     Filtrox2Pipe,
     CardMobileComponent,
     BuscarPipe,
-    CategoriaComponent
+    CategoriaComponent,
+    EditorCabeceraComponent
   ],
   imports: [
     BrowserModule,

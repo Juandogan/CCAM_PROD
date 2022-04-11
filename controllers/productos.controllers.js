@@ -16,7 +16,9 @@ res.json(productos);
 productosCtrl.newProductos = async(req,res) => {
     const productos = new Productos({      
         fecha:req.body.fecha,
+        fechaMod:req.body.fechaMod,
         titulo:req.body.titulo,
+        tituloAlt:req.body.tituloAlt,
         subtitulo:req.body.subtitulo,
         nota:req.body.nota,
         imagen1:req.body.imagen1,
@@ -46,8 +48,10 @@ productosCtrl.newProductos = async(req,res) => {
 productosCtrl.modificarProducto = async (req,res) => {
     const { id } = req.params;
     const producto = { 
+        fechaMod:req.body.fechaMod,
         fecha:req.body.fecha,
         titulo:req.body.titulo,
+        tituloAlt:req.body.tituloAlt,
         subtitulo:req.body.subtitulo,
         nota:req.body.nota,
         imagen1:req.body.imagen1,
@@ -57,7 +61,13 @@ productosCtrl.modificarProducto = async (req,res) => {
         likes:req.body.likes,
         vistas:req.body.vistas,
         tituloImagen: req.body.tituloImagen,
-        autor : req.body.autor
+        autor : req.body.autor,
+        art1 : req.body.art1,
+        art2 : req.body.art2,
+        art3 : req.body.art3,
+        art4 : req.body.art4,
+        art5 : req.body.art5,
+        art6 : req.body.art6,
                                
 
     };

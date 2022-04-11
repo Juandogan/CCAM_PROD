@@ -131,8 +131,8 @@ a{color:rgb(255, 187, 61) ; font-size: 13px;}
 }
 input{height: 24px; margin-right:110px; position: absolute; right: 95px; top:6px; border-radius: 2px; outline: none; width: 150px;}
 
-.textlogoCentro{top:60px; left: 118px; position: absolute;  }
-.textlogoAbajo{top:96px; left: 118px; position: absolute;  }
+.textlogoCentro{top:5px; left: 118px; position: absolute;  }
+.textlogoAbajo{top:36px; left: 118px; position: absolute;  }
  
 .anima:hover{
   

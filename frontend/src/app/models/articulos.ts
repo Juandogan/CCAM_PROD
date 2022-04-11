@@ -1,13 +1,30 @@
 export class Articulos {
 
-    constructor(_id ='', fechaCreate ='', titulo='', tituloImagen='', subtitulo='', nota='', imagen1='', imagen2=''
+    constructor(art1='', art2='', art3='', art4='', art5='', art6='', _id ='', fecha ='',fechaMod ='', titulo='', tituloAlt='', tituloImagen='', subtitulo='', nota='', imagen1='', imagen2=''
     ,imagen3='',fotografia='', edicionFotografia='',autor='', likes=0,categoria='', vistas=0,hash='' ){
 
+//    this.resultadoTitulo = resultadoTitulo
+//    this.resultadoTitulo2 = resultadoTitulo2
+//    this.resultadoTitulo3 = resultadoTitulo3
+//    this.resultadoTitulo4 = resultadoTitulo4
+//    this.resultadoTitulo5 = resultadoTitulo5
+//    this.resultadoTitulo6 = resultadoTitulo6
 
-        
+
+this.art1 =  art1
+this.art2 =  art2
+this.art3 =  art3
+this.art4 =  art4
+this.art5 =  art5
+this.art6 =  art6
+
+
+
 this._id = _id;
-this.fechaCreate = fechaCreate
+this.fecha = fecha
+this.fechaMod = fechaMod
 this.titulo = titulo
+this.tituloAlt = tituloAlt
 this.subtitulo = subtitulo
 this.nota = nota
 this.imagen1 = imagen1
@@ -25,13 +42,27 @@ this.hash = hash
 
     }
 
+
+    
+
     id: number;
     marginLeft?:number;
 
     _id: string
-    fechaCreate:string;
+    fecha:string;
+    fechaMod:string;
+
+    art1:string;
+    art2:string;
+    art3:string;
+    art4:string;
+    art5:string;
+    art6:string;
+    
+
     
     titulo:string;
+    tituloAlt:string;
     subtitulo:string;
     hash:string;
     nota:string;

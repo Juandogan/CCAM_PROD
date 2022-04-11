@@ -8,7 +8,7 @@
                         
                         <h2 class="subtitulo">{{nota[0].subtitulo}}</h2>
                         
-                        <app-footer-card></app-footer-card>
+                        <app-footer-card [data]="nota"></app-footer-card>
                         <hr style="margin-top: -10px;">
                         
                         <h3 [innerHTML]=saltos(nota[0]?.nota)|sanetizer >    
@@ -16,7 +16,7 @@
                        </h3>
         
                        <div *ngIf="nota">
-                        <app-articulo-relacionado [data]="nota[0]"></app-articulo-relacionado>
+                        <app-articulo-relacionado [data]="nota"></app-articulo-relacionado>
                        </div>
                           
 <div class="clasePrincipal"  >
