@@ -1,3 +1,5 @@
+import { ThrowStmt } from '@angular/compiler';
+import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/service/crud.service';
@@ -27,6 +29,7 @@ export class EditorCabeceraComponent implements OnInit {
   loader2 = true;
   cantArt:number = 0;
   filterPost=""
+  posicion= 0
 
  public articuloBusqueda: any
 
@@ -89,6 +92,12 @@ pedirUnArticulo(){
 this.aux = this.aux + 1
   this.crudService.getOneArticulo(this.busqueda)
   .subscribe(res=>{this.articuloBusqueda = res as Articulos[]
+        
+    if(this.articuloBusqueda.length > 1){
+      this.crudService.snack('No se encontro');
+      this.aux = 1 
+
+    }
 
       if(this.aux === 2 ){
       this.resultadoTitulo = this.articuloBusqueda?.titulo
@@ -117,11 +126,11 @@ this.aux = this.aux + 1
            if(this.aux === 7){
             this.resultadoTitulo6 = this.articuloBusqueda?.titulo
              this.busqueda = ""   }
-    
   
 
     
    })
+ 
   
 }
 
@@ -157,6 +166,7 @@ this.crudService.unArticulo.art3 = this.resultadoTitulo3
 this.crudService.unArticulo.art4 = this.resultadoTitulo4
 this.crudService.unArticulo.art5 = this.resultadoTitulo5
 this.crudService.unArticulo.art6 = this.resultadoTitulo6
+this.crudService.unArticulo.posicion = this.posicion
 
 
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
@@ -196,6 +206,7 @@ editarArticulo(articulos:Articulos){
  this.fotografia = this.crudService.unArticulo.fotografia 
  this.edicionFotografia = this.crudService.unArticulo.edicionFotografia
 this.nota = this.crudService.unArticulo.nota
+this.posicion = this.crudService.unArticulo.posicion
 
 }
 
@@ -210,6 +221,7 @@ limpiar(){
   this.fotografia = ""  
   this.edicionFotografia = ""  
   this.nota = ""
+this.posicion = 0
  
 
 }

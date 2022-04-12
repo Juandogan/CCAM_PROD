@@ -75,14 +75,14 @@ export class ArticuloComponent implements OnInit {
  
   //incrementa el contador
   this.crudService.unArticulo.vistas = this.auxContador + 1
- 
-  this.crudService.unArticulo._id = this.nota[0]._id
+    this.crudService.unArticulo._id = this.nota[0]._id
   this.crudService.unArticulo.imagen1 = this.nota[0].imagen1
   this.crudService.unArticulo.imagen2 = this.nota[0].imagen2
   this.crudService.unArticulo.imagen3 = this.nota[0].imagen3
   this.crudService.unArticulo.categoria = this.nota[0].categoria;
   this.crudService.unArticulo.titulo = this.nota[0].titulo;
-  this.crudService.unArticulo.fecha  =  String(this.nota[0].fechaPublicacion);
+  this.crudService.unArticulo.fecha  =  String(this.nota[0].fecha);
+  this.crudService.unArticulo.fechaMod  =  String(this.nota[0].fechaMod);
   this.crudService.unArticulo.subtitulo = this.nota[0].subtitulo;
   this.crudService.unArticulo.autor = this.nota[0].autor
   this.crudService.unArticulo.fotografia = this.nota[0].fotografia

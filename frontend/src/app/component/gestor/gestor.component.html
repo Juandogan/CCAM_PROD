@@ -54,6 +54,7 @@ data-target="#exampleModal" (click)="limpiar()">Crear publicación</button>
             <th scope="col">Titulo</th>
             <th scope="col">Creación</th>
             <th scope="col">Ultima Mod.</th>
+            <th scope="col" style="width:5%;"class="text-center">Posición</th>
             <th scope="col" style="width:5%;"class="text-center">Ficha</th>
             <th scope="col" style="width:5%;"class="text-center">Articulo</th>
             <th scope="col" style="width:5%;"class="text-center">Borrar</th>
@@ -72,10 +73,16 @@ data-target="#exampleModal" (click)="limpiar()">Crear publicación</button>
             <td> {{articulo.fecha| date: 'dd/MM/yy'}}</td>
 
             <td>{{articulo.fechaMod| date: 'dd/MM/yy'}}</td> 
+            <td style="text-align: center;">  
+             <p>1</p> 
+             
+            </td>
             <td class="text-center">
             <a data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true">
            <mat-icon style="cursor:pointer">edit</mat-icon> 
           </a></td>
+
+
             <td class="text-center">                        
               <a  (click)="id = articulo._id" (click)='editarArticulo(articulo)'(click)="this.crudService.cambioPantalla = false" > <mat-icon  style="color: green; cursor:pointer">article</mat-icon>
               </a> </td>
@@ -243,11 +250,30 @@ data-target="#exampleModal" (click)="limpiar()">Crear publicación</button>
       </div>
      </div>
 
+     
 
 
+</div>    
 
+<div class="col-6"style="margin-top:-20px">
+  <div class="form-group" >
+   <h5 class="textoInput">Posición de Publicación </h5>
+   <select  [(ngModel)]="this.posicion" class="form-control form-control-sm" style="width: 2p0px; height: 38px;">
+    <option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    </select>
 
-</div>               
+      
+ </div>
+</div>
+    
         <h4></h4>
   <br><br><br>
     </div>

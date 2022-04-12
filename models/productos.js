@@ -26,6 +26,7 @@ const ProductoSchema = new Schema({
   art4:{type: String, required : false},
   art5:{type: String, required : false},
   art6:{type: String, required : false},
+  posicion:{type: String, required : false},
 
 
 

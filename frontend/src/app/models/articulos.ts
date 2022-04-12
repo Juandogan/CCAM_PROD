@@ -1,6 +1,6 @@
 export class Articulos {
 
-    constructor(art1='', art2='', art3='', art4='', art5='', art6='', _id ='', fecha ='',fechaMod ='', titulo='', tituloAlt='', tituloImagen='', subtitulo='', nota='', imagen1='', imagen2=''
+    constructor(  posicion = 0,art1='', art2='', art3='', art4='', art5='', art6='', _id ='', fecha ='',fechaMod ='', titulo='', tituloAlt='', tituloImagen='', subtitulo='', nota='', imagen1='', imagen2=''
     ,imagen3='',fotografia='', edicionFotografia='',autor='', likes=0,categoria='', vistas=0,hash='' ){
 
 //    this.resultadoTitulo = resultadoTitulo
@@ -17,6 +17,8 @@ this.art3 =  art3
 this.art4 =  art4
 this.art5 =  art5
 this.art6 =  art6
+
+this.posicion =posicion
 
 
 
@@ -58,6 +60,7 @@ this.hash = hash
     art4:string;
     art5:string;
     art6:string;
+    posicion:number;
     
 
     

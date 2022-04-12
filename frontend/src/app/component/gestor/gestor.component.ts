@@ -42,6 +42,7 @@ export class GestorComponent implements OnInit {
  public loading5:boolean = false;
  public archivoShow:boolean = false
  cambioPantalla1=false
+ public posicion = 0
  
  tituloShow=false;
  subtituloShow=false;
@@ -105,6 +106,7 @@ this.crudService.unArticulo.fotografia = this.fotografia
 this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
 this.crudService.unArticulo.nota = this.nota
 this.crudService.unArticulo.likes = 1
+this.crudService.unArticulo.posicion =  this.posicion
 
 
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
@@ -148,6 +150,7 @@ editarArticulo(articulos:Articulos){
  this.fotografia = this.crudService.unArticulo.fotografia 
  this.edicionFotografia = this.crudService.unArticulo.edicionFotografia
 this.nota = this.crudService.unArticulo.nota
+this.posicion = this.crudService.unArticulo.posicion
 
 }
 
@@ -163,7 +166,7 @@ limpiar(){
   this.fotografia = ""  
   this.edicionFotografia = ""  
   this.nota = ""
- 
+  this.posicion = 0
 
 }
 

@@ -27,7 +27,8 @@ productosCtrl.newProductos = async(req,res) => {
         categoria:req.body.categoria,
         likes:req.body.likes,
         vistas:req.body.vistas,
-        autor:req.body.autor
+        autor:req.body.autor,
+        posicion:req.body.posicion
 
 
     });
@@ -41,6 +42,7 @@ productosCtrl.newProductos = async(req,res) => {
  productosCtrl.getProducto = async(req,res) => { 
     const productos = await Productos.findById(req.params.id);
     res.json(productos);
+    
 
 };
 
@@ -68,6 +70,7 @@ productosCtrl.modificarProducto = async (req,res) => {
         art4 : req.body.art4,
         art5 : req.body.art5,
         art6 : req.body.art6,
+        posicion:req.body.posicion
                                
 
     };
