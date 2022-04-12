@@ -28,6 +28,12 @@ productosCtrl.newProductos = async(req,res) => {
         likes:req.body.likes,
         vistas:req.body.vistas,
         autor:req.body.autor,
+        art1:req.body.art1,
+        art2:req.body.art2,
+        art3:req.body.art3,
+        art4:req.body.art4,
+        art5:req.body.art5,
+        art6:req.body.art6,
         posicion:req.body.posicion
 
 
@@ -63,13 +69,13 @@ productosCtrl.modificarProducto = async (req,res) => {
         likes:req.body.likes,
         vistas:req.body.vistas,
         tituloImagen: req.body.tituloImagen,
-        autor : req.body.autor,
-        art1 : req.body.art1,
-        art2 : req.body.art2,
-        art3 : req.body.art3,
-        art4 : req.body.art4,
-        art5 : req.body.art5,
-        art6 : req.body.art6,
+        autor:req.body.autor,
+        art1:req.body.art1,
+        art2:req.body.art2,
+        art3:req.body.art3,
+        art4:req.body.art4,
+        art5:req.body.art5,
+        art6:req.body.art6,
         posicion:req.body.posicion
                                
 

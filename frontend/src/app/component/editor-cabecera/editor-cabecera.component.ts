@@ -206,6 +206,12 @@ editarArticulo(articulos:Articulos){
  this.fotografia = this.crudService.unArticulo.fotografia 
  this.edicionFotografia = this.crudService.unArticulo.edicionFotografia
 this.nota = this.crudService.unArticulo.nota
+this.crudService.unArticulo.art1 = this.resultadoTitulo
+this.crudService.unArticulo.art2 = this.resultadoTitulo2
+this.crudService.unArticulo.art3 = this.resultadoTitulo3
+this.crudService.unArticulo.art4 = this.resultadoTitulo4
+this.crudService.unArticulo.art5 = this.resultadoTitulo5
+this.crudService.unArticulo.art6 = this.resultadoTitulo6
 this.posicion = this.crudService.unArticulo.posicion
 
 }
