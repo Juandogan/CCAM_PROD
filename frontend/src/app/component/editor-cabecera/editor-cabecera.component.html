@@ -1,4 +1,4 @@
-<div class ="row margenes" style="margin-left:290px; margin-right:290px;" >
+<div class ="row margenL margenR" >
 <div class="col-6">
 
   <br>
@@ -66,7 +66,7 @@
               </div>
               <div class="form-group">
                 <h5 class="textoInput">Título Alternativo</h5>
-                <input [(ngModel)]="this.tituloAlt" class="form-control" id="tituloAlt">
+                <input  [(ngModel)]="this.tituloAlt" class="form-control" id="tituloAlt">
                      <!-- <div  class="textoInputBajo" >
                    {{this.titulo.length}} de 200 Máx.
                 </div>  -->
@@ -101,36 +101,9 @@
       </div>
     
      
-      <div class="col-6">
+     
     
-    
-        <div style="margin-top:10px">
-          <div *ngIf="ocultar2">
-            <h6 style ="margin-bottom:-2px">IMAGEN DE PORTADA  400x560</h6>
-            <input type="file"  style="width: 80%; overflow: none"  (change)="onFileChange($event); ">
-            <button class="btn-sm btn btn-danger btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
-            <br><br><br>
-          </div>
-            <div *ngIf="this.loading2" > 
-                   <div> 
-                      <img src="../../../assets/loading4.gif"  width="50px" alt="" style="margin-top:-65px">
-                      
-                  </div>
-               </div>
-           
-           <div *ngIf="this.loading3">
-            <h6 style="color:green">✓ Imagen Portada Desktop subida!<span style="color:blue" (click)="fnOcultar()"> Deshacer</span></h6>
-              </div>
-         </div>
-    
-    
-    
-    
-    
-    </div>     
-    
-    
-    <div class="col-6" style="margin-top:-25px">
+    <div class="col-6">
       <div class="form-group">
         <h5 class="textoInput">Posición Publicación</h5>
         <select  [(ngModel)]="this.posicion" class="form-control form-control-sm" style="width: 2p0px; height: 38px;">
@@ -147,6 +120,33 @@
       
      </div>
 </div>
+<div class="col-6">
+    
+    
+  <div style="margin-top:10px">
+    <div *ngIf="ocultar2">
+      <h6 style ="margin-bottom:-2px">IMAGEN DE PORTADA  400x560</h6>
+      <input type="file"  style="width: 70%; overflow: none"  (change)="onFileChange($event); ">
+      <button class="btn-sm btn btn-danger btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
+      <br><br><br>
+    </div>
+      <div *ngIf="this.loading2" > 
+             <div> 
+                <img src="../../../assets/loading4.gif"  width="50px" alt="" style="margin-top:-65px">
+                
+            </div>
+         </div>
+     
+     <div *ngIf="this.loading3">
+      <h6 style="color:green">✓ Imagen Portada Desktop subida!<span style="color:blue" (click)="fnOcultar()"> Deshacer</span></h6>
+        </div>
+   </div>
+
+
+
+
+
+</div>     
 
 
             <h4></h4>
@@ -175,7 +175,7 @@
   
 </div>
 
-          <div  class="form-group mt-3" >
+          <div  class="form-group" style="margin-top:35px" >
             
             
             <input  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" >
@@ -190,7 +190,7 @@
           <div class="form-group mt-3">
             
             
-            <input  [(ngModel)]="this.resultadoTitulo2" class="form-control" id="titulo" style="margin-left:20px" >
+            <input (click)="selection(2)"  [(ngModel)]="this.resultadoTitulo2"  class="form-control" id="titulo" style="margin-left:20px; margin-top:30px" >
             <div style="float:left">
             <h1 style="color:rgb(0, 0, 0);   margin-top:-40px">2</h1> 
           </div>
@@ -201,7 +201,7 @@
           <div class="form-group mt-3">
             
             
-            <input  [(ngModel)]="this.resultadoTitulo3" class="form-control" id="titulo" style="margin-left:20px" >
+            <input  (click)="selection(3)" [(ngModel)]="this.resultadoTitulo3" class="form-control" id="titulo" style="margin-left:20px; margin-top: 30px;" >
             <div style="float:left">
             <h1 style="color:brown;  margin-top:-40px">3</h1> 
           </div>
@@ -212,7 +212,7 @@
           <div class="form-group mt-3">
             
             
-            <input  [(ngModel)]="resultadoTitulo4" class="form-control" id="titulo" style="margin-left:20px" >
+            <input  (click)="selection(4)"  [(ngModel)]="resultadoTitulo4" class="form-control" id="titulo" style="margin-left:20px; margin-top: 30px;" >
             <div style="float:left">
             <h1 style="color:rgb(0, 0, 0);margin-top:-40px">4</h1> 
           </div>
@@ -223,7 +223,7 @@
           <div class="form-group mt-3">
             
             
-            <input  [(ngModel)]="this.resultadoTitulo5" class="form-control" id="titulo" style="margin-left:20px" >
+            <input (click)="selection(5)"  [(ngModel)]="this.resultadoTitulo5" class="form-control" id="titulo" style="margin-left:20px; margin-top: 30px;" >
             <div style="float:left">
             <h1 style="color:brown;   margin-top:-40px">5</h1> 
           </div>
@@ -234,7 +234,7 @@
           <div class="form-group mt-3">
             
             
-            <input  [(ngModel)]="this.resultadoTitulo6" class="form-control" id="titulo" style="margin-left:20px" >
+            <input  (click)="selection(6)" [(ngModel)]="this.resultadoTitulo6" class="form-control" id="titulo" style="margin-left:20px; margin-top: 30px;" >
             <div style="float:left">
             <h1 style="color:rgb(0, 0, 0);   margin-top:-40px">6</h1> 
           </div>

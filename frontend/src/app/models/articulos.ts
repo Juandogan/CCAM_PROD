@@ -1,6 +1,8 @@
 export class Articulos {
 
-    constructor(  posicion = 0,art1='', art2='', art3='', art4='', art5='', art6='', _id ='', fecha ='',fechaMod ='', titulo='', tituloAlt='', tituloImagen='', subtitulo='', nota='', imagen1='', imagen2=''
+    constructor(  
+        resultadoID = '',resultadoID2 = '',resultadoID3 = '',resultadoID4 = '',resultadoID5 = '',resultadoID6 = '',
+        posicion = 0,art1='', art2='', art3='', art4='', art5='', art6='', _id ='', fecha ='',fechaMod ='', titulo='', tituloAlt='', tituloImagen='', subtitulo='', nota='', imagen1='', imagen2=''
     ,imagen3='',fotografia='', edicionFotografia='',autor='', likes=0,categoria='', vistas=0,hash='' ){
 
 //    this.resultadoTitulo = resultadoTitulo
@@ -41,6 +43,12 @@ this.imagen3 =imagen3
 this.likes = likes
 this.tituloImagen = tituloImagen
 this.hash = hash
+this.resultadoID  = resultadoID
+this.resultadoID2 = resultadoID2
+this.resultadoID3 = resultadoID3
+this.resultadoID4 = resultadoID4
+this.resultadoID5 = resultadoID5
+this.resultadoID6 = resultadoID6
 
     }
 
@@ -80,6 +88,13 @@ this.hash = hash
     likes:number;
     vistas:number;
     tituloImagen:string;
+
+    resultadoID:string;
+    resultadoID2:string;
+    resultadoID3:string;
+    resultadoID4:string;
+    resultadoID5:string;
+    resultadoID6:string;
 }
 
 

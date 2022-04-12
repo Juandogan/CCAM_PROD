@@ -26,6 +26,12 @@ const ProductoSchema = new Schema({
   art4:{type: String, required : false},
   art5:{type: String, required : false},
   art6:{type: String, required : false},
+  resultadoID:{type: String, required : false},
+  resultadoID2:{type: String, required : false},
+  resultadoID3:{type: String, required : false},
+  resultadoID4:{type: String, required : false},
+  resultadoID5:{type: String, required : false},
+  resultadoID6:{type: String, required : false},
   posicion:{type: String, required : false},
 
 

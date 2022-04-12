@@ -34,6 +34,12 @@ productosCtrl.newProductos = async(req,res) => {
         art4:req.body.art4,
         art5:req.body.art5,
         art6:req.body.art6,
+        resultadoID:req.body.resultadoID,
+        resultadoID2:req.body.resultadoID2,
+        resultadoID3:req.body.resultadoID3,
+        resultadoID4:req.body.resultadoID4,
+        resultadoID5:req.body.resultadoID5,
+        resultadoID6:req.body.resultadoID6,
         posicion:req.body.posicion
 
 
@@ -46,8 +52,13 @@ productosCtrl.newProductos = async(req,res) => {
 
 //GET POR ID
  productosCtrl.getProducto = async(req,res) => { 
-    const productos = await Productos.findById(req.params.id);
-    res.json(productos);
+
+    try {
+        const productos = await Productos.findById(req.params.id);
+        res.json(productos);
+      } catch (err) {
+        res.json('no encontrado')
+      }
     
 
 };
@@ -57,7 +68,6 @@ productosCtrl.modificarProducto = async (req,res) => {
     const { id } = req.params;
     const producto = { 
         fechaMod:req.body.fechaMod,
-        fecha:req.body.fecha,
         titulo:req.body.titulo,
         tituloAlt:req.body.tituloAlt,
         subtitulo:req.body.subtitulo,
@@ -76,6 +86,12 @@ productosCtrl.modificarProducto = async (req,res) => {
         art4:req.body.art4,
         art5:req.body.art5,
         art6:req.body.art6,
+        resultadoID:req.body.resultadoID,
+        resultadoID2:req.body.resultadoID2,
+        resultadoID3:req.body.resultadoID3,
+        resultadoID4:req.body.resultadoID4,
+        resultadoID5:req.body.resultadoID5,
+        resultadoID6:req.body.resultadoID6,
         posicion:req.body.posicion
                                
 

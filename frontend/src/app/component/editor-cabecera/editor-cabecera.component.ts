@@ -17,6 +17,13 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoTitulo4:string =""
   resultadoTitulo5:string =""
   resultadoTitulo6:string =""
+  resultadoID:string =""
+  resultadoID2:string =""
+  resultadoID3:string =""
+  resultadoID4:string =""
+  resultadoID5:string =""
+  resultadoID6:string =""
+
   fechaPublicacion = new Date()    	        
   fechaMod = new Date();    	        
   password = false; 
@@ -89,43 +96,66 @@ pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta lue
   } //fin de pedirProductos
 
 pedirUnArticulo(){
-this.aux = this.aux + 1
+  console.log(this.aux)
   this.crudService.getOneArticulo(this.busqueda)
   .subscribe(res=>{this.articuloBusqueda = res as Articulos[]
-        
-    if(this.articuloBusqueda.length > 1){
+
+
+    if(this.articuloBusqueda.length > 2){
+  
       this.crudService.snack('No se encontro');
-      this.aux = 1 
+      // 
+return
+    } 
 
-    }
 
-      if(this.aux === 2 ){
-      this.resultadoTitulo = this.articuloBusqueda?.titulo
-       this.busqueda = ""   }
+      if(this.aux === 1 ){
+       this.resultadoTitulo = this.articuloBusqueda?.titulo
+       this.resultadoID = this.articuloBusqueda?._id
+       this.busqueda = ""  
+       this.aux = 2
+       return
+       }
        
     
          
-      if(this.aux === 3){
+      if(this.aux === 2){
         this.resultadoTitulo2 = this.articuloBusqueda?.titulo
-         this.busqueda = ""   }
+        this.resultadoID2 = this.articuloBusqueda?._id
+         this.busqueda = "" 
+        this.aux=3
+        return
+        }
          
                 
-      if(this.aux === 4){
+      if(this.aux === 3){
         this.resultadoTitulo3 = this.articuloBusqueda?.titulo
-         this.busqueda = ""   }
-
-                     
-      if(this.aux === 5){
-        this.resultadoTitulo4 = this.articuloBusqueda?.titulo
-         this.busqueda = ""   }
-            
-         if(this.aux === 6){
-          this.resultadoTitulo5 = this.articuloBusqueda?.titulo
-           this.busqueda = ""   }
+        this.resultadoID3 = this.articuloBusqueda?._id
+         this.busqueda = ""  
+                 this.aux=4
+                return }
         
-           if(this.aux === 7){
+                     
+      if(this.aux === 4){
+        this.resultadoTitulo4 = this.articuloBusqueda?.titulo
+        this.resultadoID4 = this.articuloBusqueda?._id
+         this.busqueda = ""   
+         this.aux=5
+         return
+        }
+            
+         if(this.aux === 5){
+          this.resultadoID5 = this.articuloBusqueda?._id
+          this.resultadoTitulo5 = this.articuloBusqueda?.titulo
+           this.busqueda = "" 
+           this.aux = 6
+          return  }
+        
+           if(this.aux === 6){
+            this.resultadoID6 = this.articuloBusqueda?._id
             this.resultadoTitulo6 = this.articuloBusqueda?.titulo
-             this.busqueda = ""   }
+             this.busqueda = ""  
+            return }
   
 
     
@@ -166,13 +196,22 @@ this.crudService.unArticulo.art3 = this.resultadoTitulo3
 this.crudService.unArticulo.art4 = this.resultadoTitulo4
 this.crudService.unArticulo.art5 = this.resultadoTitulo5
 this.crudService.unArticulo.art6 = this.resultadoTitulo6
+
+this.crudService.unArticulo.resultadoID = this.resultadoID
+this.crudService.unArticulo.resultadoID2 = this.resultadoID2
+this.crudService.unArticulo.resultadoID3 = this.resultadoID3
+this.crudService.unArticulo.resultadoID4 = this.resultadoID4
+this.crudService.unArticulo.resultadoID5 = this.resultadoID5
+this.crudService.unArticulo.resultadoID6 = this.resultadoID6
+
+
+
 this.crudService.unArticulo.posicion = this.posicion
 
 
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
-  if( this.crudService.unArticulo._id)
-  { console.log('antes de mandar a guardar',this.crudService.unArticulo)
-  this.crudService.modificarArticulo(this.crudService.unArticulo)
+  if( this.crudService.unArticulo._id )
+  {   this.crudService.modificarArticulo(this.crudService.unArticulo)
   .subscribe(res => { this.crudService.snack('Modificado!')});
  
 }
@@ -190,21 +229,20 @@ this.crudService.unArticulo.posicion = this.posicion
 
 
 eliminarArticulo(id:any){
-  
-this.crudService.deleteArticulo(id).subscribe(res =>{this.crudService.snack(res);   this.pedirArticulos(); this.activo = true;})
-
+this.crudService.deleteArticulo(id).subscribe(res =>{this.crudService.snack(res);
+this.pedirArticulos(); 
+this.activo = true;})
 }
 
 
 editarArticulo(articulos:Articulos){
-
- this.crudService.unArticulo = articulos
- this.categoria = this.crudService.unArticulo.categoria
- this.titulo = this.crudService.unArticulo.titulo
- this.subtitulo = this.crudService.unArticulo.subtitulo
- this.autor = this.crudService.unArticulo.autor 
- this.fotografia = this.crudService.unArticulo.fotografia 
- this.edicionFotografia = this.crudService.unArticulo.edicionFotografia
+this.crudService.unArticulo = articulos
+this.categoria = this.crudService.unArticulo.categoria
+this.titulo = this.crudService.unArticulo.titulo
+this.subtitulo = this.crudService.unArticulo.subtitulo
+this.autor = this.crudService.unArticulo.autor 
+this.fotografia = this.crudService.unArticulo.fotografia 
+this.edicionFotografia = this.crudService.unArticulo.edicionFotografia
 this.nota = this.crudService.unArticulo.nota
 this.crudService.unArticulo.art1 = this.resultadoTitulo
 this.crudService.unArticulo.art2 = this.resultadoTitulo2
@@ -213,13 +251,12 @@ this.crudService.unArticulo.art4 = this.resultadoTitulo4
 this.crudService.unArticulo.art5 = this.resultadoTitulo5
 this.crudService.unArticulo.art6 = this.resultadoTitulo6
 this.posicion = this.crudService.unArticulo.posicion
-
 }
 
 limpiar(){
+
   this.id =""
   this.crudService.unArticulo._id =""
-
   this.categoria = ""  
   this.titulo = ""  
   this.subtitulo = ""  
@@ -227,11 +264,11 @@ limpiar(){
   this.fotografia = ""  
   this.edicionFotografia = ""  
   this.nota = ""
-this.posicion = 0
- 
-
+  this.posicion = 0
 }
-
+selection(res){
+  this.aux = res
+}
 
 cut(value){
   var corte = value.slice(8)
