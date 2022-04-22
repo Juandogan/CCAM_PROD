@@ -218,6 +218,7 @@ fnOcultar2(){
   this.archivoShow=true
 };
 agregarPublicacion(){
+
 this.crudService.unArticulo.categoria = this.categoria;
 this.crudService.unArticulo.titulo = this.titulo;
 this.crudService.unArticulo.tituloAlt = this.tituloAlt;
@@ -250,7 +251,8 @@ this.crudService.unArticulo.posicion = this.posicion
 
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
   if( this.crudService.unArticulo._id )
-  {  this.crudService.unArticulo.fechaMod = String(this.fechaMod) 
+  {   
+    this.crudService.unArticulo.fechaMod = String(this.fechaMod) 
      this.crudService.modificarArticulo(this.crudService.unArticulo)
   .subscribe(res => { this.crudService.snack('Modificado!')});
  
@@ -276,6 +278,7 @@ this.activo = true;})
 
 
 editarArticulo(articulos:Articulos){
+
 this.crudService.unArticulo = articulos
 this.categoria = this.crudService.unArticulo.categoria
 this.titulo = this.crudService.unArticulo.titulo
@@ -332,8 +335,8 @@ onUpload(){
      console.log(link)
      
     this.crudService.unArticulo.imagen1 = String(link) ;
+    this.imagen1  = String(link) ;
      
-
      
      this.ocultar2 = false
      this.loading2=false;
