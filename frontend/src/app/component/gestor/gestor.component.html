@@ -3,7 +3,7 @@
 <div *ngIf="!this.crudService.cambioPantalla">
   
 
-<app-editor [art]='this.crudService.unArticulo.nota' [id]='this.crudService.unArticulo._id'></app-editor>
+<app-editor [data]="this.crudService.unArticulo" [art]='this.crudService.unArticulo.nota' [id]='this.crudService.unArticulo._id'></app-editor>
 
 
 </div>
@@ -26,37 +26,39 @@
         <h2>Hola, Juan Ignacio</h2>
         <button class="btn btn-dark mb-4" >New</button> -->
         
-      
-<div   class="input-group mb-3 " style="width: 400px;margin-top:20px;">
-    <input type="text" name="filterPost" [(ngModel)]="filterPost" class="form-control" placeholder="Buscar en CCAM" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <div style="float:left " style="margin-left: 100px;">
-     
-    </div>
-    
 
-  </div>
-  
-<h5 class="textoChico" >Buscando en un total de {{this.cantArt}} Artículos</h5>
-<br>
-<div style="margin-left:-15px; margin-top:-15px; margin-bottom: 20px;">
-
-<button class="btn btn-danger ml-3" data-toggle="modal" 
-routerLink="../editorCabecera" 
-data-target="#exampleModal" (click)="limpiar()">Crear publicación</button>
+<div style="margin-left:-15px; margin-top:15px; margin-bottom: 35px;">
+<button class="btn btn-danger ml-3" (click)="buscador= !buscador">Buscar ▼</button>
+<button class="btn btn-danger ml-3"  
+routerLink="../editorCabecera/'622f921c86c620738b709062'" 
+  (click)="limpiar()">Crear publicación</button>
 
     <button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Publicidad</button>      
   </div>
+<div *ngIf="buscador">
+<div   class="input-group mb-3 " style="width: 400px;margin-top:20px;">
+  <input type="text" name="filterPost" [(ngModel)]="filterPost" class="form-control" placeholder="Buscar en CCAM" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div style="float:left " style="margin-left: 100px;">
+   
+  </div>
+  
+
+</div>
+
+<h5 class="textoChico" >Buscando en un total de {{this.cantArt}} Artículos</h5>
+<br>
+</div>        
     <table  class="table table-primary"  >
         <thead class="thead-dark">
-          <tr>
+          <tr >
             <!-- <th scope="col">#</th> -->
-            <th scope="col" style="width:7%;">Categoria</th>
-            <th scope="col">Titulo</th>
+            <th scope="col" style="width:7%;">Categoría</th>
+            <th scope="col">Título</th>
             <th scope="col">Creación</th>
-            <th scope="col">Ultima Mod.</th>
+            <th scope="col" >Última Mod.</th>
             <th scope="col" style="width:5%;"class="text-center">Posición</th>
             <th scope="col" style="width:5%;"class="text-center">Ficha</th>
-            <th scope="col" style="width:5%;"class="text-center">Articulo</th>
+            <th scope="col" style="width:5%;"class="text-center">Artículo</th>
             <th scope="col" style="width:5%;"class="text-center">Borrar</th>
             <th scope="col" style="width:5%;"class="text-center">Vistas</th>
             
@@ -72,14 +74,15 @@ data-target="#exampleModal" (click)="limpiar()">Crear publicación</button>
             <td class="textoTableTitulo" > {{articulo.titulo | truncate:'100'}}</td>
             <td> {{articulo.fecha| date: 'dd/MM/yy'}}</td>
 
-            <td>{{articulo.fechaMod| date: 'dd/MM/yy'}}</td> 
+            <td  style="text-align: center;">{{articulo.fechaMod| date: 'dd/MM/yy'}}</td> 
             <td style="text-align: center;">  
              <p>{{articulo.posicion}}</p> 
              
             </td>
             <td class="text-center">
-            <a data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true">
-           <mat-icon style="cursor:pointer">edit</mat-icon> 
+            <a  (click)="editar()">
+              <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
+           <mat-icon style="cursor:pointer"    routerLink="../editorCabecera/{{articulo?._id}}" >edit</mat-icon> 
           </a></td>
 
 
@@ -318,7 +321,7 @@ style="overscroll-behavior:inherit"
         </button>
       </div>
       <div class="modal-body">
-      <h4>Esta seguro que desea eliminar el articulo?</h4>
+      <h4>Esta seguro que desea eliminar el artículo?</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-dismiss="modal">Cancelar</button>

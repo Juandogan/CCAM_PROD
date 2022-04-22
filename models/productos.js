@@ -33,6 +33,8 @@ const ProductoSchema = new Schema({
   resultadoID5:{type: String, required : false},
   resultadoID6:{type: String, required : false},
   posicion:{type: String, required : false},
+  fotografia:{type: String, required : false},
+  edicionFotografia: {type: String, required : false},
 
 
 

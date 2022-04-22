@@ -12,6 +12,7 @@ import { CrudService } from 'src/app/service/crud.service';
 export class GestorComponent implements OnInit {
   public uploadedFiles: Array<File> = [];
   public fechaPublicacion =new Date();  
+  buscador = false;
   password = false; 
   password1 = "";
   articulos: Articulos[] = [] 
@@ -59,6 +60,7 @@ export class GestorComponent implements OnInit {
 
   ngOnInit(): void {
     this.pedirArticulos()	 
+    window.scroll(0,0)
       
   }
   checkPassword(value){
@@ -66,6 +68,12 @@ export class GestorComponent implements OnInit {
       this.password = true
 
     } else{this.password = false}
+  }
+
+  editar(){
+ 
+
+
   }
 
 pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta luego guardo la data en el front en el servicio y en este componente.

@@ -1,5 +1,5 @@
 <div class ="row margenL margenR" >
-<div class="col-6">
+<div class="col-6" style="margin-left: -20px;">
 
   <br>
           <h1>CREAR |<span> CABECERA</span></h1>
@@ -43,7 +43,7 @@
     
         <div class="col-6">
           <div class="form-group">
-            <h5 class="textoInput">#Tags</h5>
+            <h5 class="textoInput">#Categoria / Subtitulo</h5>
             <input [(ngModel)]="this.hash" class="form-control" id="message-text" style="width:100%">
           </div>
         </div>
@@ -65,7 +65,7 @@
                 </div>  -->
               </div>
               <div class="form-group">
-                <h5 class="textoInput">Título Alternativo</h5>
+                <h5 class="textoInput">Título Alternativo / Noticias / Relacionados</h5>
                 <input  [(ngModel)]="this.tituloAlt" class="form-control" id="tituloAlt">
                      <!-- <div  class="textoInputBajo" >
                    {{this.titulo.length}} de 200 Máx.
@@ -106,27 +106,26 @@
     <div class="col-6">
       <div class="form-group">
         <h5 class="textoInput">Posición Publicación</h5>
-        <select  [(ngModel)]="this.posicion" class="form-control form-control-sm" style="width: 2p0px; height: 38px;">
-          <option>0</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
+        <select  [(ngModel)]="this.posicion" class="form-control form-control-sm" style="width: 20px; height: 38px;">
+          <option value="0">No</option>
+          <option value="1">Portada</option>
+          <option value="2">Vertical 1</option>
+          <option value="3">Vertical 2</option>
+          <option value="4">Horizontal 1</option>
+          <option value="5">Horizontal 2</option>
+          <option value="6">Horizontal 3</option>
+          <option value="7">Vertical Largo 1</option>
+          <option value="8">Vertical Largo 2</option>
+          <option value="9">Vertical Largo 3</option>
           </select>
       
      </div>
 </div>
-<div class="col-6">
-    
-    
-  <div style="margin-top:10px">
+<div class="col-12">  
+   <div style="margin-top:10px">
     <div *ngIf="ocultar2">
       <h6 style ="margin-bottom:-2px">IMAGEN DE PORTADA  400x560</h6>
-      <input type="file"  style="width: 70%; overflow: none"  (change)="onFileChange($event); ">
+      <input type="file"  style="  overflow: none"  (change)="onFileChange($event); ">
       <button class="btn-sm btn btn-danger btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
       <br><br><br>
     </div>
@@ -247,11 +246,16 @@
        
       </div>
 
-      <div class="modal-footer " style="background-color: rgba(255, 255, 255, 0.253);width: 100%; position: fixed; bottom:0px">
-        
-        <button type="button" s class="btn btn-secondary" data-dismiss="modal" routerLink="../gestor">Cerrar</button>
+      <div class="modal-footer " style="background-color: rgb(204, 204, 204);width: 100%; position: fixed; bottom:0px">
+      
+        <button type="button" s class="btn btn-secondary" data-dismiss="modal" routerLink="../../gestor">Cerrar</button>
         <button type="button" class="btn btn-danger"  
         (click)="agregarPublicacion()"   data-dismiss="modal"
-        style="margin-right:210px"
+        style="margin-right:300px"
         >Guardar</button>
+      
+
       </div>
+ <br><br><br>
+ <br><br><br>
+ 

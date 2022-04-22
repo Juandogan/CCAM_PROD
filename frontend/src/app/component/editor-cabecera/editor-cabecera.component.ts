@@ -1,9 +1,7 @@
-import { ThrowStmt } from '@angular/compiler';
-import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/service/crud.service';
-
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-editor-cabecera',
   templateUrl: './editor-cabecera.component.html',
@@ -45,6 +43,7 @@ export class EditorCabeceraComponent implements OnInit {
  public titulo:string = "";
  public tituloAlt:string = "";
  public subtitulo:string = "";
+ public imagen1:string;
  public nota:string = "";
  public autor:string = "";
  public hash:string = "";
@@ -62,7 +61,7 @@ export class EditorCabeceraComponent implements OnInit {
  public archivoShow:boolean = false;
  
  public aux = 1
-
+nota1:any
  cambioPantalla1=false;
  tituloShow=false;
  subtituloShow=false;
@@ -70,9 +69,48 @@ export class EditorCabeceraComponent implements OnInit {
  imagenShow=false;
  tituloImagenShow = false;
 
- constructor(public crudService:CrudService) { }
+ constructor(public crudService:CrudService, private ruta:ActivatedRoute,) { }
 
   ngOnInit(): void {
+    this.ruta.data.subscribe((data)=>{
+      this.nota1 = Object.entries(data).map(i => i[1]);
+    
+this.crudService.unArticulo._id = this.nota1[0]?._id
+ this.categoria = this.nota1[0]?.categoria
+ this.titulo = this.nota1[0]?.titulo
+ this.tituloAlt = this.nota1[0]?.tituloAlt
+ this.subtitulo = this.nota1[0]?.subtitulo
+ this.imagen1 = this.nota1[0]?.imagen1
+ this.autor = this.nota1[0]?.autor
+ this.fotografia = this.nota1[0]?.fotografia
+ this.edicionFotografia = this.nota1[0]?.edicionFotografia
+ this.nota = this.nota1[0]?.nota
+  this.posicion = this.nota1[0]?.posicion
+  this.resultadoTitulo = this.nota1[0]?.art1
+  this.resultadoTitulo2 = this.nota1[0]?.art2
+  this.resultadoTitulo3 = this.nota1[0]?.art3
+  this.resultadoTitulo4 = this.nota1[0]?.art4
+  this.resultadoTitulo5 = this.nota1[0]?.art5
+  this.resultadoTitulo6 = this.nota1[0]?.art6
+
+
+
+
+      // this.crudService.unArticulo.categoria = this.nota[0].categoria;
+      // this.crudService.unArticulo.titulo = this.titulo;
+      // this.crudService.unArticulo.tituloAlt = this.tituloAlt;
+      // this.crudService.unArticulo.fecha =  String(this.fechaPublicacion);
+      //  this.crudService.unArticulo.subtitulo = this.subtitulo;
+      // this.crudService.unArticulo.autor = this.autor
+      // this.crudService.unArticulo.fotografia = this.fotografia
+      // this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
+      // this.crudService.unArticulo.nota = this.nota
+      // this.crudService.unArticulo.likes = 1
+      // this.crudService.unArticulo.posicion =  this.posicion
+      
+
+      })
+    
     this.pedirArticulos();
 
 
@@ -185,6 +223,7 @@ this.crudService.unArticulo.titulo = this.titulo;
 this.crudService.unArticulo.tituloAlt = this.tituloAlt;
 this.crudService.unArticulo.fecha =  String(this.fechaPublicacion);
 this.crudService.unArticulo.subtitulo = this.subtitulo;
+this.crudService.unArticulo.imagen1 = this.imagen1;
 this.crudService.unArticulo.autor = this.autor
 this.crudService.unArticulo.fotografia = this.fotografia
 this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
@@ -211,7 +250,8 @@ this.crudService.unArticulo.posicion = this.posicion
 
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
   if( this.crudService.unArticulo._id )
-  {   this.crudService.modificarArticulo(this.crudService.unArticulo)
+  {  this.crudService.unArticulo.fechaMod = String(this.fechaMod) 
+     this.crudService.modificarArticulo(this.crudService.unArticulo)
   .subscribe(res => { this.crudService.snack('Modificado!')});
  
 }
@@ -266,6 +306,8 @@ limpiar(){
   this.nota = ""
   this.posicion = 0
 }
+
+//esta es para cuando se clickea en un input de articulos relacionadas modifique esta misma. 
 selection(res){
   this.aux = res
 }

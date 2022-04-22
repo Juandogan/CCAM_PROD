@@ -16,7 +16,7 @@
 
       <!-- CARROUSLE -->
       <div class="margenRCorreccion">
-   <app-carousel [items]="articulos" [data]="articulos" [height]="200"></app-carousel> 
+   <app-carousel [items]="articulos|posiciones:1" [data]="articulos|posiciones:1" [height]="200"></app-carousel> 
      <div *ngFor="let articulo of articulos" class="cardMobile" > 
    <app-card-mobile  [data]="articulo"></app-card-mobile> 
    <br>
@@ -30,7 +30,7 @@
       <div class="row row2" style="margin-left: -20px;">
 
 
-        <div *ngFor="let articulo of articulos|filtrox2" class="col-6 quitar600" style="padding-right: 0px; padding-left: 20px;">
+        <div *ngFor="let articulo of articulos|posiciones:2|filtrox2" class="col-6 quitar600" style="padding-right: 0px; padding-left: 20px;">
 
           <app-card-bajo-portada [data]='articulo'></app-card-bajo-portada>
 

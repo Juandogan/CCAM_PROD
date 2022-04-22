@@ -45,6 +45,7 @@ import { BuscarPipe } from './pipes/buscar.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CategoriaComponent } from './component/categoria/categoria.component';
 import { EditorCabeceraComponent } from './component/editor-cabecera/editor-cabecera.component';
+import { PosicionesPipe } from './pipes/posiciones.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +72,8 @@ import { EditorCabeceraComponent } from './component/editor-cabecera/editor-cabe
     CardMobileComponent,
     BuscarPipe,
     CategoriaComponent,
-    EditorCabeceraComponent
+    EditorCabeceraComponent,
+    PosicionesPipe
   ],
   imports: [
     BrowserModule,

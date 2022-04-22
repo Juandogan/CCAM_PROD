@@ -16,7 +16,7 @@ export class CardBajoPortadaComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.data)
+ 
   }
 
   cut(value:any){

@@ -24,8 +24,8 @@ export class ArticuloRelacionadoComponent implements OnInit {
 pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta luego guardo la data en el front en el servicio y en este componente.
   this.crudService.getArticulos().subscribe(res =>{
   this.articulos = res as Articulos[]; // guardo resultados de la peticion en variable productos del este componente.
- 
-console.log(this.articulos)
+ this.articulos = this.articulos.reverse()
+ console.log(this.articulos)
 
     });//fin de subscribe
   } //fin de pedirProductos

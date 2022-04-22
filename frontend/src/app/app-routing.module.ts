@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'subidas', component:  SubidasComponent },
   {path:'formaParte', component:  FormaParteComponent },
   {path:'gestor', component:  GestorComponent },
-  {path:'editorCabecera', component:  EditorCabeceraComponent },
+  {path:'editorCabecera/:_id', component:  EditorCabeceraComponent, resolve: {data: ResolveNotaService} },
   {path:'buscador', component:  BuscadorComponent, resolve: {data: ResolveNotaService} },
   {path:'articulo/:_id', component: ArticuloComponent, resolve: {data: ResolveNotaService}},
   {path:'categoria/:categoria', component: CategoriaComponent, resolve: {data: ResolveNotaService}}

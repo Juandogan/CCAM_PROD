@@ -11,6 +11,9 @@ import { CrudService } from 'src/app/service/crud.service';
 })
 export class EditorComponent implements OnInit {
 
+
+  @Input('data') data : any ;
+
   @Input('art') art:any;
   @Input('id') id:any;
 
