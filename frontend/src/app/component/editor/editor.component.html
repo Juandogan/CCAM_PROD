@@ -15,7 +15,7 @@
             <div style="float:left;">
             <mat-icon style=" margin-left:4px; color:brown" (click)="scrollCenter()">vertical_align_center</mat-icon>
           </div>
-            <mat-icon *ngIf="loader" (click)="loader=false" (click)="agregarPublicacion()" style="color:brown; cursor:pointer; font-size:30px;margin-right: 10px;">save</mat-icon>    
+            <mat-icon *ngIf="loader" (click)="loader=false" (click)="agregarPublicacion()" style="color:brown; cursor:pointer; font-size:30px;margin-right: 10px;" routerLink="../gestor">save</mat-icon>    
         
             <img *ngIf="!loader" src="../../../assets/loader.gif" width="40px" alt="" style="margin-top:-22px">
         

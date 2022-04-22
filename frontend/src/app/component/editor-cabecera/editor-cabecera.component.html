@@ -106,7 +106,7 @@
     <div class="col-6">
       <div class="form-group">
         <h5 class="textoInput">Posición Publicación</h5>
-        <select  [(ngModel)]="this.posicion" class="form-control form-control-sm" style="width: 20px; height: 38px;">
+        <select  [(ngModel)]="this.posicion" class="form-control form-control-sm" style="width: 100%; height: 38px;">
           <option value="0">No</option>
           <option value="1">Portada</option>
           <option value="2">Vertical 1</option>
@@ -137,7 +137,7 @@
          </div>
      
      <div *ngIf="this.loading3">
-      <h6 style="color:green">✓ Imagen Portada Desktop subida!<span style="color:blue" (click)="fnOcultar()"> Deshacer</span></h6>
+      <h6 style="color:green; font-size: 15px;">✓ Subida! <span style="font-size:14px; color:brown" (click)="fnOcultar()"> Deshacer</span></h6>
         </div>
    </div>
 
@@ -250,7 +250,7 @@
       
         <button type="button" s class="btn btn-secondary" data-dismiss="modal" routerLink="../../gestor">Cerrar</button>
         <button type="button" class="btn btn-danger"  
-        (click)="agregarPublicacion()"   data-dismiss="modal"
+        (click)="agregarPublicacion()"  routerLink="../../gestor"
         style="margin-right:300px"
         >Guardar</button>
       
