@@ -1,7 +1,7 @@
   
 <div class="clasePrincipal"  >
      <div>
-        <div class="primerIcon" >
+        <div class="primerIcon" *ngIf="nota[0]?.autor">
             <mat-icon class="mr-2 stilo ml-2 " style="color:rgba(34, 34, 34, 0.356)">account_circle</mat-icon>
             <div>
                     <h3  class="subtituloResposive2 vistas">{{nota[0]?.autor}}</h3>
@@ -23,7 +23,7 @@
   
    <div style="margin-top:0px; ">
   
-        <div  class="tercerIcon" >
+        <div  class="tercerIcon" *ngIf="nota[0]?.fotografia">
             <mat-icon  class="mr-corre mr-2 ml-2  stilo" style="color:rgba(34, 34, 34, 0.356)">photo</mat-icon>
             <div>
             <h3 class="subtituloResposive2  fecha">{{nota[0]?.fotografia}}</h3>

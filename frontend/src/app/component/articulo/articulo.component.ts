@@ -24,31 +24,32 @@ export class ArticuloComponent implements OnInit {
       })};
 
   saltos(data){
-  var aux2 = data.split('<h2>').join(`<h2 style="
-                                      font-weight: 700; 
-                                      line-height: 22px;
-                                      letter-spacing: -1px;
-                                      font-size:20px;
-                                      color:orange;
-                                      margin-bottom:15px;
-                                       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                                       `)
-
+  var aux2 = data.split('<h2>').join(`<h2 style=" font-weight: 700; 
+  line-height: 32px;
+  letter-spacing: -1px;
+  font-size:25px!important;
+  color:orange;
+  margin-bottom:15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;};">
+   `)
+   
   aux2 = aux2.split('<h3').join(`<h3 style="font-weight: 400; 
   line-height: 30px;
-  letter-spacing: -1px;
-  font-size:22px;
+  letter-spacing: 0px;
+  font-size:122px;
   color:orange;
   margin-bottom:10px;
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"`)
 
                                     aux2 = aux2.split('<p').join(`<p
-                                    style="font-family: Georgia, 'Times New Roman', Times, serif; 
-                                    font-weight: 300;
+                                    style="
+                                    font-weight: 400;
                                     margin-top:-10px;
                                     font-size: 18px; 
-                                    line-height: 26px;
-                                    color:rgb(68, 68, 68);"
+                                    line-height: 28px;
+                                    color:rgb(68, 68, 68);
+                                    
+                                    "
                                    
                                                                       `)
                                                                       
@@ -56,10 +57,11 @@ export class ArticuloComponent implements OnInit {
                                     // aux2 = aux2.split('</p></strong>').join('</p></b>')
                                     aux2 = aux2.split('<img').join('<img style="width:100%; margin-top:10px"')
                                     
-                                    
+                                    aux2 = aux2.split('<strong>').join('<strong style="font-size:18px; ">')
+                                   
 
+console.log(aux2)
 
-  
   return (aux2)
 
 
@@ -79,6 +81,7 @@ export class ArticuloComponent implements OnInit {
   this.crudService.unArticulo.imagen1 = this.nota[0].imagen1
   this.crudService.unArticulo.imagen2 = this.nota[0].imagen2
   this.crudService.unArticulo.imagen3 = this.nota[0].imagen3
+  this.crudService.unArticulo.posicion = this.nota[0].posicion
   this.crudService.unArticulo.categoria = this.nota[0].categoria;
   this.crudService.unArticulo.titulo = this.nota[0].titulo;
   this.crudService.unArticulo.fecha  =  String(this.nota[0].fecha);
@@ -88,6 +91,18 @@ export class ArticuloComponent implements OnInit {
   this.crudService.unArticulo.fotografia = this.nota[0].fotografia
   this.crudService.unArticulo.edicionFotografia = this.nota[0].edicionFotografia
   this.crudService.unArticulo.nota = this.nota[0].nota
+  this.crudService.unArticulo.art1 = this.nota[0].art1
+  this.crudService.unArticulo.art2 = this.nota[0].art2
+  this.crudService.unArticulo.art3 = this.nota[0].art3
+  this.crudService.unArticulo.art4 = this.nota[0].art4
+  this.crudService.unArticulo.art5 = this.nota[0].art5
+  this.crudService.unArticulo.art6 = this.nota[0].art6
+  this.crudService.unArticulo.resultadoID = this.nota[0].resultadoID
+  this.crudService.unArticulo.resultadoID2 = this.nota[0].resultadoID2
+  this.crudService.unArticulo.resultadoID3 = this.nota[0].resultadoID3
+  this.crudService.unArticulo.resultadoID4  = this.nota[0].resultadoID4
+  this.crudService.unArticulo.resultadoID5 = this.nota[0].resultadoID5
+  this.crudService.unArticulo.resultadoID6 = this.nota[0].resultadoID6
 
 
       // this.crudService.unProducto.fecha = String(this.fachaPublicacion)

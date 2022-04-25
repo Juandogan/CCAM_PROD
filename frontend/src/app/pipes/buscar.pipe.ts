@@ -9,7 +9,7 @@ export class BuscarPipe implements PipeTransform {
     const resultPost =  [];
 
     for(const post of value){
-      var aux = post._id
+      var aux = post._id + post.titulo + post.subtitulo + post.nota
 
       if (aux.toLowerCase().indexOf(args.toLowerCase()) > -1)
       {resultPost.push(post) }

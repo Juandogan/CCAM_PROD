@@ -25,7 +25,15 @@ a{color:white}
  
   }
 
-  
+  .truncar4 {
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow-wrap: break-word;
+    overflow: hidden;/*si no se declara añade los ... pero muestra todo el texto*/
+  }
+
 .parrafo{
   color:rgb(207, 207, 207);
   font-size: 17px;

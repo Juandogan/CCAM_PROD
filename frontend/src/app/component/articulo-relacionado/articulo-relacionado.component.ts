@@ -10,6 +10,8 @@ export class ArticuloRelacionadoComponent implements OnInit {
   
   
   articulos: Articulos[] = []
+  
+  articuloBusqueda: Articulos[] = []
 
 
   @Input('data') nota : any ;
@@ -17,7 +19,7 @@ export class ArticuloRelacionadoComponent implements OnInit {
 
   ngOnInit(): void {
     this.pedirArticulos()
-    
+    this.pedirUnArticulo()
   }
 
   
@@ -25,10 +27,28 @@ pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta lue
   this.crudService.getArticulos().subscribe(res =>{
   this.articulos = res as Articulos[]; // guardo resultados de la peticion en variable productos del este componente.
  this.articulos = this.articulos.reverse()
- console.log(this.articulos)
+ 
+
+
+
 
     });//fin de subscribe
   } //fin de pedirProductos
+
+  pedirUnArticulo(){
+  console.log(this.nota[0]._id)
+    this.crudService.getOneArticulo(this.nota[0]._id)
+    .subscribe(res=>{this.articuloBusqueda = res as Articulos[]
+     })
+   
+    if(this.articuloBusqueda.length > 2)
+    {
+    this.crudService.snack('No se encontro');
+     return
+    } 
+    }
+
+
 
   cut(value:any){
     if(value){

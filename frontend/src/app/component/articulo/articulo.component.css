@@ -17,13 +17,28 @@
   
 }
 
+.capital::first-letter {
+
+  float: right;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 60px;
+  float: left;
+  margin-top: 13px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+  line-height: 30px;
+  color:orange;
+
+}
+
 .subtitulo{
-   font-family: Georgia, 'Times New Roman', Times, serif; 
-  font-weight: 300;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
   margin-top:-10px;
   font-size: 18px; 
   line-height: 26px;
   color:rgb(68, 68, 68);
+  letter-spacing: 0.5px;
     }
 
   .borde{border-right: 20px solid rgba(160, 160, 160, 0) ;}

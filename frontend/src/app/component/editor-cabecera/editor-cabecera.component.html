@@ -67,9 +67,7 @@
               <div class="form-group">
                 <h5 class="textoInput">Título Alternativo / Noticias / Relacionados</h5>
                 <input  [(ngModel)]="this.tituloAlt" class="form-control" id="tituloAlt">
-                     <!-- <div  class="textoInputBajo" >
-                   {{this.titulo.length}} de 200 Máx.
-                </div>  -->
+                 
               </div>
               <div class="form-group">
                 <h5 class="textoInput">Subtítulo</h5>
@@ -110,13 +108,13 @@
           <option value="0">No</option>
           <option value="1">Portada</option>
           <option value="2">Vertical 1</option>
-          <option value="3">Vertical 2</option>
-          <option value="4">Horizontal 1</option>
-          <option value="5">Horizontal 2</option>
-          <option value="6">Horizontal 3</option>
-          <option value="7">Vertical Largo 1</option>
-          <option value="8">Vertical Largo 2</option>
-          <option value="9">Vertical Largo 3</option>
+          <option value="2">Vertical 2</option>
+          <option value="3">Horizontal 1</option>
+          <option value="3">Horizontal 2</option>
+          <option value="3">Horizontal 3</option>
+          <option value="4">Vertical Largo 1</option>
+          <option value="4">Vertical Largo 2</option>
+          <option value="4">Vertical Largo 3</option>
           </select>
       
      </div>
@@ -177,7 +175,7 @@
           <div  class="form-group" style="margin-top:35px" >
             
             
-            <input  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" >
+            <input (click)="selection(1)"  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" >
             
             <div style="float:left">
             <h1 style="color:brown;   margin-top:-40px">1</h1> 

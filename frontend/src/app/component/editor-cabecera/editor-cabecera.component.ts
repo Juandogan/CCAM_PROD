@@ -75,6 +75,7 @@ nota1:any
     this.ruta.data.subscribe((data)=>{
       this.nota1 = Object.entries(data).map(i => i[1]);
     
+      //cargo desde el objeto a cada una de las variablen vinculadas a los inputs
 this.crudService.unArticulo._id = this.nota1[0]?._id
  this.categoria = this.nota1[0]?.categoria
  this.titulo = this.nota1[0]?.titulo
@@ -86,6 +87,7 @@ this.crudService.unArticulo._id = this.nota1[0]?._id
  this.edicionFotografia = this.nota1[0]?.edicionFotografia
  this.nota = this.nota1[0]?.nota
   this.posicion = this.nota1[0]?.posicion
+  this.crudService.unArticulo.posicion = this.nota1[0]?.posicion
   this.resultadoTitulo = this.nota1[0]?.art1
   this.resultadoTitulo2 = this.nota1[0]?.art2
   this.resultadoTitulo3 = this.nota1[0]?.art3
@@ -243,9 +245,6 @@ this.crudService.unArticulo.resultadoID3 = this.resultadoID3
 this.crudService.unArticulo.resultadoID4 = this.resultadoID4
 this.crudService.unArticulo.resultadoID5 = this.resultadoID5
 this.crudService.unArticulo.resultadoID6 = this.resultadoID6
-
-
-
 this.crudService.unArticulo.posicion = this.posicion
 
 
