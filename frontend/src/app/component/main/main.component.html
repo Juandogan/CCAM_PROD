@@ -8,10 +8,11 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
     
   </div> 
+  
   <br>
   <div class="row fondoRow" >
 
-  
+    
     <div *ngIf="!aux"  class="col-12	col-sm-12	col-md-9 col-lg-9	col-xl-9 fondoCol ">
 
       <!-- CARROUSLE -->
@@ -71,7 +72,7 @@
     <div *ngIf="!aux" class="row quitar600">
       
       <div  class="col-9" style="margin-top: 20px; padding-right: 5px;"  >
-        <app-card-bajopublix3 [data]="articulos"></app-card-bajopublix3>
+        <app-card-bajopublix3 [data]="articulos|posiciones:3"></app-card-bajopublix3>
       </div>
       
       <div class="col-3 quitar810" style="padding-right:30px;margin-top:20px">
@@ -85,7 +86,7 @@
   
       </div>
       <br>
-      <app-triple-card [data]="articulos" style="margin-top:20px"></app-triple-card>
+      <app-triple-card [data]="articulos|posiciones:4" style="margin-top:20px"></app-triple-card>
 
 <br><br><br>
     </div>

@@ -19,6 +19,8 @@
         margin-top: -10px;
     }
 
-    .categoria{color:rgb(83, 83, 83); font-size: 12px; margin-top:-10px; text-transform: uppercase;}
+    .categoria{color:orange; font-size: 12px; margin-top:-10px; text-transform: uppercase;}
 
     .sombra{border-bottom: 1px solid rgb(190, 190, 190);}
+
+    .card{margin-bottom: 20px;}

@@ -10,10 +10,9 @@
                         
                         <app-footer-card [data]="nota"></app-footer-card>
                         <hr style="margin-top: -10px;">
-                        
-                        <h3 class="capital" [innerHTML]=saltos(nota[0]?.nota)|sanetizer >    
-                                                        
-                       </h3>
+                        <br>
+                        <!-- <p class="capital" >{{saltos(nota[0]?.nota)|sanetizer}}</p> para ver contenido html-->
+                         <h3  [innerHTML]=saltos(nota[0]?.nota)|sanetizer ></h3> 
         
                        <div *ngIf="nota">
                         <app-articulo-relacionado [data]="nota"></app-articulo-relacionado>
