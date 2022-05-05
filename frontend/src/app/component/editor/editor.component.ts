@@ -95,13 +95,13 @@ agregarPublicacion(){
     {
     this.crudService.modificarArticulo(this.crudService.unArticulo)
     .subscribe(res => {this.loader = true; this.crudService.snack("MODIFICADO!")});
-    window.location.href = 'http://168.197.50.191/gestor'
+    // window.location.href = 'http://168.197.50.191/gestor'
     }
       else  {
        this.crudService.unArticulo.vistas = 0
       //  this.crudService.unProducto.fecha = String(this.fachaPublicacion)
          this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => { this.loader = true; this.crudService.snack("Guardado!")
-         window.location.href = 'http://168.197.50.191/gestor'
+        //  window.location.href = 'http://168.197.50.191/gestor'
         })
     }
   };

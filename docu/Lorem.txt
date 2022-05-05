@@ -1,3 +1,9 @@
+dominio CCAM
+https://42.ip-178-103-190.us.ipxon.net:2222/
+User: nati2009
+Pass: 58dRD7zgF
+
+
 168.181.187.131
 X5HKqtgCbgCJ
 
