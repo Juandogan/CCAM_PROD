@@ -15,6 +15,21 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoTitulo4:string =""
   resultadoTitulo5:string =""
   resultadoTitulo6:string =""
+
+  resultadoCategoria:string =""
+  resultadoCategoria2:string =""
+  resultadoCategoria3:string =""
+  resultadoCategoria4:string =""
+  resultadoCategoria5:string =""
+  resultadoCategoria6:string =""
+
+  resultadoImagen:string =""
+  resultadoImagen2:string =""
+  resultadoImagen3:string =""
+  resultadoImagen4:string =""
+  resultadoImagen5:string =""
+  resultadoImagen6:string =""
+
   resultadoID:string =""
   resultadoID2:string =""
   resultadoID3:string =""
@@ -152,6 +167,8 @@ return
       if(this.aux === 1 ){
        this.resultadoTitulo = this.articuloBusqueda?.titulo
        this.resultadoID = this.articuloBusqueda?._id
+       this.crudService.unArticulo.resultadoCategoria = this.articuloBusqueda?.categoria
+       this.crudService.unArticulo.resultadoImagen = this.articuloBusqueda?.imagen1
        this.busqueda = ""  
        this.aux = 2
        return
@@ -162,6 +179,8 @@ return
       if(this.aux === 2){
         this.resultadoTitulo2 = this.articuloBusqueda?.titulo
         this.resultadoID2 = this.articuloBusqueda?._id
+        this.crudService.unArticulo.resultadoCategoria2 = this.articuloBusqueda?.categoria
+        this.crudService.unArticulo.resultadoImagen2 = this.articuloBusqueda?.imagen1
          this.busqueda = "" 
         this.aux=3
         return
@@ -171,6 +190,8 @@ return
       if(this.aux === 3){
         this.resultadoTitulo3 = this.articuloBusqueda?.titulo
         this.resultadoID3 = this.articuloBusqueda?._id
+        this.crudService.unArticulo.resultadoCategoria3 = this.articuloBusqueda?.categoria
+        this.crudService.unArticulo.resultadoImagen3 = this.articuloBusqueda?.imagen1
          this.busqueda = ""  
                  this.aux=4
                 return }
@@ -179,6 +200,8 @@ return
       if(this.aux === 4){
         this.resultadoTitulo4 = this.articuloBusqueda?.titulo
         this.resultadoID4 = this.articuloBusqueda?._id
+        this.crudService.unArticulo.resultadoCategoria4 = this.articuloBusqueda?.categoria
+        this.crudService.unArticulo.resultadoImagen4 = this.articuloBusqueda?.imagen1
          this.busqueda = ""   
          this.aux=5
          return
@@ -187,6 +210,8 @@ return
          if(this.aux === 5){
           this.resultadoID5 = this.articuloBusqueda?._id
           this.resultadoTitulo5 = this.articuloBusqueda?.titulo
+          this.crudService.unArticulo.resultadoCategoria5 = this.articuloBusqueda?.categoria
+          this.crudService.unArticulo.resultadoImagen5 = this.articuloBusqueda?.imagen1
            this.busqueda = "" 
            this.aux = 6
           return  }
@@ -194,6 +219,8 @@ return
            if(this.aux === 6){
             this.resultadoID6 = this.articuloBusqueda?._id
             this.resultadoTitulo6 = this.articuloBusqueda?.titulo
+            this.crudService.unArticulo.resultadoCategoria6 = this.articuloBusqueda?.categoria
+            this.crudService.unArticulo.resultadoImagen6 = this.articuloBusqueda?.imagen1
              this.busqueda = ""  
             return }
   
@@ -245,6 +272,8 @@ this.crudService.unArticulo.resultadoID3 = this.resultadoID3
 this.crudService.unArticulo.resultadoID4 = this.resultadoID4
 this.crudService.unArticulo.resultadoID5 = this.resultadoID5
 this.crudService.unArticulo.resultadoID6 = this.resultadoID6
+
+
 this.crudService.unArticulo.posicion = this.posicion
 
 

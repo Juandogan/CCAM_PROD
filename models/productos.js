@@ -32,6 +32,23 @@ const ProductoSchema = new Schema({
   resultadoID4:{type: String, required : false},
   resultadoID5:{type: String, required : false},
   resultadoID6:{type: String, required : false},
+
+  resultadoCategoria:{type: String, required : false},
+  resultadoCategoria2:{type: String, required : false},
+  resultadoCategoria3:{type: String, required : false},
+  resultadoCategoria4:{type: String, required : false},
+  resultadoCategoria5:{type: String, required : false},
+  resultadoCategoria6:{type: String, required : false},
+
+  
+
+  resultadoImagen:{type: String, required : false},
+  resultadoImagen2:{type: String, required : false},
+  resultadoImagen3:{type: String, required : false},
+  resultadoImagen4:{type: String, required : false},
+  resultadoImagen5:{type: String, required : false},
+  resultadoImagen6:{type: String, required : false},
+
   posicion:{type: String, required : false},
   fotografia:{type: String, required : false},
   edicionFotografia: {type: String, required : false},

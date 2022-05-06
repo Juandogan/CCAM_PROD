@@ -29,6 +29,9 @@ git remote add origin https://github.com/Juandogan/CCAM.git
 git branch -M main
 git push -u origin main
 
+en raiz
+cp -RT /home/img/ /home/CCAM_PROD/subidas/
+
 jahmAguirre
 
 ---- Servidor install  nginx --- 

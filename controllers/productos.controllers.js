@@ -42,7 +42,21 @@ productosCtrl.newProductos = async(req,res) => {
         resultadoID4:req.body.resultadoID4,
         resultadoID5:req.body.resultadoID5,
         resultadoID6:req.body.resultadoID6,
-        posicion:req.body.posicion
+        posicion:req.body.posicion,
+        resultadoCategoria:req.body.resultadoCategoria,
+        resultadoCategoria2:req.body.resultadoCategoria2,
+        resultadoCategoria3:req.body.resultadoCategoria3,
+        resultadoCategoria4:req.body.resultadoCategoria4,
+        resultadoCategoria5:req.body.resultadoCategoria5,
+        resultadoCategoria6:req.body.resultadoCategoria6,
+
+        resultadoImagen:req.body.resultadoCategoria,
+        resultadoImagen2:req.body.resultadoImagen2,
+        resultadoImagen3:req.body.resultadoImagen3,
+        resultadoImagen4:req.body.resultadoImagen4,
+        resultadoImagen5:req.body.resultadoImagen5,
+        resultadoImagen6:req.body.resultadoImagen6,
+        
 
 
     });
@@ -96,7 +110,23 @@ productosCtrl.modificarProducto = async (req,res) => {
         resultadoID4:req.body.resultadoID4,
         resultadoID5:req.body.resultadoID5,
         resultadoID6:req.body.resultadoID6,
-        posicion:req.body.posicion
+        posicion:req.body.posicion,
+
+        resultadoCategoria:req.body.resultadoCategoria,
+        resultadoCategoria2:req.body.resultadoCategoria2,
+        resultadoCategoria3:req.body.resultadoCategoria3,
+        resultadoCategoria4:req.body.resultadoCategoria4,
+        resultadoCategoria5:req.body.resultadoCategoria5,
+        resultadoCategoria6:req.body.resultadoCategoria6,
+
+        resultadoImagen:req.body.resultadoCategoria,
+        resultadoImagen2:req.body.resultadoImagen2,
+        resultadoImagen3:req.body.resultadoImagen3,
+        resultadoImagen4:req.body.resultadoImagen4,
+        resultadoImagen5:req.body.resultadoImagen5,
+        resultadoImagen6:req.body.resultadoImagen6,
+        
+
                                
 
     };

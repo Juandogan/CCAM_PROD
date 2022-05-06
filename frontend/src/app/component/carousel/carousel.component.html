@@ -6,7 +6,7 @@
     <div class="dsc-carousel__content">
         <ng-container *ngFor="let section of data;">
             <div class="dsc-carousel__content-item" [ngStyle]="{'background-image': 'url(' + section.imagen1 + ')', 'margin-left': section.marginLeft + '%', 'object-fit':'cover' }">
-                <h2 style="padding-top:6px">{{section.categoria}}</h2>
+                <h2 style="font-size:12px!important; padding-top:6px; margin-bottom:20px;">{{section.categoria}}</h2>
             
                     <h1 class="truncar"><a routerLink="../articulo/{{section?._id}}"   style="color:rgb(253, 226, 226);  "> {{section.titulo}}    </a></h1>   
                     

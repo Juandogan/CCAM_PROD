@@ -33,13 +33,11 @@ export class ArticuloComponent implements OnInit {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;};">
    `)
    
-  aux2 = aux2.split('<h3').join(`<h3 style="font-weight: 400; 
-  line-height: 30px;
-  letter-spacing: 0px;
-  font-size:122px;
-  color:orange;
-  margin-bottom:10px;
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"`)
+   aux2 = aux2.split('<h3').join(`<h3 style="font-weight: 400; 
+   line-height: 30px;
+   letter-spacing: 0px;
+   margin-bottom:10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"`)
 
                                     aux2 = aux2.split('<p').join(`<p
                                     style="
@@ -47,17 +45,14 @@ export class ArticuloComponent implements OnInit {
                                     margin-top:-10px;
                                     font-size: 18px; 
                                     line-height: 28px;
-                                    color:rgb(68, 68, 68);
-                                    
-                                    "
-                                   
-                                                                      `)
+                                    color:rgb(68, 68, 68);"`)
                                                                       
                                     // aux2 = aux2.split('<strong').join('<strong style="font-size:14px;  font-weight: 800;"')
                                     // aux2 = aux2.split('</p></strong>').join('</p></b>')
                                     aux2 = aux2.split('<img').join('<img style="width:100%; margin-top:10px"')
+                                    aux2 = aux2.split('<h4').join('<h4 style="text-align: center;"')
                                     
-                                    aux2 = aux2.split('<strong>').join('<strong style="font-size:18px; ">')
+                                    // aux2 = aux2.split('<strong>').join('<strong style="font-size:18px; ">')
                                     aux2 = aux2.split('https://www.youtube.com/watch?v=').join('https://www.youtube.com/embed/')
                                    
                                     aux2 = aux2.split('<figure class="media"><oembed url="').join('<iframe width="100%" height="515" src="')

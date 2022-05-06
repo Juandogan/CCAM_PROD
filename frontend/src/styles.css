@@ -10,25 +10,44 @@ body{margin:0px; padding:0px}
 
 html, body { height: 100%; }
 body { margin: 0;  }
-.mat-typography h2 {  font-weight: 700; 
-                      line-height: 22px;
-                      letter-spacing: -1px;
-                      font-size:20px;
-                      color:orange;
-                      padding-bottom:10px;
-                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+ 
 
-                      .mat-typography strong {  font-weight: 400; 
-                        font-weight: 700; 
-                        line-height: 18px;
-                        font-size:18px;
-                        color:rgb(78, 78, 78);
-                        margin-bottom:15px;
-               }
-  
-  a{color:white}
+ 
+.mat-typography h2 { 
+         font-weight: 700; 
+        line-height: 32px;
+        letter-spacing: -1px;
+        font-size:25px!important;
+        color:orange;
+        margin-bottom:25px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    
 
-a{color:white}
+
+.mat-typography h3 { 
+    font-weight: 800;
+    margin-top:-10px;
+    font-size: 19px; 
+    line-height: 28px;
+    color:rgb(68, 68, 68);
+    
+}
+
+.mat-typography p { 
+    font-weight: 400;
+    margin-top:-10px;
+    font-size: 18px; 
+    line-height: 28px;
+    color:rgb(68, 68, 68);
+    
+}
+          
+ 
+
+         
+.mat-typography  a{color:rgb(0, 0, 164)}
+
+ 
 /* .row{
     margin-left:160px;  margin-right: 160px;
 } */
