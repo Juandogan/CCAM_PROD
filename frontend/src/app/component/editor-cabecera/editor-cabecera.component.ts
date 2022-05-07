@@ -168,7 +168,7 @@ return
        this.resultadoTitulo = this.articuloBusqueda?.titulo
        this.resultadoID = this.articuloBusqueda?._id
        this.crudService.unArticulo.resultadoCategoria = this.articuloBusqueda?.categoria
-       this.crudService.unArticulo.resultadoImagen = this.articuloBusqueda?.imagen1
+       this.crudService.unArticulo.resultadoImagen = this.articuloBusqueda.imagen1
        this.busqueda = ""  
        this.aux = 2
        return
@@ -248,6 +248,7 @@ fnOcultar2(){
 };
 agregarPublicacion(){
 
+  console.log("hola", this.crudService.unArticulo?.resultadoImagen)
 this.crudService.unArticulo.categoria = this.categoria;
 this.crudService.unArticulo.titulo = this.titulo;
 this.crudService.unArticulo.tituloAlt = this.tituloAlt;
