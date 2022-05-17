@@ -119,7 +119,7 @@ productosCtrl.modificarProducto = async (req,res) => {
         resultadoCategoria5:req.body.resultadoCategoria5,
         resultadoCategoria6:req.body.resultadoCategoria6,
 
-        resultadoImagen:req.body.resultadoCategoria,
+        resultadoImagen:req.body.resultadoImagen,
         resultadoImagen2:req.body.resultadoImagen2,
         resultadoImagen3:req.body.resultadoImagen3,
         resultadoImagen4:req.body.resultadoImagen4,

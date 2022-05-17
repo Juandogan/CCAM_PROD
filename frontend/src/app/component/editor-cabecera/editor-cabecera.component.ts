@@ -123,6 +123,31 @@ this.crudService.unArticulo._id = this.nota1[0]?._id
   this.resultadoTitulo6 = this.nota1[0]?.art6
   this.crudService.unArticulo.vistas = this.nota1[0]?.vistas
   this.crudService.unArticulo.fecha = this.nota1[0]?.fecha
+
+  this.crudService.unArticulo.resultadoCategoria = this.nota1[0]?.resultadoCategoria 
+  this.crudService.unArticulo.resultadoCategoria2 = this.nota1[0]?.resultadoCategoria2
+  this.crudService.unArticulo.resultadoCategoria3 = this.nota1[0]?.resultadoCategoria3
+  this.crudService.unArticulo.resultadoCategoria4 = this.nota1[0]?.resultadoCategoria4
+  this.crudService.unArticulo.resultadoCategoria5 = this.nota1[0]?.resultadoCategoria5
+  this.crudService.unArticulo.resultadoCategoria6 = this.nota1[0]?.resultadoCategoria6
+
+  this.crudService.unArticulo.resultadoImagen = this.nota1[0]?.resultadoImagen
+  this.crudService.unArticulo.resultadoImagen2 = this.nota1[0]?.resultadoImagen2
+  this.crudService.unArticulo.resultadoImagen3 = this.nota1[0]?.resultadoImagen3
+  this.crudService.unArticulo.resultadoImagen4 = this.nota1[0]?.resultadoImagen4
+  this.crudService.unArticulo.resultadoImagen5 = this.nota1[0]?.resultadoImagen5
+  this.crudService.unArticulo.resultadoImagen6 = this.nota1[0]?.resultadoImagen6
+
+  this.crudService.unArticulo.resultadoID = this.nota1[0]?.resultadoID
+  this.crudService.unArticulo.resultadoID2 = this.nota1[0]?.resultadoID2
+  this.crudService.unArticulo.resultadoID3 = this.nota1[0]?.resultadoID3
+  this.crudService.unArticulo.resultadoID4 = this.nota1[0]?.resultadoID4
+  this.crudService.unArticulo.resultadoID5 = this.nota1[0]?.resultadoID5
+  this.crudService.unArticulo.resultadoID6 = this.nota1[0]?.resultadoID6
+
+  
+
+
  
   if (this.nota1[0]?.art1){
     this.aux = 2
