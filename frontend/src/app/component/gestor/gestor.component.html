@@ -1,5 +1,4 @@
-<!-- <div *ngIf="password"> -->
-
+ 
 <div *ngIf="!this.crudService.cambioPantalla">
   
 
@@ -52,10 +51,10 @@ routerLink="../editorCabecera/'622f921c86c620738b709062'"
         <thead class="thead-dark">
           <tr >
             <!-- <th scope="col">#</th> -->
-            <th scope="col" style="width:7%;">Categoría</th>
+            <th scope="col" style="width:3%;">ID</th>
             <th scope="col">Título</th>
             <th scope="col">Creación</th>
-            <th scope="col" >Última Mod.</th>
+            <th scope="col" >Mod.</th>
             <th scope="col" style="width:5%;"class="text-center">Posición</th>
             <th scope="col" style="width:5%;"class="text-center">Ficha</th>
             <th scope="col" style="width:5%;"class="text-center">Artículo</th>
@@ -66,17 +65,18 @@ routerLink="../editorCabecera/'622f921c86c620738b709062'"
           </tr>
         </thead>
         <tbody>
-          
-          <tr *ngFor="let articulo of articulos|buscar:filterPost " style="transition: 0.2s all  ease-out; " [style.backgroundColor]="activo? 'white' : 'grey'">
+       
+
+          <tr *ngFor="let articulo of articulos|buscar:filterPost  " [style.backgroundColor]="activo? 'white' : 'grey'">
             <!-- <th scope="row">1</th> -->
             
-            <td > <span class="badge badge-danger">{{articulo.categoria}}</span></td>
-            <td class="textoTableTitulo" > {{articulo.titulo | truncate:'100'}}</td>
-            <td> {{articulo.fecha| date: 'dd/MM/yy'}}</td>
+            <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
+            <td class="textoTableTitulo" > {{articulo?.titulo | truncate:'100'}}</td>
+            <td> {{articulo?.fecha| date: 'dd/MM/yy'}}</td>
 
-            <td  style="text-align: center;">{{articulo.fechaMod| date: 'dd/MM/yy'}}</td> 
+            <td  style="text-align: center;">{{articulo?.fechaMod| date: 'dd/MM/yy'}}</td> 
             <td style="text-align: center;">  
-             <p>{{articulo.posicion}}</p> 
+             <p style="margin-top:0px">{{articulo?.posicion}}</p> 
              
             </td>
             <td class="text-center">
@@ -101,12 +101,13 @@ routerLink="../editorCabecera/'622f921c86c620738b709062'"
 
                   </a>
                   
-                  <td class="text-center">{{articulo.vistas}}</td>  
+                  <td class="text-center">{{articulo?.vistas}}</td>  
               
           </tr>
           
         </tbody>
       </table>
+    
     </div>
      
 <br><br><br><br><br><br>
@@ -116,7 +117,7 @@ routerLink="../editorCabecera/'622f921c86c620738b709062'"
 
 </div>
 
- 
+
 
 
 <!-- <div *ngIf="!password"> 

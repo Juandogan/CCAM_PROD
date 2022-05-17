@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as ClassicEditor from 'src/app/ckeditor2';
 import { CrudService } from 'src/app/service/crud.service';
-
+ 
+ 
+ 
 
 
 @Component({
@@ -42,8 +44,7 @@ export class EditorComponent implements OnInit {
      public onReady( editor:any ) {
          editor.ui.getEditableElement().parentElement.insertBefore(
             editor.ui.view.toolbar.element,
-         
-             editor.ui.getEditableElement()
+            editor.ui.getEditableElement()
         );}
 
 
@@ -53,6 +54,16 @@ export class EditorComponent implements OnInit {
   ngOnInit(): void {
 
     this.Editor.create( document.querySelector( '.document-editor__editable' ), { 
+    
+     
+  link: {
+            // Automatically add target="_blank" and rel="noopener noreferrer" to all external links.
+            addTargetToExternalLinks: true,
+         
+           
+
+        },
+
 
       simpleUpload: {
       uploadUrl: "http://168.197.50.191/upload2",
@@ -61,6 +72,7 @@ export class EditorComponent implements OnInit {
         'X-CSRF-TOKEN': 'CSFR-Token',
         Authorization: 'Bearer <JSON Web Token>'
       }
+
     }
           } )
   

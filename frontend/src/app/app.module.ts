@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-
+import {ScrollingModule} from '@angular/cdk/scrolling';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
@@ -46,6 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CategoriaComponent } from './component/categoria/categoria.component';
 import { EditorCabeceraComponent } from './component/editor-cabecera/editor-cabecera.component';
 import { PosicionesPipe } from './pipes/posiciones.pipe';
+import { Filtrox10Pipe } from './pipes/filtrox10.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +74,9 @@ import { PosicionesPipe } from './pipes/posiciones.pipe';
     BuscarPipe,
     CategoriaComponent,
     EditorCabeceraComponent,
-    PosicionesPipe
+    PosicionesPipe,
+    Filtrox10Pipe,
+
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,8 @@ import { PosicionesPipe } from './pipes/posiciones.pipe';
     MatRippleModule,
     MatMenuModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ScrollingModule
     
     
   ],

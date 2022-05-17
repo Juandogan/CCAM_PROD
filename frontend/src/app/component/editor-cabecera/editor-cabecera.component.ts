@@ -8,6 +8,14 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./editor-cabecera.component.css']
 })
 export class EditorCabeceraComponent implements OnInit {
+  openInputBuscar:Boolean = true;
+  openInput:Boolean = true;
+  openInput2:Boolean = true;
+  openInput3:Boolean = true;
+  openInput4:Boolean = true;
+  openInput5:Boolean = true;
+  openInput6:Boolean = true;
+  
   public uploadedFiles: Array<File> = [];
   resultadoTitulo:string =""
   resultadoTitulo2:string =""
@@ -37,7 +45,8 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoID5:string =""
   resultadoID6:string =""
 
-  fechaPublicacion = new Date()    	        
+  fechaPublicacion = new Date()    ;
+  fecha	  = ""
   fechaMod = new Date();    	        
   password = false; 
   password1 = "";
@@ -87,6 +96,8 @@ nota1:any
  constructor(public crudService:CrudService, private ruta:ActivatedRoute,) { }
 
   ngOnInit(): void {
+    this.fecha = String(new Date())
+
     this.ruta.data.subscribe((data)=>{
       this.nota1 = Object.entries(data).map(i => i[1]);
     
@@ -95,6 +106,7 @@ this.crudService.unArticulo._id = this.nota1[0]?._id
  this.categoria = this.nota1[0]?.categoria
  this.titulo = this.nota1[0]?.titulo
  this.tituloAlt = this.nota1[0]?.tituloAlt
+ this.fecha = this.nota1[0]?.fecha
  this.subtitulo = this.nota1[0]?.subtitulo
  this.imagen1 = this.nota1[0]?.imagen1
  this.autor = this.nota1[0]?.autor
@@ -109,9 +121,29 @@ this.crudService.unArticulo._id = this.nota1[0]?._id
   this.resultadoTitulo4 = this.nota1[0]?.art4
   this.resultadoTitulo5 = this.nota1[0]?.art5
   this.resultadoTitulo6 = this.nota1[0]?.art6
-
-
-
+  this.crudService.unArticulo.vistas = this.nota1[0]?.vistas
+  this.crudService.unArticulo.fecha = this.nota1[0]?.fecha
+ 
+  if (this.nota1[0]?.art1){
+    this.aux = 2
+  }
+  
+  if (this.nota1[0]?.art2){
+    this.aux = 3
+  }
+  
+  if (this.nota1[0]?.art3){
+    this.aux = 4
+  }
+  if (this.nota1[0]?.art4){
+    this.aux = 5
+  }
+  
+  
+  if (this.nota1[0]?.art5){
+    this.aux = 6
+  }
+  
 
       // this.crudService.unArticulo.categoria = this.nota[0].categoria;
       // this.crudService.unArticulo.titulo = this.titulo;
@@ -151,8 +183,11 @@ pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta lue
   } //fin de pedirProductos
 
 pedirUnArticulo(){
-  console.log(this.aux)
+
+
   this.crudService.getOneArticulo(this.busqueda)
+
+
   .subscribe(res=>{this.articuloBusqueda = res as Articulos[]
 
 
@@ -248,7 +283,7 @@ fnOcultar2(){
 };
 agregarPublicacion(){
 
-  console.log("hola", this.crudService.unArticulo?.resultadoImagen)
+  
 this.crudService.unArticulo.categoria = this.categoria;
 this.crudService.unArticulo.titulo = this.titulo;
 this.crudService.unArticulo.tituloAlt = this.tituloAlt;
@@ -281,12 +316,16 @@ this.crudService.unArticulo.posicion = this.posicion
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
   if( this.crudService.unArticulo._id )
   {   
-    this.crudService.unArticulo.fechaMod = String(this.fechaMod) 
+
+      this.crudService.unArticulo.fechaMod = String(this.fechaMod) 
+    
      this.crudService.modificarArticulo(this.crudService.unArticulo)
   .subscribe(res => { this.crudService.snack('Modificado!')});
  
 }
   else  {
+
+      this.crudService.unArticulo.fecha = String(this.fechaPublicacion) 
      this.crudService.unArticulo.vistas = 0
           this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion)
        this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => { this.crudService.snack(res)
@@ -313,6 +352,7 @@ this.categoria = this.crudService.unArticulo.categoria
 this.titulo = this.crudService.unArticulo.titulo
 this.subtitulo = this.crudService.unArticulo.subtitulo
 this.autor = this.crudService.unArticulo.autor 
+this.fecha = String(this.crudService.unArticulo.fecha)
 this.fotografia = this.crudService.unArticulo.fotografia 
 this.edicionFotografia = this.crudService.unArticulo.edicionFotografia
 this.nota = this.crudService.unArticulo.nota
@@ -342,6 +382,7 @@ limpiar(){
 //esta es para cuando se clickea en un input de articulos relacionadas modifique esta misma. 
 selection(res){
   this.aux = res
+  
 }
 
 cut(value){

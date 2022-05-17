@@ -7,11 +7,19 @@
  select, textarea, input{background-color: rgba(143, 143, 143, 0.158);}
 .textoChico{font-size: 12px; margin-left:4px; color:rgba(32, 32, 32, 0.719); margin-top:-10px}
 .textoInputBajo{margin-left:5px; margin-bottom: 0px;font-size:10px; color:rgba(82, 82, 82, 0.404)}    
-
+.mouseOver{ cursor: pointer;}
  .modal-open {
   overflow:hidden;}
   
-
+  example-viewport {
+    height: 200px ;
+   width: 200px ;
+  border : 1px negro sólido;
+ }
+ 
+ .ex{
+    width : 50px ;
+ }
 @keyframes ldio-n970spnnnqh {
   0% { transform: rotate(0) }
   100% { transform: rotate(360deg) }

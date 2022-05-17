@@ -10,7 +10,13 @@ h1{font-size:25px;
     color:rgb(44, 44, 44)}
 
     hr {margin-top:-10px}
+   button{z-index: -10000;} 
+.InputSelection{
+    border:2px solid rgba(0, 0, 0, 0.346);
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px orange;
 
+}
     
 span {font-size:25px; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

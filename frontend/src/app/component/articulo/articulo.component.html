@@ -22,7 +22,7 @@
                          <h3  [innerHTML]=saltos(nota[0]?.nota)|sanetizer ></h3> 
         
                        <div *ngIf="nota">
-                        <app-articulo-relacionado [data]="nota"></app-articulo-relacionado>
+                        <app-articulo-relacionado [data]="nota[0]"></app-articulo-relacionado>
                        </div>
                           
 <div class="clasePrincipal"  >

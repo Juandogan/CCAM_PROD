@@ -175,6 +175,7 @@ text-transform: uppercase;
     /* align-items: left; */
     justify-content: center;
     min-width: 100%;
+    width: 100px;
     height: 350px;
     background-repeat: no-repeat;
     background-size: cover;

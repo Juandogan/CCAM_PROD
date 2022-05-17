@@ -52,7 +52,7 @@ export class CarouselComponent implements OnInit {
 
   setCurrentPosition(position: number) {
     this.currentPosition = position;
-    this.items.find(i => i.id === 0).marginLeft = -100 * position;
+    this.items.find(i => i.id === 0).marginLeft = -50 * position;
   }
 
 

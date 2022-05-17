@@ -11,6 +11,7 @@ import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
+import LinkImage from '@ckeditor/ckeditor5-link/src/linkimage';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar.js';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload.js';
@@ -41,6 +42,7 @@ Editor.builtinPlugins = [
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
+	LinkImage,
 	Indent,
 	Italic,
 	Link,
@@ -70,6 +72,7 @@ Editor.defaultConfig = {
 			'indent',
 			'|',
 			'imageUpload',
+			'linkImage',
 			'blockQuote',
 			'insertTable',
 			'mediaEmbed',
@@ -83,7 +86,9 @@ Editor.defaultConfig = {
 			'imageTextAlternative',
 			'imageStyle:inline',
 			'imageStyle:block',
-			'imageStyle:side'
+			'imageStyle:side',
+			'toggleImageCaption',
+			
 		]
 	},
 	table: {

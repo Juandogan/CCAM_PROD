@@ -1,4 +1,4 @@
-
+import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, OnInit } from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/service/crud.service';
@@ -52,17 +52,26 @@ export class GestorComponent implements OnInit {
  imagenShow=false;
 
  tituloImagenShow = false;
-  constructor(public crudService:CrudService) { 
+  constructor(public crudService:CrudService, private clipboard: Clipboard) { 
 
 
 
   }
 
   ngOnInit(): void {
-    this.pedirArticulos()	 
     window.scroll(0,0)
+    this.pedirArticulos()	 
+
       
   }
+
+  copyToClipboard(value): void {
+    // Se copia el texto del input al portapapeles
+    this.clipboard.copy(value);
+    this.crudService.snack('Copiado!')
+  }
+
+
   checkPassword(value){
     if(value==="admin"){
       this.password = true

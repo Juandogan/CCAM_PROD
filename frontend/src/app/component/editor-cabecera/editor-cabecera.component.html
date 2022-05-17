@@ -165,90 +165,108 @@
 <hr>
 <h5 class="textoInput" style="margin-left:25px" >Buscar</h5>
 <div class="input-group" >
-  <input  [(ngModel)]="this.busqueda" id="busqueda" style="margin-left:20px;" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <input  [(ngModel)]="this.busqueda" id="busqueda" style="margin-left:20px;" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2"   >
   <div class="input-group-append">
     <button class="btn btn-danger" type="button" (click)="pedirUnArticulo()">Buscar</button>
   </div>
-  
 </div>
 
-          <div  class="form-group" style="margin-top:35px" >
-            
-            
-            <input (click)="selection(1)"  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" >
-            
+<!-- comiexo1  -->
+          <div  class="form-group" style="margin-top:35px" >            
+            <div class="input-group"  >
+            <input  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput}}" autocomplete="false">
+            <div class="input-group-append">
+              <button class="btn btn-dark" type="button" (click)="selection(1)"   (click)="openInput=false; openInputBuscar=false ">Editar</button>
+              <button class="btn btn-dark ml-1" type="button"  (click)="openInput=true;openInputBuscar=true">Guardar</button>
+            </div>
+          </div>
             <div style="float:left">
             <h1 style="color:brown;   margin-top:-40px">1</h1> 
           </div>
-                 <!-- <div  class="textoInputBajo" >
-               {{this.titulo.length}} de 200 Máx.
-            </div>  -->
           </div>
-          <div class="form-group mt-3">
-            
-            
-            <input (click)="selection(2)"  [(ngModel)]="this.resultadoTitulo2"  class="form-control" id="titulo" style="margin-left:20px; margin-top:30px" >
-            <div style="float:left">
-            <h1 style="color:rgb(0, 0, 0);   margin-top:-40px">2</h1> 
-          </div>
-                 <!-- <div  class="textoInputBajo" >
-               {{this.titulo.length}} de 200 Máx.
-            </div>  -->
-          </div>
-          <div class="form-group mt-3">
-            
-            
-            <input  (click)="selection(3)" [(ngModel)]="this.resultadoTitulo3" class="form-control" id="titulo" style="margin-left:20px; margin-top: 30px;" >
-            <div style="float:left">
-            <h1 style="color:brown;  margin-top:-40px">3</h1> 
-          </div>
-                 <!-- <div  class="textoInputBajo" >
-               {{this.titulo.length}} de 200 Máx.
-            </div>  -->
-          </div>
-          <div class="form-group mt-3">
-            
-            
-            <input  (click)="selection(4)"  [(ngModel)]="resultadoTitulo4" class="form-control" id="titulo" style="margin-left:20px; margin-top: 30px;" >
-            <div style="float:left">
-            <h1 style="color:rgb(0, 0, 0);margin-top:-40px">4</h1> 
-          </div>
-                 <!-- <div  class="textoInputBajo" >
-               {{this.titulo.length}} de 200 Máx.
-            </div>  -->
-          </div>
-          <div class="form-group mt-3">
-            
-            
-            <input (click)="selection(5)"  [(ngModel)]="this.resultadoTitulo5" class="form-control" id="titulo" style="margin-left:20px; margin-top: 30px;" >
-            <div style="float:left">
-            <h1 style="color:brown;   margin-top:-40px">5</h1> 
-          </div>
-                 <!-- <div  class="textoInputBajo" >
-               {{this.titulo.length}} de 200 Máx.
-            </div>  -->
-          </div>
-          <div class="form-group mt-3">
-            
-            
-            <input  (click)="selection(6)" [(ngModel)]="this.resultadoTitulo6" class="form-control" id="titulo" style="margin-left:20px; margin-top: 30px;" >
-            <div style="float:left">
-            <h1 style="color:rgb(0, 0, 0);   margin-top:-40px">6</h1> 
-          </div>
-                 <!-- <div  class="textoInputBajo" >
-               {{this.titulo.length}} de 200 Máx.
-            </div>  -->
-          </div>
+<!-- comiexo1  -->
+<!-- comiexo2  -->
+<div  class="form-group" style="margin-top:35px" >            
+  <div class="input-group"  >
+  <input  [(ngModel)]="resultadoTitulo2" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput2}}" autocomplete="false">
+  <div class="input-group-append">
+    <button class="btn btn-dark" type="button" (click)="selection(2)"   (click)="openInput2=false;">Editar</button>
+    <button class="btn btn-dark ml-1" type="button"  (click)="openInput2=true; ">Guardar</button>
+  </div>
+</div>
+  <div style="float:left">
+  <h1 style="color:brown;   margin-top:-40px">2</h1> 
+</div>
+</div>
+<!-- comiexo2  -->
+       
+<!-- comiexo3  -->
+<div  class="form-group" style="margin-top:35px" >            
+  <div class="input-group"  >
+  <input  [(ngModel)]="resultadoTitulo3" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput3}}" autocomplete="false">
+  <div class="input-group-append">
+    <button class="btn btn-dark" type="button" (click)="selection(3)"   (click)="openInput3=false;">Editar</button>
+    <button class="btn btn-dark ml-1" type="button"  (click)="openInput3=true; ">Guardar</button>
+  </div>
+</div>
+  <div style="float:left">
+  <h1 style="color:brown;   margin-top:-40px">3</h1> 
+</div>
+</div>
+<!-- comiexo3  -->
+<!-- comiexo3  -->
+<div  class="form-group" style="margin-top:35px" >            
+  <div class="input-group"  >
+  <input  [(ngModel)]="resultadoTitulo4" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput4}}" autocomplete="false">
+  <div class="input-group-append">
+    <button class="btn btn-dark" type="button" (click)="selection(4)"   (click)="openInput4=false;">Editar</button>
+    <button class="btn btn-dark ml-1" type="button"  (click)="openInput4=true; ">Guardar</button>
+  </div>
+</div>
+  <div style="float:left">
+  <h1 style="color:brown;   margin-top:-40px">4</h1> 
+</div>
+</div>
+<!-- comiexo3  -->
 
+<!-- comiexo3  -->
+<div  class="form-group" style="margin-top:35px" >            
+  <div class="input-group"  >
+  <input  [(ngModel)]="resultadoTitulo5" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput5}}" autocomplete="false">
+  <div class="input-group-append">
+    <button class="btn btn-dark" type="button" (click)="selection(5)"   (click)="openInput5=false;">Editar</button>
+    <button class="btn btn-dark ml-1" type="button"  (click)="openInput5=true; ">Guardar</button>
+  </div>
+</div>
+  <div style="float:left">
+  <h1 style="color:brown;   margin-top:-40px">5</h1> 
+</div>
+</div>
+<!-- comiexo3  -->
+
+<!-- comiexo3  -->
+<div  class="form-group" style="margin-top:35px" >            
+  <div class="input-group"  >
+  <input  [(ngModel)]="resultadoTitulo6" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput6}}" autocomplete="false">
+  <div class="input-group-append">
+    <button class="btn btn-dark" type="button" (click)="selection(6)"   (click)="openInput6=false;">Editar</button>
+    <button class="btn btn-dark ml-1" type="button"  (click)="openInput6=true;">Guardar</button>
+  </div>
+</div>
+  <div style="float:left">
+  <h1 style="color:brown;   margin-top:-40px">6</h1> 
+</div>
+</div>
+<!-- comiexo3  -->
         </div>
        
       </div>
 
-      <div class="modal-footer " style="background-color: rgb(204, 204, 204);width: 100%; position: fixed; bottom:0px">
+      <div class="modal-footer" style="z-index: 1000;background-color: rgb(204, 204, 204);width: 100%; position: fixed; bottom:0px">
       
         <button type="button" s class="btn btn-secondary" data-dismiss="modal" routerLink="../../gestor">Cerrar</button>
         <button type="button" class="btn btn-danger"  
-        (click)="agregarPublicacion()"  routerLink="../../gestor"
+        (click)="agregarPublicacion()"  
         style="margin-right:300px"
         >Guardar</button>
       
