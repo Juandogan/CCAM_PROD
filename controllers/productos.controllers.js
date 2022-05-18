@@ -111,7 +111,6 @@ productosCtrl.modificarProducto = async (req,res) => {
         resultadoID5:req.body.resultadoID5,
         resultadoID6:req.body.resultadoID6,
         posicion:req.body.posicion,
-
         resultadoCategoria:req.body.resultadoCategoria,
         resultadoCategoria2:req.body.resultadoCategoria2,
         resultadoCategoria3:req.body.resultadoCategoria3,

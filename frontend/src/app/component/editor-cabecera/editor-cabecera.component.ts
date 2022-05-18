@@ -333,16 +333,14 @@ this.crudService.unArticulo.resultadoID3 = this.resultadoID3
 this.crudService.unArticulo.resultadoID4 = this.resultadoID4
 this.crudService.unArticulo.resultadoID5 = this.resultadoID5
 this.crudService.unArticulo.resultadoID6 = this.resultadoID6
-
-
 this.crudService.unArticulo.posicion = this.posicion
 
 
   // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
   if( this.crudService.unArticulo._id )
-  {   
-
-      this.crudService.unArticulo.fechaMod = String(this.fechaMod) 
+  {    this.crudService.unArticulo.fecha = String(this.fechaPublicacion)
+      
+ 
     
      this.crudService.modificarArticulo(this.crudService.unArticulo)
   .subscribe(res => { this.crudService.snack('Modificado!')});

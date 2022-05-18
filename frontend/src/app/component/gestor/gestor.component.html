@@ -72,7 +72,7 @@ routerLink="../editorCabecera/'622f921c86c620738b709062'"
             
             <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
             <td class="textoTableTitulo" > {{articulo?.titulo | truncate:'100'}}</td>
-            <td> {{articulo?.fecha}}</td>
+            <td> {{articulo?.fecha| date: 'dd/MM/yy'}}</td>
 
             <td  style="text-align: center;">{{articulo?.fechaMod| date: 'dd/MM/yy'}}</td> 
             <td style="text-align: center;">  
