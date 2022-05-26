@@ -51,6 +51,7 @@ body { margin: 0;  }
 /* .row{
     margin-left:160px;  margin-right: 160px;
 } */
+.roboto{font-family: 'Roboto', sans-serif; }
 
 .blue-snackbar{background-color:rgb(185, 14, 14) ; color:rgb(255, 255, 255);  top:50px }
 .mat-snack-bar-container {
@@ -59,7 +60,7 @@ body { margin: 0;  }
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
-.roboto{font-family: 'Roboto', sans-serif; }
+
 
 .mat-simple-snackbar {
     display: inline-block !important;

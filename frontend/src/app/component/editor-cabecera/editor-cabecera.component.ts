@@ -23,6 +23,8 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoTitulo4:string =""
   resultadoTitulo5:string =""
   resultadoTitulo6:string =""
+  resultadoTitulo7:string =""
+  resultadoTitulo8:string =""
 
   resultadoCategoria:string =""
   resultadoCategoria2:string =""
@@ -30,6 +32,8 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoCategoria4:string =""
   resultadoCategoria5:string =""
   resultadoCategoria6:string =""
+  resultadoCategoria7:string =""
+  resultadoCategoria8:string =""
 
   resultadoImagen:string =""
   resultadoImagen2:string =""
@@ -37,6 +41,8 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoImagen4:string =""
   resultadoImagen5:string =""
   resultadoImagen6:string =""
+  resultadoImagen7:string =""
+  resultadoImagen8:string =""
 
   resultadoID:string =""
   resultadoID2:string =""
@@ -44,6 +50,9 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoID4:string =""
   resultadoID5:string =""
   resultadoID6:string =""
+  resultadoID7:string =""
+  resultadoID8:string =""
+
 
   fechaPublicacion = new Date()    ;
   fecha	  = ""
@@ -121,10 +130,9 @@ this.crudService.unArticulo._id = this.nota1[0]?._id
   this.resultadoTitulo4 = this.nota1[0]?.art4
   this.resultadoTitulo5 = this.nota1[0]?.art5
   this.resultadoTitulo6 = this.nota1[0]?.art6
-  this.crudService.unArticulo.vistas = this.nota1[0]?.vistas
-  this.crudService.unArticulo.fecha = this.nota1[0]?.fecha
-
-  this.crudService.unArticulo.resultadoCategoria = this.nota1[0]?.resultadoCategoria 
+  this.resultadoTitulo7 = this.nota1[0]?.art7
+  this.resultadoTitulo8 = this.nota1[0]?.art8
+    this.crudService.unArticulo.resultadoCategoria = this.nota1[0]?.resultadoCategoria 
  this.crudService.unArticulo.resultadoCategoria2 = this.nota1[0]?.resultadoCategoria2
 this.crudService.unArticulo.resultadoCategoria3 = this.nota1[0]?.resultadoCategoria3
 this.crudService.unArticulo.resultadoCategoria4 = this.nota1[0]?.resultadoCategoria4
@@ -306,52 +314,52 @@ fnOcultar2(){
   this.loading5=false
   this.archivoShow=true
 };
+
+
 agregarPublicacion(){
 
+
+  this.crudService.unArticulo.titulo = this.titulo;
+  this.crudService.unArticulo.tituloAlt = this.tituloAlt;
+  this.crudService.unArticulo.subtitulo = this.subtitulo;
+  this.crudService.unArticulo.fecha =  String(this.fechaPublicacion);
+  this.crudService.unArticulo.imagen1 = this.imagen1;
+  this.crudService.unArticulo.nota = this.nota  //esta variable para la editoria
+  this.crudService.unArticulo.art1 = this.resultadoTitulo
+  this.crudService.unArticulo.art2 = this.resultadoTitulo2
+  this.crudService.unArticulo.art3 = this.resultadoTitulo3
+  this.crudService.unArticulo.art4 = this.resultadoTitulo4
+  this.crudService.unArticulo.art5 = this.resultadoTitulo5
+  this.crudService.unArticulo.art6 = this.resultadoTitulo6
+  this.crudService.unArticulo.art6 = this.resultadoTitulo7
+  this.crudService.unArticulo.art6 = this.resultadoTitulo8
   
-this.crudService.unArticulo.categoria = this.categoria;
-this.crudService.unArticulo.titulo = this.titulo;
-this.crudService.unArticulo.tituloAlt = this.tituloAlt;
-this.crudService.unArticulo.fecha =  String(this.fechaPublicacion);
-this.crudService.unArticulo.subtitulo = this.subtitulo;
-this.crudService.unArticulo.imagen1 = this.imagen1;
-this.crudService.unArticulo.autor = this.autor
-this.crudService.unArticulo.fotografia = this.fotografia
-this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
-this.crudService.unArticulo.nota = this.nota
-this.crudService.unArticulo.likes = 1
-this.crudService.unArticulo.art1 = this.resultadoTitulo
-this.crudService.unArticulo.art2 = this.resultadoTitulo2
-this.crudService.unArticulo.art3 = this.resultadoTitulo3
-this.crudService.unArticulo.art4 = this.resultadoTitulo4
-this.crudService.unArticulo.art5 = this.resultadoTitulo5
-this.crudService.unArticulo.art6 = this.resultadoTitulo6
-
-
-this.crudService.unArticulo.posicion = this.posicion
-
-console.log(this.crudService.unArticulo.resultadoID6,'asas')
-  // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
-  if( this.crudService.unArticulo._id )
-  {    this.crudService.unArticulo.fecha = String(this.fechaPublicacion)
-
-    
-     this.crudService.modificarArticulo(this.crudService.unArticulo)
-  .subscribe(res => { this.crudService.snack('Modificado!')});
- 
-}
-  else  {
-
-      this.crudService.unArticulo.fecha = String(this.fechaPublicacion) 
-     this.crudService.unArticulo.vistas = 0
-          this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion)
-       this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => { this.crudService.snack(res)
-        this.pedirArticulos()
-        
-      })
-}
-
-};
+  
+  this.crudService.unArticulo.posicion = this.posicion
+  
+  console.log(this.crudService.unArticulo.resultadoID6,'asas')
+    // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
+    if( this.crudService.unArticulo._id )
+    {    this.crudService.unArticulo.fecha = String(this.fechaPublicacion)
+  
+      
+       this.crudService.modificarArticulo(this.crudService.unArticulo)
+    .subscribe(res => { this.crudService.snack('Modificado!')});
+   
+  }
+    else  {
+  
+        this.crudService.unArticulo.fecha = String(this.fechaPublicacion) 
+       this.crudService.unArticulo.vistas = 0
+            this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion)
+         this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => { this.crudService.snack(res)
+          this.pedirArticulos()
+          
+        })
+  }
+  
+  };
+  
 
   
 
