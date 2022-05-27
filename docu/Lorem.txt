@@ -8,7 +8,13 @@ Pass: 58dRD7zgF
 X5HKqtgCbgCJ
 
 
+//instal mongo local
+apt install aptitude 
 
+
+
+
+Centro Cultural
 root
 jJ9HLp5xG7Gc
 

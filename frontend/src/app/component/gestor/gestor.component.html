@@ -28,9 +28,7 @@
 
 <div style="margin-left:-15px; margin-top:15px; margin-bottom: 35px;">
 <button class="btn btn-danger ml-3" (click)="buscador= !buscador">Buscar ▼</button>
-<button class="btn btn-danger ml-3"  
-routerLink="../editorCabecera/'622f921c86c620738b709062'" 
-  (click)="limpiar()">Crear publicación</button>
+<button class="btn btn-danger ml-3"  routerLink="../editorCabecera/62902088b69caf0a51c7e05d" (click)="limpiar()">Crear publicación</button>
 
     <button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Publicidad</button>      
   </div>
@@ -82,7 +80,7 @@ routerLink="../editorCabecera/'622f921c86c620738b709062'"
             <td class="text-center">
             <a  (click)="editar()">
               <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
-           <mat-icon style="cursor:pointer"    routerLink="../editorCabecera/{{articulo?._id}}" >edit</mat-icon> 
+           <mat-icon style="cursor:pointer"  routerLink="../editorCabecera/{{articulo?._id}}" >edit</mat-icon> 
           </a></td>
 
 
