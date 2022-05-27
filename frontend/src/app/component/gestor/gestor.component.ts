@@ -54,8 +54,6 @@ export class GestorComponent implements OnInit {
  tituloImagenShow = false;
   constructor(public crudService:CrudService, private clipboard: Clipboard) { 
 
-
-
   }
 
   ngOnInit(): void {

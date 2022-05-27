@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/service/crud.service';
 import {ActivatedRoute} from '@angular/router';
+
 @Component({
   selector: 'app-editor-cabecera',
   templateUrl: './editor-cabecera.component.html',
@@ -109,13 +110,15 @@ nota1:any
 
     this.ruta.data.subscribe((data)=>{
       this.nota1 = Object.entries(data).map(i => i[1]);
+
     
-      //cargo desde el objeto a cada una de las variablen vinculadas a los inputs
-this.crudService.unArticulo._id = this.nota1[0]?._id
+  //cargo desde el objeto a cada una de las variablen vinculadas a los inputs
+ this.crudService.unArticulo._id = this.nota1[0]?._id
  this.categoria = this.nota1[0]?.categoria
  this.titulo = this.nota1[0]?.titulo
  this.tituloAlt = this.nota1[0]?.tituloAlt
  this.fecha = this.nota1[0]?.fecha
+ this.fechaMod = this.nota1[0]?.fechaMod
  this.subtitulo = this.nota1[0]?.subtitulo
  this.imagen1 = this.nota1[0]?.imagen1
  this.autor = this.nota1[0]?.autor
@@ -322,7 +325,7 @@ agregarPublicacion(){
   this.crudService.unArticulo.titulo = this.titulo;
   this.crudService.unArticulo.tituloAlt = this.tituloAlt;
   this.crudService.unArticulo.subtitulo = this.subtitulo;
-  this.crudService.unArticulo.fecha =  String(this.fechaPublicacion);
+  this.crudService.unArticulo.fecha =  this.fecha
   this.crudService.unArticulo.imagen1 = this.imagen1;
   this.crudService.unArticulo.nota = this.nota  //esta variable para la editoria
   this.crudService.unArticulo.art1 = this.resultadoTitulo
@@ -337,19 +340,25 @@ agregarPublicacion(){
   
   this.crudService.unArticulo.posicion = this.posicion
   
-  console.log(this.crudService.unArticulo.resultadoID6,'asas')
-    // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
-    if( this.crudService.unArticulo._id )
-    {    this.crudService.unArticulo.fecha = String(this.fechaPublicacion)
   
+     
+    if( this.crudService.unArticulo._id && this.crudService.unArticulo._id !=="62902088b69caf0a51c7e023" )
+    {  
+      
+      this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion)
+      
       
        this.crudService.modificarArticulo(this.crudService.unArticulo)
     .subscribe(res => { this.crudService.snack('Modificado!')});
    
   }
     else  {
+
+
   
         this.crudService.unArticulo.fecha = String(this.fechaPublicacion) 
+        this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion) 
+
        this.crudService.unArticulo.vistas = 0
             this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion)
          this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => { this.crudService.snack(res)
