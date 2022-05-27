@@ -334,8 +334,8 @@ agregarPublicacion(){
   this.crudService.unArticulo.art4 = this.resultadoTitulo4
   this.crudService.unArticulo.art5 = this.resultadoTitulo5
   this.crudService.unArticulo.art6 = this.resultadoTitulo6
-  this.crudService.unArticulo.art6 = this.resultadoTitulo7
-  this.crudService.unArticulo.art6 = this.resultadoTitulo8
+  
+  
   
   
   this.crudService.unArticulo.posicion = this.posicion
