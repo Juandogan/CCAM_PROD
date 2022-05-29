@@ -3,6 +3,7 @@ import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/service/crud.service';
 import {ActivatedRoute} from '@angular/router';
 
+
 @Component({
   selector: 'app-editor-cabecera',
   templateUrl: './editor-cabecera.component.html',
@@ -181,17 +182,17 @@ this.crudService.unArticulo.resultadoCategoria4 = this.nota1[0]?.resultadoCatego
   }
   
 
-      // this.crudService.unArticulo.categoria = this.nota[0].categoria;
-      // this.crudService.unArticulo.titulo = this.titulo;
-      // this.crudService.unArticulo.tituloAlt = this.tituloAlt;
-      // this.crudService.unArticulo.fecha =  String(this.fechaPublicacion);
-      //  this.crudService.unArticulo.subtitulo = this.subtitulo;
-      // this.crudService.unArticulo.autor = this.autor
-      // this.crudService.unArticulo.fotografia = this.fotografia
-      // this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
-      // this.crudService.unArticulo.nota = this.nota
-      // this.crudService.unArticulo.likes = 1
-      // this.crudService.unArticulo.posicion =  this.posicion
+       
+       this.crudService.unArticulo.titulo = this.titulo;
+       this.crudService.unArticulo.tituloAlt = this.tituloAlt;
+      this.crudService.unArticulo.fecha =  String(this.fechaPublicacion);
+       this.crudService.unArticulo.subtitulo = this.subtitulo;
+       this.crudService.unArticulo.autor = this.autor
+       this.crudService.unArticulo.fotografia = this.fotografia
+       this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
+       this.crudService.unArticulo.nota = this.nota
+        this.crudService.unArticulo.likes = 1
+       this.crudService.unArticulo.posicion =  this.posicion
       
 
       })
@@ -199,7 +200,7 @@ this.crudService.unArticulo.resultadoCategoria4 = this.nota1[0]?.resultadoCatego
     this.pedirArticulos();
 
 
-  }
+}
 
   checkPassword(value){
       if(value==="admin"){
@@ -327,6 +328,10 @@ agregarPublicacion(){
   this.crudService.unArticulo.subtitulo = this.subtitulo;
   this.crudService.unArticulo.fecha =  this.fecha
   this.crudService.unArticulo.imagen1 = this.imagen1;
+  this.crudService.unArticulo.categoria = this.categoria
+  this.crudService.unArticulo.autor = this.autor
+  this.crudService.unArticulo.posicion = this.posicion
+    this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
   this.crudService.unArticulo.nota = this.nota  //esta variable para la editoria
   this.crudService.unArticulo.art1 = this.resultadoTitulo
   this.crudService.unArticulo.art2 = this.resultadoTitulo2
@@ -342,7 +347,7 @@ agregarPublicacion(){
   
   
      
-    if( this.crudService.unArticulo._id && this.crudService.unArticulo._id !=="62902088b69caf0a51c7e023" )
+    if( this.crudService.unArticulo._id && this.crudService.unArticulo._id !=="62902088b69caf0a51c7e023" )//porque est id es un registro en blanco que se usa para crear un nuevo articulo
     {  
       
       this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion)
