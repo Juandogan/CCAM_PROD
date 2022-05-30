@@ -331,7 +331,7 @@ agregarPublicacion(){
   this.crudService.unArticulo.categoria = this.categoria
   this.crudService.unArticulo.autor = this.autor
   this.crudService.unArticulo.posicion = this.posicion
-    this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
+  this.crudService.unArticulo.edicionFotografia = this.edicionFotografia
   this.crudService.unArticulo.nota = this.nota  //esta variable para la editoria
   this.crudService.unArticulo.art1 = this.resultadoTitulo
   this.crudService.unArticulo.art2 = this.resultadoTitulo2
@@ -358,16 +358,13 @@ agregarPublicacion(){
    
   }
     else  {
-
-
-  
+ 
         this.crudService.unArticulo.fecha = String(this.fechaPublicacion) 
         this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion) 
-
-       this.crudService.unArticulo.vistas = 0
-            this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion)
-         this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => { this.crudService.snack(res)
-          this.pedirArticulos()
+        this.crudService.unArticulo.vistas = 0
+        this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion)
+        this.crudService.addArticulo(this.crudService.unArticulo).subscribe(res => { this.crudService.snack(res)
+        this.pedirArticulos()
           
         })
   }
