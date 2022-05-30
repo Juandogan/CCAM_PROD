@@ -47,6 +47,8 @@ import { CategoriaComponent } from './component/categoria/categoria.component';
 import { EditorCabeceraComponent } from './component/editor-cabecera/editor-cabecera.component';
 import { PosicionesPipe } from './pipes/posiciones.pipe';
 import { Filtrox10Pipe } from './pipes/filtrox10.pipe';
+import { FiltrarFechaPipe } from './pipes/filtrar-fecha.pipe';
+import { FiltrarFechaModPipe } from './pipes/filtrar-fecha-mod.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +78,8 @@ import { Filtrox10Pipe } from './pipes/filtrox10.pipe';
     EditorCabeceraComponent,
     PosicionesPipe,
     Filtrox10Pipe,
+    FiltrarFechaPipe,
+    FiltrarFechaModPipe,
 
   ],
   imports: [

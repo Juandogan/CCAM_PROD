@@ -23,6 +23,8 @@ export class GestorComponent implements OnInit {
   loader2 = true;
   cantArt:number = 0;
   filterPost=""
+  filtro = false
+  filtro2 = false
 
  public titulo:string = "";
  public tituloAlt:string = "";
@@ -62,6 +64,8 @@ export class GestorComponent implements OnInit {
 
       
   }
+
+
 
   copyToClipboard(value): void {
     // Se copia el texto del input al portapapeles

@@ -51,8 +51,10 @@
             <!-- <th scope="col">#</th> -->
             <th scope="col" style="width:3%;">ID</th>
             <th scope="col">Título</th>
-            <th scope="col">Creación</th>
-            <th scope="col" >Mod.</th>
+      
+            <th scope="col"><a style="cursor:pointer" (click)="filtro = !filtro">Creación</a></th>
+         
+            <th scope="col"><a style="cursor:pointer" (click)="filtro = !filtro">Mod</a></th>
             <th scope="col" style="width:5%;"class="text-center">Posición</th>
             <th scope="col" style="width:5%;"class="text-center">Ficha</th>
             <th scope="col" style="width:5%;"class="text-center">Artículo</th>
@@ -65,13 +67,14 @@
         <tbody>
        
 
-          <tr *ngFor="let articulo of articulos|buscar:filterPost  " [style.backgroundColor]="activo? 'white' : 'grey'">
+          <tr *ngFor="let articulo of articulos|buscar:filterPost |filtrarFecha:filtro filtrarFechaMod:filtro2" [style.backgroundColor]="activo? 'white' : 'grey'">
             <!-- <th scope="row">1</th> -->
             
             <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
             <td class="textoTableTitulo" > {{articulo?.titulo | truncate:'100'}}</td>
+   
             <td> {{articulo?.fecha| date: 'dd/MM/yy'}}</td>
-
+   
             <td  style="text-align: center;">{{articulo?.fechaMod| date: 'dd/MM/yy'}}</td> 
             <td style="text-align: center;">  
              <p style="margin-top:0px">{{articulo?.posicion}}</p> 
