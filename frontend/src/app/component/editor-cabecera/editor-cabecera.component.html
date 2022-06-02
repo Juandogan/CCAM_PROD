@@ -78,19 +78,19 @@
               </div>
     
     <div class="row">
-      <div class="col-12">
+      <div class="col-6">
         <div class="form-group">
           <h5 class="textoInput">Autor</h5>
           <input [(ngModel)]="this.autor" class="form-control" id="message-text" >
         </div>
     </div>
     
-      <!-- <div class="col-6">
+       <div class="col-6">
               <div class="form-group">
-                <h5 class="textoInput">Fotografía</h5>
+                <h5 class="textoInput">Autor Fotografía</h5>
                 <input [(ngModel)]="this.fotografia"class="form-control" id="message-text">
              </div>
-      </div> -->
+      </div> 
       <div class="col-6">
               <div class="form-group">
                 <h5 class="textoInput">Edición de fotografía</h5>
@@ -125,6 +125,10 @@
       <h6 style ="margin-bottom:-2px">IMAGEN DE PORTADA  400x560</h6>
       <input type="file"  style="  overflow: none"  (change)="onFileChange($event); ">
       <button class="btn-sm btn btn-danger btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
+      <div style="margin-top:10px">
+       <h5 *ngIf="this.imagen1">Imagen: {{this.imagen1}}</h5>
+       <h5 *ngIf="!this.imagen1">Sin imagen</h5>
+      </div>
       <br><br><br>
     </div>
       <div *ngIf="this.loading2" > 

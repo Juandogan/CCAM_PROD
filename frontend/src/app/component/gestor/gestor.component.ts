@@ -25,7 +25,7 @@ export class GestorComponent implements OnInit {
   filterPost=""
   filtro = false
   filtro2 = false
-
+  estadoFiltros = "fecha"
  public titulo:string = "";
  public tituloAlt:string = "";
  public subtitulo:string = "";

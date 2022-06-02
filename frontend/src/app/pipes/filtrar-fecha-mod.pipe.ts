@@ -12,15 +12,17 @@ export class FiltrarFechaModPipe implements PipeTransform {
     var hoy = new Date()
    
     let newVal = value.sort((a: any, b: any) => {
-      let date1 = Date.parse(a.fechaMod)
-      let date2 = Date.parse(b.fechaMod);
-      
+    let date1 = Date.parse(a.fechaMod)
+    let date2 = Date.parse(b.fechaMod);
   
-      if (date1 > date2) {
-          return 1;
-      } else if (date1 < date2) {
+    if (date1 > date2) {
+         return 1;
+      } 
+      else if (date1 < date2) 
+      {
           return -1;
-      } else {
+      } else 
+      {
           return 0;
       }
   });
@@ -28,13 +30,12 @@ export class FiltrarFechaModPipe implements PipeTransform {
   return newVal;
 
 
-}else{
-
-
+        }
+    else{
 
   let newVal = value.sort((a: any, b: any) => {
-    let date1 = Date.parse(a.fecha)
-    let date2 = Date.parse(b.fecha);
+    let date1 = Date.parse(a.fechaMod)
+    let date2 = Date.parse(b.fechaMod);
 
     if (date2 > date1) {
         return 1;
@@ -46,8 +47,6 @@ export class FiltrarFechaModPipe implements PipeTransform {
 });
    
 return newVal;
+    }
 
-
-}
-   
 }}
