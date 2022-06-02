@@ -107,6 +107,22 @@ console.log('sa' + aux2)
   this.crudService.unArticulo.resultadoID6 = this.nota[0].resultadoID6
 
 
+  this.crudService.unArticulo.resultadoCategoria = this.nota[0]?.resultadoCategoria 
+  this.crudService.unArticulo.resultadoCategoria2 = this.nota[0]?.resultadoCategoria2
+  this.crudService.unArticulo.resultadoCategoria3 = this.nota[0]?.resultadoCategoria3
+  this.crudService.unArticulo.resultadoCategoria4 = this.nota[0]?.resultadoCategoria4
+  this.crudService.unArticulo.resultadoCategoria5 = this.nota[0]?.resultadoCategoria5
+  this.crudService.unArticulo.resultadoCategoria6 = this.nota[0]?.resultadoCategoria6
+
+
+  this.crudService.unArticulo.resultadoImagen = this.nota[0]?.resultadoImagen
+  this.crudService.unArticulo.resultadoImagen2 = this.nota[0]?.resultadoImagen2
+  this.crudService.unArticulo.resultadoImagen3 = this.nota[0]?.resultadoImagen3
+  this.crudService.unArticulo.resultadoImagen4 = this.nota[0]?.resultadoImagen4
+  this.crudService.unArticulo.resultadoImagen5 = this.nota[0]?.resultadoImagen5
+  this.crudService.unArticulo.resultadoImagen6 = this.nota[0]?.resultadoImagen6
+
+
       // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
 
     this.crudService.modificarArticulo(this.crudService.unArticulo)
