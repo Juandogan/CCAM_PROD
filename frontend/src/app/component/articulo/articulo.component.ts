@@ -20,7 +20,8 @@ export class ArticuloComponent implements OnInit {
       window.scroll(0,0)
       this.ruta.data.subscribe((data)=>{
       this.nota = Object.entries(data).map(i => i[1]);
-      this.auxContador =  this.nota[0].vistas
+      this.auxContador =  this.nota[0]?.vistas
+      
       })};
 
   saltos(data){
@@ -80,6 +81,7 @@ console.log('sa' + aux2)
   //incrementa el contador
   this.crudService.unArticulo.vistas = this.auxContador + 1
     this.crudService.unArticulo._id = this.nota[0]._id
+    this.crudService.unArticulo.comentarios = this.nota[0].comentarios
   this.crudService.unArticulo.imagen1 = this.nota[0].imagen1
   this.crudService.unArticulo.imagen2 = this.nota[0].imagen2
   this.crudService.unArticulo.imagen3 = this.nota[0].imagen3

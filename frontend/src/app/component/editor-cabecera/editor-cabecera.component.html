@@ -126,7 +126,9 @@
       <input type="file"  style="  overflow: none"  (change)="onFileChange($event); ">
       <button class="btn-sm btn btn-danger btn-upload ml-2" (click)="this.loading2=true" (click)="onUpload()">Subir</button>
       <div style="margin-top:10px">
+        <a href="{{this.imagen1}}" target="_blank" rel="noopener noreferrer">
        <h5 *ngIf="this.imagen1">Imagen: {{this.imagen1}}</h5>
+      </a>
        <h5 *ngIf="!this.imagen1">Sin imagen</h5>
       </div>
       <br><br><br>
@@ -167,21 +169,32 @@
           <br>
           <h1><h1>ARTÍCULOS |<span> RELACIONADOS</span></h1></h1>
 <hr>
-<h5 class="textoInput" style="margin-left:25px" >Buscar</h5>
+<!-- <h5 class="textoInput" style="margin-left:25px" >Buscar</h5>
 <div class="input-group" >
   <input  [(ngModel)]="this.busqueda" id="busqueda" style="margin-left:20px;" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2"   >
   <div class="input-group-append">
     <button class="btn btn-danger" type="button" (click)="pedirUnArticulo()">Buscar</button>
   </div>
-</div>
+</div> -->
 
 <!-- comiexo1  -->
           <div  class="form-group" style="margin-top:35px" >            
             <div class="input-group"  >
             <input  [(ngModel)]="resultadoTitulo" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput}}" autocomplete="false">
             <div class="input-group-append">
+
+             
               <button class="btn btn-dark" type="button" (click)="selection(1)"   (click)="openInput=false; openInputBuscar=false ">Editar</button>
               <button class="btn btn-dark ml-1" type="button"  (click)="openInput=true;openInputBuscar=true">Guardar</button>
+              <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+                <button class="btn btn-dark ml-1" type="button"  (click)="openInput=true;openInputBuscar=true; this.aux = 1">
+                  <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                               <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+                                   
+                  Buscar</button>
+              </a>
             </div>
           </div>
             <div style="float:left">
@@ -196,6 +209,16 @@
   <div class="input-group-append">
     <button class="btn btn-dark" type="button" (click)="selection(2)"   (click)="openInput2=false;">Editar</button>
     <button class="btn btn-dark ml-1" type="button"  (click)="openInput2=true; ">Guardar</button>
+    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+      <button class="btn btn-dark ml-1" type="button"  (click)="openInput2=true;openInputBuscar=true; this.aux = 2">
+        <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+                     <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+                         
+        Buscar</button>
+    </a>
+    
   </div>
 </div>
   <div style="float:left">
@@ -211,6 +234,15 @@
   <div class="input-group-append">
     <button class="btn btn-dark" type="button" (click)="selection(3)"   (click)="openInput3=false;">Editar</button>
     <button class="btn btn-dark ml-1" type="button"  (click)="openInput3=true; ">Guardar</button>
+    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+      <button class="btn btn-dark ml-1" type="button"  (click)="openInput3=true;openInputBuscar=true; this.aux = 3">
+        <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+                     <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+                         
+        Buscar</button>
+    </a>
   </div>
 </div>
   <div style="float:left">
@@ -218,43 +250,70 @@
 </div>
 </div>
 <!-- comiexo3  -->
-<!-- comiexo3  -->
+<!-- comiexo4  -->
 <div  class="form-group" style="margin-top:35px" >            
   <div class="input-group"  >
   <input  [(ngModel)]="resultadoTitulo4" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput4}}" autocomplete="false">
   <div class="input-group-append">
     <button class="btn btn-dark" type="button" (click)="selection(4)"   (click)="openInput4=false;">Editar</button>
     <button class="btn btn-dark ml-1" type="button"  (click)="openInput4=true; ">Guardar</button>
+    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+      <button class="btn btn-dark ml-1" type="button"  (click)="openInput4=true;openInputBuscar=true; this.aux = 4">
+        <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+                     <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+                         
+        Buscar</button>
+    </a>
   </div>
 </div>
   <div style="float:left">
   <h1 style="color:brown;   margin-top:-40px">4</h1> 
 </div>
 </div>
-<!-- comiexo3  -->
+<!-- comiexo4  -->
 
-<!-- comiexo3  -->
+<!-- comiexo5  -->
 <div  class="form-group" style="margin-top:35px" >            
   <div class="input-group"  >
   <input  [(ngModel)]="resultadoTitulo5" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput5}}" autocomplete="false">
   <div class="input-group-append">
     <button class="btn btn-dark" type="button" (click)="selection(5)"   (click)="openInput5=false;">Editar</button>
     <button class="btn btn-dark ml-1" type="button"  (click)="openInput5=true; ">Guardar</button>
+    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+      <button class="btn btn-dark ml-1" type="button"  (click)="openInput5=true;openInputBuscar=true; this.aux = 5">
+        <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+                     <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+                         
+        Buscar</button>
+    </a>
   </div>
 </div>
   <div style="float:left">
   <h1 style="color:brown;   margin-top:-40px">5</h1> 
 </div>
 </div>
-<!-- comiexo3  -->
+<!-- comiexo5  -->
 
-<!-- comiexo3  -->
+<!-- comiexo6  -->
 <div  class="form-group" style="margin-top:35px" >            
   <div class="input-group"  >
   <input  [(ngModel)]="resultadoTitulo6" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput6}}" autocomplete="false">
   <div class="input-group-append">
     <button class="btn btn-dark" type="button" (click)="selection(6)"   (click)="openInput6=false;">Editar</button>
     <button class="btn btn-dark ml-1" type="button"  (click)="openInput6=true;">Guardar</button>
+    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+      <button class="btn btn-dark ml-1" type="button"  (click)="openInput6=true;openInputBuscar=true; this.aux = 6">
+        <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+                     <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+                         
+        Buscar</button>
+    </a>
   </div>
 </div>
   <div style="float:left">
@@ -279,3 +338,39 @@
  <br><br><br>
  <br><br><br>
  
+ <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="staticBackdropLabel" style="margin-top:5px">Ingrese nro. de ID</h3>
+        <a  data-bs-dismiss="modal" aria-label="Close" style="margin-top:-20px; cursor:pointer">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+        </a>                
+      </div>
+      <div class="modal-body">
+       
+ <div class="input-group" style="margin-left: -15px" >
+   <input  [(ngModel)]="this.busqueda" id="busqueda" style="margin-left:20px;" type="text" class="form-control" placeholder="Número de ID del articulo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+   <div class="input-group-append">
+    
+     <button class="btn btn-dark" type="button" (click)="pedirUnArticulo() "  data-bs-dismiss="modal" aria-label="Close" >
+       
+    Buscar</button>
+    
+
+
+   </div>
+ </div> 
+      </div>
+      <div class="modal-footer">
+        
+        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -11,6 +11,7 @@ export class FooterCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+   console.log(this.nota[0])
   }
 
 }

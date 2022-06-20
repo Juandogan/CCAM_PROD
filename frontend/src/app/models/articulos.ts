@@ -1,6 +1,7 @@
 export class Articulos {
 
     constructor(  
+        comentarios="",
         resultadoCategoria = '',
         resultadoCategoria2='',
         resultadoCategoria3='',
@@ -27,7 +28,7 @@ export class Articulos {
 //    this.resultadoTitulo5 = resultadoTitulo5
 //    this.resultadoTitulo6 = resultadoTitulo6
 
-
+this.comentarios = comentarios
 this.art1 =  art1
 this.art2 =  art2
 this.art3 =  art3
@@ -83,7 +84,7 @@ this.resultadoID6 = resultadoID6
 
 
     
-
+    comentarios: string;
     id: number;
     marginLeft?:number;
 

@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./editor-cabecera.component.css']
 })
 export class EditorCabeceraComponent implements OnInit {
-
+  comentarios ="";
   openInputBuscar:Boolean = true;
   openInput:Boolean = true;
   openInput2:Boolean = true;
@@ -74,7 +74,7 @@ export class EditorCabeceraComponent implements OnInit {
 
  public articuloBusqueda: any
 
-
+ loaderModal = false
  public busqueda:string ="";
  public titulo:string = "";
  public tituloAlt:string = "";
@@ -128,6 +128,7 @@ export class EditorCabeceraComponent implements OnInit {
  this.edicionFotografia = this.nota1[0]?.edicionFotografia
  this.nota = this.nota1[0]?.nota
  this.posicion = this.nota1[0]?.posicion
+ this.comentarios = this.nota1[0]?.comentarios
  
  //cargo desde el objeto a cada una de las variablen vinculadas a los inputs
   this.resultadoTitulo = this.nota1[0]?.art1
@@ -225,13 +226,13 @@ pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta lue
 
 pedirUnArticulo(){
 
-
+this.loaderModal = true
   this.crudService.getOneArticulo(this.busqueda)
 
 
   .subscribe(res=>{this.articuloBusqueda = res as Articulos[]
 
-
+    this.loaderModal = false
     if(this.articuloBusqueda.length > 2){
   
       this.crudService.snack('No se encontro');
@@ -327,7 +328,7 @@ fnOcultar2(){
 
 agregarPublicacion(){
 
- 
+  this.crudService.unArticulo.comentarios = this.comentarios; 
   this.crudService.unArticulo.titulo = this.titulo;
   this.crudService.unArticulo.tituloAlt = this.tituloAlt;
   this.crudService.unArticulo.subtitulo = this.subtitulo;

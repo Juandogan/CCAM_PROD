@@ -8,7 +8,7 @@
 
     <div class="row" >
 
-      <div class="card col-4">
+      <div  *ngIf="this.nota.art1" class="card col-4">
         <a routerLink="../../articulo/{{this.nota.resultadoID}}"  target="_blank">
           <img class="card-img-top sombra"src="{{this.nota.resultadoImagen}}" alt="" height="200px" style="object-fit: cover;">
           </a>

@@ -15,6 +15,7 @@ res.json(productos);
 //POST
 productosCtrl.newProductos = async(req,res) => {
     const productos = new Productos({      
+        comentarios:req.body.comentarios,
         fecha:req.body.fecha,
         fechaMod:req.body.fechaMod,
         titulo:req.body.titulo,
@@ -95,6 +96,7 @@ productosCtrl.newProductos = async(req,res) => {
 productosCtrl.modificarProducto = async (req,res) => {
     const { id } = req.params;
     const producto = { 
+        comentarios:req.body.comentarios,
         fechaMod:req.body.fechaMod,
         titulo:req.body.titulo,
         tituloAlt:req.body.tituloAlt,

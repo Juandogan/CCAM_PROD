@@ -9,24 +9,24 @@
             
         </div>
     </div>
-<!--   
+  
   
    <div class="segundoIcon">
   
-        <div  class="divSegundoIcon" >
-            <mat-icon class="mr-2 stilo">visibility</mat-icon>
+        <div  class="divSegundoIcon" *ngIf="nota[0]?.fotografia" >
+            <mat-icon class="mr-2 stilo">photo</mat-icon>
              <div>
-                     <h3  class="subtituloResposive2 vistas">22</h3>
+                     <h3  class="subtituloResposive2 vistas">{{nota[0]?.fotografia}}</h3>
              </div>
         </div>
-    </div>  -->
+    </div>   
   
    <div style="margin-top:0px; ">
   
-        <div  class="tercerIcon" *ngIf="nota[0]?.fotografia">
+        <div  class="tercerIcon" *ngIf="nota[0]?.edicionFotografia">
             <mat-icon  class="mr-corre mr-2 ml-2  stilo" style="color:rgba(34, 34, 34, 0.356)">photo</mat-icon>
             <div>
-            <h3 class="subtituloResposive2  fecha">{{nota[0]?.fotografia}}</h3>
+            <h3 class="subtituloResposive2  fecha">{{nota[0]?.edicionFotografia}}</h3>
             </div>
         </div>
     </div>
