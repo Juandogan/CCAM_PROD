@@ -12,7 +12,7 @@ export class ComentariosPipe implements PipeTransform {
     for(const post of value){
       var aux = post.contadorComentarios
 
-      if (aux.toLowerCase().indexOf(args.toLowerCase()) > -1 && post.categoria !== 'nuevo')
+      if (aux.toLowerCase().indexOf(args.toLowerCase()) > -1 )
       {resultPost.push(post) }
 
     }
