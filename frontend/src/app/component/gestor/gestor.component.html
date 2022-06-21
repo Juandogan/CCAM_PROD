@@ -29,6 +29,7 @@
 <div style="margin-left:-15px; margin-top:15px; margin-bottom: 35px;">
 <button class="btn btn-danger ml-3" (click)="buscador= !buscador">Buscar ▼</button>
 <button class="btn btn-danger ml-3"  routerLink="../editorCabecera/62902088b69caf0a51c7e023" (click)="limpiar()">Crear publicación</button>
+<button class="btn btn-danger ml-3" (click)="papulo=!papulo">Comentarios</button>
 
     <button class="btn btn-danger ml-3" data-toggle="modal" data-target="#exampleModal" (click)="limpiar()" (click)="this.crudService.cambioPantalla=true" >Publicidad</button>      
   </div>
@@ -45,7 +46,7 @@
 <h5 class="textoChico" >Buscando en un total de {{this.cantArt}} Artículos</h5>
 <br>
 </div>        
-    <table  class="table table-light"  >
+    <table *ngIf="papulo" class="table table-light"  >
         <thead class="thead-dark">
           <tr >
             <!-- <th scope="col">#</th> -->
@@ -62,13 +63,14 @@
             <th scope="col" style="width:5%;"class="text-center">Vistas</th>
             <th scope="col" style="width:5%;"class="text-center">Prev.</th>
             
+            
  
           </tr>
         </thead>
         <tbody>
        
 
-          <tr *ngFor="let articulo of articulos|buscar:filterPost |filtrarFechaMod:filtro |filtrarFecha:filtro  " [style.backgroundColor]="activo? 'white' : 'grey'">
+          <tr *ngFor="let articulo of articulos|buscar:filterPost |filtrarFecha:filtro " [style.backgroundColor]="activo? 'white' : 'grey'">
             <!-- <th scope="row">1</th> -->
             
             <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
@@ -109,9 +111,78 @@
                       <path d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z"/>
                       <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
                     </svg>
-
-
                   </a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <table *ngIf="!papulo" class="table table-light"  >
+        <thead class="thead-dark">
+          <tr >
+            <!-- <th scope="col">#</th> -->
+            <th scope="col" style="width:3%;">ID</th>
+            <th scope="col">Título</th>
+      
+            <th scope="col"><a style="cursor:pointer" (click)="filtro = !filtro">Creación</a></th>        
+            <th scope="col"><a style="cursor:pointer" (click)="filtro = !filtro">Mod</a></th>
+
+            <th scope="col" style="width:5%;"class="text-center">Posición</th>
+            <th scope="col" style="width:5%;"class="text-center">Ficha</th>
+            <th scope="col" style="width:5%;"class="text-center">Artículo</th>
+            <th scope="col" style="width:5%;"class="text-center">Borrar</th>
+            <th scope="col" style="width:5%;"class="text-center">Vistas</th>
+            <th scope="col" style="width:5%;"class="text-center">Prev.</th>
+            
+            
+ 
+          </tr>
+        </thead>
+        <tbody>
+       
+
+          <tr *ngFor="let articulo of articulos|buscar:filterPost  |comentarios:'nuevo'" [style.backgroundColor]="activo? 'white' : 'grey'">
+            <!-- <th scope="row">1</th> -->
+            
+            <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
+            <td class="textoTableTitulo" > {{articulo?.titulo | truncate:'100'}}</td>
+   
+            <td> {{articulo?.fecha| date: 'dd/MM/yy'}}</td>
+   
+            <td  style="text-align: center;">{{articulo?.fechaMod| date: 'dd/MM/yy'}}</td> 
+            <td style="text-align: center;">  
+             <p style="margin-top:0px">{{articulo?.posicion}}</p> 
+             
+            </td>
+            <td class="text-center">
+            <a  (click)="editar()">
+              <!-- data-toggle="modal" data-target="#exampleModal" (click)='editarArticulo(articulo)' (click)="this.crudService.cambioPantalla=true" -->
+           <mat-icon style="cursor:pointer"  routerLink="../editorCabecera/{{articulo?._id}}" >edit</mat-icon> 
+          </a></td>
+
+
+            <td class="text-center">                        
+              <a  (click)="id = articulo._id" (click)='editarArticulo(articulo)'(click)="this.crudService.cambioPantalla = false" > <mat-icon  style="color: green; cursor:pointer">article</mat-icon>
+              </a> </td>
+            
+              <td class="text-center">                        
+                <a data-toggle="modal" data-target="#exampleModalCenter" (click)="id = articulo._id">
+                  <div *ngIf="loader">
+                   <mat-icon style="cursor:pointer; color:red">delete</mat-icon>
+                  </div>
+                  <div *ngIf="!loader">
+                    <img src="../../../assets/loader.gif" alt="" width="30px"> 
+                  </div>
+
+                  </a>
+                  
+                  <td class="text-center">{{articulo?.vistas}}</td>  
+                  <td class="text-center"><a routerLink="../articulo/{{this.articulo?._id}}" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-easel2-fill" viewBox="0 0 16 16">
+                      <path d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z"/>
+                      <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
+                    </svg>
+                  </a></td>
+                  
               
           </tr>
           

@@ -5,6 +5,7 @@ const { Schema } = mongoose;
 
 // ARTICULO CCAM
 const ProductoSchema = new Schema({
+  contadorComentarios:{type: String, required : false},
   comentarios:{type: String, required : false},
   fecha:{type: String, required : false},
   fechaMod:{type: String, required : false},

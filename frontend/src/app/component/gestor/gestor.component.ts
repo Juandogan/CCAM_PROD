@@ -14,6 +14,7 @@ export class GestorComponent implements OnInit {
   public fechaPublicacion =new Date();  
   buscador = false;
   password = false; 
+  papulo =true;
   password1 = "";
   articulos: Articulos[] = [] 
   id:string = ""

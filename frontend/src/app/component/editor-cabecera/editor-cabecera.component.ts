@@ -327,7 +327,7 @@ fnOcultar2(){
 
 
 agregarPublicacion(){
-
+   
   this.crudService.unArticulo.comentarios = this.comentarios; 
   this.crudService.unArticulo.titulo = this.titulo;
   this.crudService.unArticulo.tituloAlt = this.tituloAlt;
@@ -381,13 +381,16 @@ agregarPublicacion(){
     if( this.crudService.unArticulo._id && this.crudService.unArticulo._id !=="62902088b69caf0a51c7e023" )//porque est id es un registro en blanco que se usa para crear un nuevo articulo
     {  
       console.log(this.crudService.unArticulo._id,'antes de Modificar')
-      
+      this.crudService.unArticulo.contadorComentarios = "NO"    
       this.crudService.modificarArticulo(this.crudService.unArticulo)
-    .subscribe(res => { this.crudService.snack('Modificado!')});
+      
+    .subscribe(res => { this.crudService.snack('Modificado!')
+    
+  });
    
   }
     else  {
- 
+      this.crudService.unArticulo.contadorComentarios = "NO"    
         this.crudService.unArticulo.fecha = String(this.fechaPublicacion) 
         this.crudService.unArticulo.fechaMod = String(this.fechaPublicacion) 
         this.crudService.unArticulo.vistas = 0

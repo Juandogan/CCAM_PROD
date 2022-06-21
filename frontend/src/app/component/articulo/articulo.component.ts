@@ -82,6 +82,7 @@ console.log('sa' + aux2)
   this.crudService.unArticulo.vistas = this.auxContador + 1
     this.crudService.unArticulo._id = this.nota[0]._id
     this.crudService.unArticulo.comentarios = this.nota[0].comentarios
+    this.crudService.unArticulo.contadorComentarios = this.nota[0].contadorComentarios
   this.crudService.unArticulo.imagen1 = this.nota[0].imagen1
   this.crudService.unArticulo.imagen2 = this.nota[0].imagen2
   this.crudService.unArticulo.imagen3 = this.nota[0].imagen3

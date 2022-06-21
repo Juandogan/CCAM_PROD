@@ -49,6 +49,7 @@ import { PosicionesPipe } from './pipes/posiciones.pipe';
 import { Filtrox10Pipe } from './pipes/filtrox10.pipe';
 import { FiltrarFechaPipe } from './pipes/filtrar-fecha.pipe';
 import { FiltrarFechaModPipe } from './pipes/filtrar-fecha-mod.pipe';
+import { ComentariosPipe } from './pipes/comentarios.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +81,7 @@ import { FiltrarFechaModPipe } from './pipes/filtrar-fecha-mod.pipe';
     Filtrox10Pipe,
     FiltrarFechaPipe,
     FiltrarFechaModPipe,
+    ComentariosPipe,
 
   ],
   imports: [
