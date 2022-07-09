@@ -21,13 +21,13 @@ export class MainComponent implements OnInit {
   constructor(public crudService:CrudService,  private loadingObservable:LoadingObservableService) { }
 
   ngOnInit(): void {
-    this.pedirArticulos()
+    // this.pedirArticulos()
 
     this.loadingObservable.loading$.subscribe(res => {
       this.aux = res
      
     })    
-
+this.aux=false
   }
 
 

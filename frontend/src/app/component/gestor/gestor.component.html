@@ -70,7 +70,7 @@
         <tbody>
        
 
-          <tr *ngFor="let articulo of articulos|buscar:filterPost |filtrarFecha:filtro " [style.backgroundColor]="activo? 'white' : 'grey'">
+          <tr *ngFor="let articulo of articulos|buscar:filterPost  " [style.backgroundColor]="activo? 'white' : 'grey'">
             <!-- <th scope="row">1</th> -->
             
             <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>

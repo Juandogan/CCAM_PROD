@@ -12,6 +12,12 @@ res.json(productos);
 
 };
 
+productosCtrl2.getProductos = async (req,res) =>{
+    const productos = await Productos.find();
+    res.json(productos);
+    
+    };
+
 //POST
 productosCtrl.newProductos = async(req,res) => {
     const productos = new Productos({      

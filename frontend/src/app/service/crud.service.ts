@@ -14,7 +14,7 @@ import {MatSnackBarConfig} from '@angular/material/snack-bar';
 })
 export class CrudService {
 
-  readonly URL_API  = "http://168.197.50.191/articulos";
+  readonly URL_API  = "http://168.197.50.191/adm";
   // readonly URL_API  = "http://168.197.50.191/articulos";
   readonly URL_API2 = "http://localhost:3000/upload";
   
