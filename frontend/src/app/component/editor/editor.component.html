@@ -19,24 +19,17 @@
         
             <img *ngIf="!loader" src="../../../assets/loader.gif" width="40px" alt="" style="margin-top:-22px">
         
-        <mat-icon  (click)="this.crudService.cambioPantalla = true" (click)="scrollReset()"  style="font-size:30px; cursor:pointer; color:brown;">close</mat-icon>
+        <mat-icon routerLink="../../gestor" (click)="scrollReset()"  style="font-size:30px; cursor:pointer; color:brown;">close</mat-icon>
         <!-- data-toggle="modal" data-target="#exampleModalCenter"  -->
     </div> 
-    <div class="editor">
-    
-      <div class="document-editor__toolbar" ></div>
-      <div class="document-editor__editable-container" >
-          <div  class="document-editor__editable " [innerHTML] = "(this.art)|sanetizer">
-
-          </div> 
-          
-          <br><br><br><br><br><br>
-          
-          
-          
+    <div class="document-editor">
+      <div class="document-editor__toolbar"></div>
+      <div class="document-editor__editable-container">
+          <div class="document-editor__editable" [innerHTML] = "(this.art)|sanetizer">
+              <p>The initial editor data.</p>
+          </div>
       </div>
-      
-    </div>
+  </div>
     
     </div>
    

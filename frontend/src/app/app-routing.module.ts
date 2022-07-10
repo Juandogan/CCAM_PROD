@@ -11,6 +11,7 @@ import { CategoriaComponent } from './component/categoria/categoria.component';
 import { SuscripcionComponent } from './component/suscripcion/suscripcion.component';
 import { ResolveNotaService } from './service/resolve-nota.service';
 import { EditorCabeceraComponent  } from './component/editor-cabecera/editor-cabecera.component';
+import { EditorCuerpoComponent } from './component/editorCuerpo/editorCuerpo.component';
 const routes: Routes = [
 
   {path:'', component:  MainComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:'formaParte', component:  FormaParteComponent },
   {path:'gestor', component:  GestorComponent },
   {path:'editorCabecera/:_id', component:  EditorCabeceraComponent, resolve: {data: ResolveNotaService} },
+  {path:'editorCuerpo/:_id', component: EditorCuerpoComponent, resolve: {data: ResolveNotaService} },
   {path:'buscador', component:  BuscadorComponent, resolve: {data: ResolveNotaService} },
   {path:'articulo/:_id', component: ArticuloComponent, resolve: {data: ResolveNotaService}},
   {path:'categoria/:categoria', component: CategoriaComponent, resolve: {data: ResolveNotaService}}

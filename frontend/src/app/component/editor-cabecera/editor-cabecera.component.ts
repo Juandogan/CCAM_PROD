@@ -105,7 +105,7 @@ export class EditorCabeceraComponent implements OnInit {
  imagenShow=false;
  tituloImagenShow = false;
 
- constructor(public crudService:CrudService, private ruta:ActivatedRoute,) { }
+ constructor(public crudService:CrudService, private ruta:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.fecha = String(new Date())

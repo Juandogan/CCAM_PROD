@@ -91,7 +91,8 @@
 
 
             <td class="text-center">                        
-              <a  (click)="id = articulo._id" (click)='editarArticulo(articulo)'(click)="this.crudService.cambioPantalla = false" > <mat-icon  style="color: green; cursor:pointer">article</mat-icon>
+              
+              <a  (click)="id = articulo._id; this.loader2 = true" (click)='editarArticulo(articulo)'routerLink="../editorCuerpo/{{articulo?._id}}" > <mat-icon  style="color: green; cursor:pointer">article</mat-icon>
               </a> </td>
             
               <td class="text-center">                        
@@ -278,7 +279,7 @@
             <h5 class="textoInput">Título</h5>
             <textarea [(ngModel)]="this.titulo" class="form-control" id="titulo"></textarea>
                  <div  class="textoInputBajo" >
-               {{this.titulo.length}} de 200 Máx.
+               <!-- {{this.titulo.length}} de 200 Máx. -->
             </div> 
           </div>
 
@@ -286,7 +287,7 @@
             <h5 class="textoInput">Subtítulo</h5>
             <textarea [(ngModel)]="this.subtitulo" rows="5" class="form-control" id="message-text"></textarea>
             <div  class="textoInputBajo" >
-              {{this.subtitulo.length}} de 200 Máx.
+              <!-- {{this.subtitulo.length}} de 200 Máx. -->
             </div> 
           </div>
 
