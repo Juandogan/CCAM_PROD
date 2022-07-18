@@ -1,26 +1,23 @@
-// const MercadoPagoSchema  = require('../models/mercadopago')
-// const mercadopago = require ('mercadopago');
-// API
 
 const productosCtrl = {};
 const Productos  = require('../models/productos')
 
 //GET
-productosCtrl.getProductos = async (req,res) =>{
-const productos = await Productos.find();
+productosCtrl.getProductos2 = async (req,res) =>{
+const productos = await Productos.find({},{_id:1, titulo:1, imagen1:1, posicion:1, categoria:1, vistas:1, fecha:1, fechaMod:1});
 res.json(productos);
 
 };
 
-productosCtrl2.getProductos = async (req,res) =>{
-    const productos = await Productos.find();
+productosCtrl.getProductos = async (req,res) =>{
+    const productos = await Productos.find({categoria:"revista"});
     res.json(productos);
-    
+
     };
 
 //POST
 productosCtrl.newProductos = async(req,res) => {
-    const productos = new Productos({      
+    const productos = new Productos({
         contadorComentarios: req.body.contadorComentarios,
         comentarios:req.body.comentarios,
         fecha:req.body.fecha,
@@ -45,6 +42,8 @@ productosCtrl.newProductos = async(req,res) => {
         art5:req.body.art5,
         art6:req.body.art6,
         art7:req.body.art7,
+
+        
         art8:req.body.art8,
 
         resultadoID:req.body.resultadoID,
@@ -59,6 +58,17 @@ productosCtrl.newProductos = async(req,res) => {
         posicion:req.body.posicion,
         resultadoCategoria:req.body.resultadoCategoria,
         resultadoCategoria2:req.body.resultadoCategoria2,
+        resultadoCategoria3:req.body.resultadoCategoria3,
+        resultadoCategoria4:req.body.resultadoCategoria4,
+        resultadoCategoria5:req.body.resultadoCategoria5,
+        resultadoCategoria6:req.body.resultadoCategoria6,
+        resultadoCategoria7:req.body.resultadoCategoria7,
+        resultadoCategoria8:req.body.resultadoCategoria8,
+
+
+        resultadoImagen:req.body.resultadoImagen,
+        resultadoImagen2:req.body.resultadoImagen2,
+
         resultadoCategoria3:req.body.resultadoCategoria3,
         resultadoCategoria4:req.body.resultadoCategoria4,
         resultadoCategoria5:req.body.resultadoCategoria5,
@@ -128,7 +138,7 @@ productosCtrl.modificarProducto = async (req,res) => {
         art6:req.body.art6,
         art7:req.body.art7,
         art8:req.body.art8,
-        
+
         resultadoID:req.body.resultadoID,
         resultadoID2:req.body.resultadoID2,
         resultadoID3:req.body.resultadoID3,

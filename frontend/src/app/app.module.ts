@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -51,6 +51,13 @@ import { FiltrarFechaPipe } from './pipes/filtrar-fecha.pipe';
 import { FiltrarFechaModPipe } from './pipes/filtrar-fecha-mod.pipe';
 import { ComentariosPipe } from './pipes/comentarios.pipe';
 import { EditorCuerpoComponent } from './component/editorCuerpo/editorCuerpo.component';
+import { GestorPubliComponent } from './component/gestor-publi/gestor-publi.component';
+import { AuthGuard } from './guard/auth.guard';
+import { TokenInterceptorService } from './service/token-interceptor.service';
+import { LoginComponent } from './component/login/login.component';
+import { LogonComponent } from './component/logon/logon.component';
+import { AutofocusDirective } from './directivas/autofocus.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,8 +90,11 @@ import { EditorCuerpoComponent } from './component/editorCuerpo/editorCuerpo.com
     FiltrarFechaPipe,
     FiltrarFechaModPipe,
     ComentariosPipe,
-    EditorCuerpoComponent
-
+    EditorCuerpoComponent,
+    GestorPubliComponent,
+    LoginComponent,
+    LogonComponent,
+    AutofocusDirective,
   ],
   imports: [
     BrowserModule,
@@ -103,7 +113,9 @@ import { EditorCuerpoComponent } from './component/editorCuerpo/editorCuerpo.com
     
     
   ],
-  providers: [CrudService, ResolveNotaService],
+  providers: [CrudService, ResolveNotaService, AuthGuard,
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, 
+      multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

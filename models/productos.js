@@ -1,3 +1,4 @@
+ 
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
@@ -33,6 +34,8 @@ const ProductoSchema = new Schema({
   resultadoID4:{type: String, required : false},
   resultadoID5:{type: String, required : false},
   resultadoID6:{type: String, required : false},
+  resultadoID7:{type: String, required : false},
+  resultadoID8:{type: String, required : false},
 
   resultadoCategoria:{type: String, required : false},
   resultadoCategoria2:{type: String, required : false},
@@ -40,8 +43,10 @@ const ProductoSchema = new Schema({
   resultadoCategoria4:{type: String, required : false},
   resultadoCategoria5:{type: String, required : false},
   resultadoCategoria6:{type: String, required : false},
+  resultadoCategoria7:{type: String, required : false},
+  resultadoCategoria8:{type: String, required : false},
 
-  
+
 
   resultadoImagen:{type: String, required : false},
   resultadoImagen2:{type: String, required : false},
@@ -49,10 +54,14 @@ const ProductoSchema = new Schema({
   resultadoImagen4:{type: String, required : false},
   resultadoImagen5:{type: String, required : false},
   resultadoImagen6:{type: String, required : false},
-
+  resultadoImagen7:{type: String, required : false},
+  resultadoImagen8:{type: String, required : false},
+ 
   posicion:{type: String, required : false},
   fotografia:{type: String, required : false},
   edicionFotografia: {type: String, required : false},
+
+
 
 
 

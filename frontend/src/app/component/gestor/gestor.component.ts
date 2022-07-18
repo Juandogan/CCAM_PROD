@@ -16,7 +16,12 @@ export class GestorComponent implements OnInit {
   buscador = false;
   password = false; 
   papulo =true;
+
+//inicio de sesion
   password1 = "";
+  usuario = "";
+
+
   articulos: Articulos[] = [] 
   id:string = ""
   activo=true; //estilo 
@@ -62,6 +67,10 @@ export class GestorComponent implements OnInit {
 
   ngOnInit(): void {
     window.scroll(0,0)
+
+    if(this.crudService.usuarios){
+  this.password = false 
+}
     this.pedirArticulos()	 
 
 
@@ -83,11 +92,15 @@ export class GestorComponent implements OnInit {
   }
 
 
-  checkPassword(value){
-    if(value==="admin"){
-      this.password = true
+  checkPassword(usuario, pass ){
 
-    } else{this.password = false}
+this.crudService.pass = pass
+this.crudService.usuarios = usuario
+
+    if( pass ==="2"){
+      this.password = false
+console.log(usuario, pass, "esaa")
+    } else{this.password = true}
   }
 
   editar(){

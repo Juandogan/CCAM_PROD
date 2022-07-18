@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Articulos } from '../models/articulos';
 import { HttpClient } from '@angular/common/http';
+import { Publicidad } from '../models/publicidad'
 
 
 import { Location } from '@angular/common';
@@ -14,13 +15,18 @@ import {MatSnackBarConfig} from '@angular/material/snack-bar';
 })
 export class CrudService {
 
+  // readonly URL_API  = "http://localhost:3000/adm";
+  readonly URL_API3  = "http://localhost:3000/publicidad";
   readonly URL_API  = "http://168.197.50.191/adm";
-  // readonly URL_API  = "http://168.197.50.191/articulos";
   readonly URL_API2 = "http://localhost:3000/upload";
   
+
+  usuarios:string;
+  pass:string;
   cambioPantalla = true;
   Articulos:Articulos[]=[];
   unArticulo:Articulos
+  unPublicidad:Publicidad
   loading=true;
   
   
@@ -53,6 +59,12 @@ export class CrudService {
 
   };
 
+  getPublicidad() {
+    // var precio:number = Number(this.pedido.precio)    no se pa que funciona
+    return this.http.get(this.URL_API3);
+
+  };
+
    getOneArticulo(_id:any){
     return this.http.get(this.URL_API + `/${_id}`);
   };
@@ -60,6 +72,14 @@ export class CrudService {
   addArticulo(articulo:Articulos) {
     
     return this.http.post(this.URL_API, articulo);
+    
+
+  };
+
+  
+  addPublicidad(publicidad:Publicidad) {
+    
+    return this.http.post(this.URL_API3, publicidad);
     
 
   };
