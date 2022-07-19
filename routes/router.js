@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const jwt = require('jsonwebtoken')
-const User = require('./userModel')
+const User = require('../models/userModel')
 const router = Router()
 
 
