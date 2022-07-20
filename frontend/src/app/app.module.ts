@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { MainComponent } from './component/main/main.component';
 import { GestorComponent } from './component/gestor/gestor.component';
+import { GestorComentariosComponent } from './component/gestorComentarios/gestorComentarios.component';
 import { CrudService } from './service/crud.service';
 import { ResolveNotaService } from './service/resolve-nota.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -95,6 +96,8 @@ import { AutofocusDirective } from './directivas/autofocus.directive';
     LoginComponent,
     LogonComponent,
     AutofocusDirective,
+    GestorComentariosComponent
+    
   ],
   imports: [
     BrowserModule,

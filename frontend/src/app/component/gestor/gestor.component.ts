@@ -1,6 +1,7 @@
 import { Clipboard } from '@angular/cdk/clipboard';
 import { Component, OnInit } from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
+import { AuthService } from 'src/app/service/auth.service';
 import { CrudService } from 'src/app/service/crud.service';
 import { LoadingObservableService } from 'src/app/service/loading-observable.service';
 
@@ -61,7 +62,12 @@ export class GestorComponent implements OnInit {
  imagenShow=false;
 
  tituloImagenShow = false;
-  constructor(public crudService:CrudService, private clipboard: Clipboard, private loadingObservable:LoadingObservableService) { 
+  constructor(
+    public crudService:CrudService, 
+    private clipboard: Clipboard, 
+    private loadingObservable:LoadingObservableService,
+    public auth:AuthService
+    ) { 
 
   }
 

@@ -4,11 +4,11 @@
     
     
     
-    <div class="flex-items" style="margin-top:20px">
-         <img *ngIf="imagenEvita"   src="../../../assets/evita.png " width="300px" alt="">
+    <div class="flex-items" style="margin-top:20px; width:300px;" >
+         
 <div>
 <div style="margin: 10px 10px 0% 5%">
-    <label>Usuario</label>     
+    <label>Usuario</label>    
    <div class="input-group mb-3">
      <input [(ngModel)]="user.email" type="text" 
      class="form-control inputSize" placeholder="Usuario" 
@@ -25,6 +25,9 @@
      placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1" >
    </div>
    <div class="d-grid gap-2">
+
+
+
    <button (click)="loader=!loader; signIn()" class="btn btn-info btn-sm btn-block mt-3" type="button">
     <img *ngIf="loader" src="../../../assets/loader.gif" alt="" width="20px" style="margin-top:-3px">   
     Ingresar</button>
@@ -35,7 +38,7 @@
   
  </div>
 
- 
+ <span *ngIf="this.msjError" style="color:red;margin-left:15px;  text-transform: uppercase; font-size:13px">*{{this.msjError}}</span>
 </div>
 
     </div>

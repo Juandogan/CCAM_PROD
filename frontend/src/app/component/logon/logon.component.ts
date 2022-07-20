@@ -18,11 +18,13 @@ export class LogonComponent implements OnInit {
   }
 
   signUp(){
+    console.log(this.user)
     this.authService.signUp(this.user).subscribe(res => { 
-    console.log(res,'respiesta')
+
+    console.log(res,'respuesta')
     localStorage.setItem('token', res.token)        
     this.loader = false;
-    this.router.navigate(['/CuerpoPrincipalComponent'])
+    this.router.navigate(['../gestor'])
   })
 
 

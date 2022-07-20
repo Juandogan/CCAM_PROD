@@ -28,10 +28,11 @@ app.use(morgan('dev')); // morgan es una funcion, la pegamos en la propiedad use
 app.use(express.json()); // habilita para que el servidor entienda formato json, es una propiedad de la dependencia Express.npom
 
 app.use(cors('http://168.197.50.191/'));
+app.use(cors());
 app.use(bodyParser.json({limit: '200mb'}));
 app.use(bodyParser.urlencoded({limit: '200mb', extended: true}));
 
-app.use('/api', require('./router/router'));
+
 
 app.post('/upload', multiPartMiddleware, (req,res)=>{
        var link = req.files['archivos'].path
@@ -53,6 +54,7 @@ console.log({'url': url })
 app.use('/',express.static('client', {redirect:false}));
 app.use('/articulos',require('./routes/productos.routes'))
 app.use('/adm',require('./routes/productos.routes2'))
+app.use('/api', require('./routes/router')); //USUARIOS
 app.use('/upload', express.static(path.resolve('./subidas')))
 
 app.get('*', function(req, res, next){res.sendFile(path.resolve('client/index.html'));

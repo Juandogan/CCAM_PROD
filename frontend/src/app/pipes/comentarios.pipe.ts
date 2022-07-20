@@ -7,17 +7,17 @@ export class ComentariosPipe implements PipeTransform {
 
 
   transform(value:any, args:any): any {
-    const resultPost =  [];
+    const resultPost2 =  [];
 
-    for(const post of value){
-      var aux = post.contadorComentarios
-
-      if (aux.toLowerCase().indexOf(args.toLowerCase()) > -1 )
-      {resultPost.push(post) }
+    for(var post of value){
+      var aux = post.contadorComentarios  
+          if (aux === null){return}
+      if (aux.indexOf('Nuevo') > -1 )
+      {resultPost2.push(post) }
 
     }
 
-    return resultPost;
+    return resultPost2;
   }
 
 }

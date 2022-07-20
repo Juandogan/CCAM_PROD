@@ -6,6 +6,7 @@
   label{font-size: 10px;}
   p{font-size: 17px;}
   
+  h6{font-size: 14px;}
   .flex-container {
     display: flex;
     flex-direction: row;

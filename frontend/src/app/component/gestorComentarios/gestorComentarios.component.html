@@ -1,0 +1,23 @@
+<table class="table table-light"  class="margenL margenR" >
+  <thead class="thead-dark">
+    <tr >
+      <!-- <th scope="col">#</th> -->
+      
+      <th scope="col">Título</th>
+      <th scope="col"><a style="cursor:pointer">Creación</a></th>        
+      <th scope="col"><a style="cursor:pointer" >Mod</a></th>
+      <th scope="col" style="width:5%;"class="text-center">Borrar</th>
+       <th scope="col" style="width:5%;"class="text-center">Vista Prev.</th>
+          
+
+    </tr>
+  </thead>
+
+  <tbody>
+     <tr *ngFor="let articulo of articulos|comentarios:'NO'" >
+  
+       <h4> {{articulo.titulo}}</h4>
+   
+    </tr>
+  </tbody>
+</table>

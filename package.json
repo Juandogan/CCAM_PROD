@@ -9,6 +9,7 @@
     "fs": "0.0.1-security",
     "geoip-lite": "^1.4.2",
     "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
     "mercadopago": "^1.5.4",
     "mongoose": "^5.11.17",
     "morgan": "^1.10.0",

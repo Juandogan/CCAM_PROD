@@ -28,9 +28,20 @@
         
 
 <div style="margin-left:-15px; margin-top:15px; margin-bottom: 35px;">
+  
+<div style=" float:right">
+  
+  <button class="btn btn-danger ml-3" (click)="papulo=!papulo; auth.logOut()" style="margin-top:0px">Cerrar sesión</button>
+  </div>
+
+  
+
 <button class="btn btn-danger ml-3" (click)="buscador= !buscador">Buscar ▼</button>
 <button class="btn btn-danger ml-3"  routerLink="../editorCabecera/62902088b69caf0a51c7e023" (click)="limpiar()">Crear publicación</button>
-<button class="btn btn-danger ml-3" (click)="papulo=!papulo">Comentarios</button>
+<button class="btn btn-danger ml-3" >Anunciantes</button>
+<button class="btn btn-danger ml-3">Comentarios</button>
+<!-- <button class="btn btn-danger ml-3" routerLink="../gestorComentarios" >Comentarios</button> -->
+
 
     <!-- <button routerLink="gestorPubli">Publicidad</button>       -->
   </div>
@@ -142,7 +153,7 @@
         <tbody>
     
 
-          <tr *ngFor="let articulo of articulos|buscar:filterPost  |comentarios:'Nuevo'" [style.backgroundColor]="activo? 'white' : 'grey'">
+          <tr *ngFor="let articulo of articulos|buscar:filterPost" [style.backgroundColor]="activo? 'white' : 'grey'">
             <!-- <th scope="row">1</th> -->
             
             <td (click)="copyToClipboard(articulo?._id)" > <span > <mat-icon class="mouseOver" style="color:gainsboro">file_copy</mat-icon></span></td>
@@ -203,18 +214,7 @@
 
 
 
- <div *ngIf="!password"> 
-  <div class="margenL" style="margin-top:20px; text-align: center;">
 
-  <h4 style="text-align:left">USUARIO</h4>
-<input  [(ngModel)]="this.usuario" class="form-control"  type="text" width="400px" style="margin-top:-15px; width: 300px;">
-<h4 style="text-align:left; margin-top: 10px" name="password" [(ngModel)]="this.password1" >Contraseña</h4>
-<input type="password" class="form-control"   style="margin-top:-15px; width: 300px;" >
-<div style="text-align:left">
-<button style="text-align:left" (click)="checkPassword(usuario, password1)" class="btn btn-dark mt-4">Ingresar</button>
-</div>
-</div>
-</div> 
 
 
 <div class="modal fade bd-example-modal-lg " style=" background-color: rgba(95, 158, 160, 0.253);"  id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> 

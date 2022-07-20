@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  public URL ="http://168.197.50.191:3000/api"
+  public URL ="http://168.197.50.191/api"
+  //public URL ="http://localhost:3000/api"
 
 
   usuario=""
