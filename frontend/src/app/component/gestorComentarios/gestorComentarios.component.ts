@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/service/crud.service';
+import { LoadingObservableService } from 'src/app/service/loading-observable.service';
 
 @Component({
   selector: 'app-gestorComentarios',
@@ -8,13 +9,23 @@ import { CrudService } from 'src/app/service/crud.service';
   styleUrls: ['./gestorComentarios.component.css']
 })
 export class GestorComentariosComponent implements OnInit {
-
+  loader2=true
   articulos: Articulos[] = [] 
-  constructor(public crudService:CrudService) { }
+  constructor(public crudService:CrudService, private loadingObservable:LoadingObservableService) { }
 
   ngOnInit() {
 
+
+    this.loadingObservable.loading$.subscribe(res => {
+      this.loader2 = res   
+
+                         })   
+
     this.pedirArticulos()
+
+     
+  
+        
   }
 
 
@@ -25,7 +36,9 @@ export class GestorComentariosComponent implements OnInit {
     console.log(this.articulos)
    // this.cantArt = this.articulos.length
     this.articulos = this.articulos.reverse()
-   //this.loader2 = false
+   this.loader2 = false
+      
+   
     
       });//fin de subscribe
     } //fin de pedirProductos

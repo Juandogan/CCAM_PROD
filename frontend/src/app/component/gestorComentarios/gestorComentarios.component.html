@@ -1,23 +1,51 @@
-<table class="table table-light"  class="margenL margenR" >
+<div class="margenL margenR">
+<div *ngIf="loader2"  style="text-align: center; margin-top:70px; ">
+
+  <div class="loadingio-spinner-dual-ring-jqg38uhhax"><div class="ldio-n970spnnnqh">
+    <div></div><div><div></div></div>
+    </div></div>
+
+<br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<table *ngIf="!loader2"  class="table table-light  "   style="margin-top:20px" >
   <thead class="thead-dark">
     <tr >
       <!-- <th scope="col">#</th> -->
-      
+      <th scope="col" style="width:3%;">ID</th>
       <th scope="col">Título</th>
-      <th scope="col"><a style="cursor:pointer">Creación</a></th>        
+
+      <!-- (click)="filtro = !filtro -->
+      <th scope="col"><a style="cursor:pointer" >Creación</a></th>        
       <th scope="col"><a style="cursor:pointer" >Mod</a></th>
+
+      <th scope="col" style="width:5%;"class="text-center">Posición</th>
+      <th scope="col" style="width:5%;"class="text-center">Ficha</th>
+      <th scope="col" style="width:5%;"class="text-center">Artículo</th>
       <th scope="col" style="width:5%;"class="text-center">Borrar</th>
-       <th scope="col" style="width:5%;"class="text-center">Vista Prev.</th>
-          
+      <th scope="col" style="width:5%;"class="text-center">Vistas</th>
+      <th scope="col" style="width:5%;"class="text-center">Prev.</th>
+      
+      
 
     </tr>
   </thead>
 
+
+
   <tbody>
-     <tr *ngFor="let articulo of articulos|comentarios:'NO'" >
+     <tr *ngFor="let articulo of articulos|comentarios:'Nuevo'" >
+         
+         <td> {{articulo._id}}</td>
+         <td> {{articulo.titulo}}</td>
+         <td> {{articulo.fecha}}</td>
+         <td> {{articulo.contadorComentarios}}</td>
+         <td> {{articulo.comentarios}}</td>
   
-       <h4> {{articulo.titulo}}</h4>
-   
     </tr>
   </tbody>
 </table>
+
+
+</div>
