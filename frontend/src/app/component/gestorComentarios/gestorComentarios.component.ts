@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/service/crud.service';
 import { LoadingObservableService } from 'src/app/service/loading-observable.service';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-gestorComentarios',
@@ -11,9 +12,14 @@ import { LoadingObservableService } from 'src/app/service/loading-observable.ser
 export class GestorComentariosComponent implements OnInit {
   loader2=true
   articulos: Articulos[] = [] 
-  constructor(public crudService:CrudService, private loadingObservable:LoadingObservableService) { }
+  constructor(public crudService:CrudService, 
+    private loadingObservable:LoadingObservableService,
+    private clipboard: Clipboard
+    ) { }
 
   ngOnInit() {
+
+ 
 
 
     this.loadingObservable.loading$.subscribe(res => {
@@ -28,7 +34,11 @@ export class GestorComentariosComponent implements OnInit {
         
   }
 
-
+  copyToClipboard(value): void {
+    // Se copia el texto del input al portapapeles
+    this.clipboard.copy(value);
+    this.crudService.snack('Copiado!')
+  }
 
   pedirArticulos(){    // llamo al servicio del crud y susbscribo la respuesta luego guardo la data en el front en el servicio y en este componente.
     this.crudService.getArticulos().subscribe(res =>{
@@ -37,7 +47,8 @@ export class GestorComentariosComponent implements OnInit {
    // this.cantArt = this.articulos.length
     this.articulos = this.articulos.reverse()
    this.loader2 = false
-      
+ 
+ 
    
     
       });//fin de subscribe

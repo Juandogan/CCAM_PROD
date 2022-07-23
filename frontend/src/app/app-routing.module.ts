@@ -17,6 +17,7 @@ import { AuthGuard } from './guard/auth.guard';
 import { LoginComponent } from './component/login/login.component';
 import { LogonComponent } from './component/logon/logon.component';
 import { GestorComentariosComponent } from './component/gestorComentarios/gestorComentarios.component';
+import { EditorComentariosComponent } from './component/editor-comentarios/editor-comentarios.component';
 const routes: Routes = [
 
   {path:'', component:  MainComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   {path:'categoria/:categoria', component: CategoriaComponent, resolve: {data: ResolveNotaService}},
   {path:'gestorPubli', component: GestorPubliComponent},
   {path:'gestorComentarios', component: GestorComentariosComponent},
-  {path:'logon', component: LogonComponent}
+  {path:'logon', component: LogonComponent},
+  {path:'editorComentarios/:_id', component: EditorComentariosComponent, resolve: {data: ResolveNotaService}}
   
 ];
 

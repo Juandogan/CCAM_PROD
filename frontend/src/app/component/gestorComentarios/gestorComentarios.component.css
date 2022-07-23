@@ -1,4 +1,6 @@
 
+.textoTableTitulo{font-size: 20px; color:rgba(59, 59, 59, 0.726);}
+
 @keyframes ldio-n970spnnnqh {
     0% { transform: rotate(0) }
     100% { transform: rotate(360deg) }

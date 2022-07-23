@@ -11,10 +11,10 @@ export class ComentariosPipe implements PipeTransform {
 
     for(var post of value){
       var aux = post.contadorComentarios + ' ' + post._id
-          if (aux.indexOf('') > -1 )
+          if (aux.indexOf('Nuevo') > -1 )
 
-      {resultPost2.push(post) 
-        
+      {
+        resultPost2.push(post) 
       }
 
     }

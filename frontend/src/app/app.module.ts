@@ -58,6 +58,7 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
 import { LoginComponent } from './component/login/login.component';
 import { LogonComponent } from './component/logon/logon.component';
 import { AutofocusDirective } from './directivas/autofocus.directive';
+import { EditorComentariosComponent } from './component/editor-comentarios/editor-comentarios.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { AutofocusDirective } from './directivas/autofocus.directive';
     LoginComponent,
     LogonComponent,
     AutofocusDirective,
-    GestorComentariosComponent
+    GestorComentariosComponent,
+    EditorComentariosComponent
     
   ],
   imports: [
