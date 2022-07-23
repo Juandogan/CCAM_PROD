@@ -5,7 +5,7 @@ const Productos  = require('../models/productos')
 //GET
 productosCtrl.getProductos2 = async (req,res) =>{
 const productos = await Productos.find({},{_id:1, titulo:1, imagen1:1, posicion:1, categoria:1, vistas:1, fecha:1, fechaMod:1, 
-correos:1, subtitulo:1, comentarios:1
+correos:1, subtitulo:1, comentarios:1, contadorComentarios:1
 });
 res.json(productos);
 
