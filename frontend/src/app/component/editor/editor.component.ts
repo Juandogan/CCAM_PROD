@@ -102,6 +102,8 @@ export class EditorComponent implements OnInit {
   
 agregarPublicacion(){
   this.crudService.unArticulo.nota = this.myEditor.getData() 
+
+  console.log(this.crudService.unArticulo)
     // this.crudService.unProducto.fecha = String(this.fachaPublicacion)
     if( this.id )
     {

@@ -37,15 +37,14 @@ productosCtrl.newProductos = async(req,res) => {
         autor:req.body.autor,
         fotografia:req.body.fotografia,
         edicionFotografia:req.body.edicionFotografia,
+        posicion:req.body.posicion,
         art1:req.body.art1,
         art2:req.body.art2,
         art3:req.body.art3,
         art4:req.body.art4,
         art5:req.body.art5,
         art6:req.body.art6,
-        art7:req.body.art7,
-
-        
+        art7:req.body.art7,        
         art8:req.body.art8,
 
         resultadoID:req.body.resultadoID,
@@ -57,7 +56,7 @@ productosCtrl.newProductos = async(req,res) => {
         resultadoID7:req.body.resultadoID7,
         resultadoID8:req.body.resultadoID8,
 
-        posicion:req.body.posicion,
+     
         resultadoCategoria:req.body.resultadoCategoria,
         resultadoCategoria2:req.body.resultadoCategoria2,
         resultadoCategoria3:req.body.resultadoCategoria3,
@@ -68,8 +67,7 @@ productosCtrl.newProductos = async(req,res) => {
         resultadoCategoria8:req.body.resultadoCategoria8,
 
 
-        resultadoImagen:req.body.resultadoImagen,
-        resultadoImagen2:req.body.resultadoImagen2,
+   
 
         resultadoCategoria3:req.body.resultadoCategoria3,
         resultadoCategoria4:req.body.resultadoCategoria4,
@@ -77,7 +75,6 @@ productosCtrl.newProductos = async(req,res) => {
         resultadoCategoria6:req.body.resultadoCategoria6,
         resultadoCategoria7:req.body.resultadoCategoria7,
         resultadoCategoria8:req.body.resultadoCategoria8,
-
 
         resultadoImagen:req.body.resultadoImagen,
         resultadoImagen2:req.body.resultadoImagen2,

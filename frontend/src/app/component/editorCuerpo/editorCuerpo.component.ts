@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Articulos } from 'src/app/models/articulos';
 import { CrudService } from 'src/app/service/crud.service';
 
 @Component({
@@ -9,6 +10,9 @@ import { CrudService } from 'src/app/service/crud.service';
 })
 export class EditorCuerpoComponent implements OnInit {
 nota:any
+
+
+test:Articulos = new Articulos 
   constructor(public crudService:CrudService, private ruta:ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -16,6 +20,7 @@ nota:any
 
       this.ruta.data.subscribe((data)=>{
       this.nota = Object.entries(data).map(i => i[1]); })
+      this.crudService.unArticulo = this.nota[0]
 
           }
 
