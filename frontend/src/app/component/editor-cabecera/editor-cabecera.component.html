@@ -8,7 +8,8 @@
         <div class="col-12">
             <h5 class="textoInput">Categoría</h5>
           
-            <select  [(ngModel)]="this.categoria" class="form-control form-control-sm" style="width: 100%; height: 38px;">
+            <select  [(ngModel)]="this.categoria" (change)="this.fichaChange(this.categoria)"class="form-control form-control-sm" style="width: 100%; height: 38px;">
+              <option value="Ficha">· Ficha de Montaña</option>
               <option>· Montañismo · Escalada en Roca</option>
               <option>· Montañismo · Escalada en Hielo</option>
               <option>· Montañismo · Ascensión </option>
@@ -319,6 +320,154 @@
   <div style="float:left">
   <h1 style="color:brown;   margin-top:-40px">6</h1> 
 </div>
+</div>
+
+
+<!-- comiexo7  -->
+
+<div *ngIf="fichaOk">
+<div  class="form-group" style="margin-top:35px" >            
+  <div class="input-group"  >
+  <input  [(ngModel)]="resultadoTitulo7" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput7}}" autocomplete="false">
+  <div class="input-group-append">   
+    <button class="btn btn-dark" type="button" (click)="selection(7)"   (click)="openInput7=false; openInputBuscar=false ">Editar</button>
+    <button class="btn btn-dark ml-1" type="button"  (click)="openInput7=true;openInputBuscar=true">Guardar</button>
+    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+      <button class="btn btn-dark ml-1" type="button"  (click)="openInput7=true;openInputBuscar=true; this.aux = 7">
+        <svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+                     <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+                         
+        Buscar</button>
+    </a>
+  </div>
+</div>
+  <div style="float:left">
+  <h1 style="color:brown;   margin-top:-40px">7</h1> 
+</div>
+</div>
+<!-- comiexo7  -->
+<!-- comiexo8  -->
+<div  class="form-group" style="margin-top:35px" >            
+<div class="input-group"  >
+<input  [(ngModel)]="resultadoTitulo8" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput8}}" autocomplete="false">
+<div class="input-group-append">
+<button class="btn btn-dark" type="button" (click)="selection(8)"   (click)="openInput8=false;">Editar</button>
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput8=true; ">Guardar</button>
+<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput8=true;openInputBuscar=true; this.aux = 8">
+<svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+           <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+               
+Buscar</button>
+</a>
+
+</div>
+</div>
+<div style="float:left">
+<h1 style="color:brown;   margin-top:-40px">8</h1> 
+</div>
+</div>
+<!-- comiexo2  -->
+
+<!-- comiexo3  -->
+<div  class="form-group" style="margin-top:35px" >            
+<div class="input-group"  >
+<input  [(ngModel)]="resultadoTitulo9" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput9}}" autocomplete="false">
+<div class="input-group-append">
+<button class="btn btn-dark" type="button" (click)="selection(9)"   (click)="openInput9=false;">Editar</button>
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput3=true; ">Guardar</button>
+<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput9=true;openInputBuscar=true; this.aux = 9">
+<svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+           <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+               
+Buscar</button>
+</a>
+</div>
+</div>
+<div style="float:left">
+<h1 style="color:brown;   margin-top:-40px">9</h1> 
+</div>
+</div>
+<!-- comiexo3  -->
+<!-- comiexo4  -->
+<div  class="form-group" style="margin-top:35px" >            
+<div class="input-group"  >
+<input  [(ngModel)]="resultadoTitulo10" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput10}}" autocomplete="false">
+<div class="input-group-append">
+<button class="btn btn-dark" type="button" (click)="selection(10)"   (click)="openInput10=false;">Editar</button>
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput10=true; ">Guardar</button>
+<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput10=true;openInputBuscar=true; this.aux = 10">
+<svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+           <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+               
+Buscar</button>
+</a>
+</div>
+</div>
+<div style="float:left">
+<h1 style="color:brown;   margin-top:-40px">0</h1> 
+</div>
+</div>
+<!-- comiexo4  -->
+
+<!-- comiexo5  -->
+<div  class="form-group" style="margin-top:35px" >            
+<div class="input-group"  >
+<input  [(ngModel)]="resultadoTitulo11" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput11}}" autocomplete="false">
+<div class="input-group-append">
+<button class="btn btn-dark" type="button" (click)="selection(11)"   (click)="openInput11=false;">Editar</button>
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput5=true; ">Guardar</button>
+<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput11=true;openInputBuscar=true; this.aux = 11">
+<svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+           <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+               
+Buscar</button>
+</a>
+</div>
+</div>
+<div style="float:left">
+<h1 style="color:brown;   margin-top:-40px">1</h1> 
+</div>
+</div>
+<!-- comiexo5  -->
+
+<!-- comiexo6  -->
+<div  class="form-group" style="margin-top:35px" >            
+<div class="input-group"  >
+<input  [(ngModel)]="resultadoTitulo12" class="form-control" id="titulo" style="margin-left:20px" disabled="{{openInput12}}" autocomplete="false">
+<div class="input-group-append">
+<button class="btn btn-dark" type="button" (click)="selection(12)"   (click)="openInput12=false;">Editar</button>
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput6=true;">Guardar</button>
+<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"> 
+<button class="btn btn-dark ml-1" type="button"  (click)="openInput12=true;openInputBuscar=true; this.aux = 12">
+<svg *ngIf="!loaderModal" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg>
+           <img *ngIf="loaderModal" src="../../../assets/loader.gif" width="30px" alt="">              
+               
+Buscar</button>
+</a>
+</div>
+</div>
+<div style="float:left">
+<h1 style="color:brown;   margin-top:-40px">2</h1> 
+</div>
+</div>
+
+
 </div>
 <!-- comiexo3  -->
         </div>

@@ -46,6 +46,11 @@ productosCtrl.newProductos = async(req,res) => {
         art6:req.body.art6,
         art7:req.body.art7,        
         art8:req.body.art8,
+        art8:req.body.art9,
+        art8:req.body.art10,
+        art8:req.body.art11,
+        art8:req.body.art12,
+
 
         resultadoID:req.body.resultadoID,
         resultadoID2:req.body.resultadoID2,
@@ -55,6 +60,11 @@ productosCtrl.newProductos = async(req,res) => {
         resultadoID6:req.body.resultadoID6,
         resultadoID7:req.body.resultadoID7,
         resultadoID8:req.body.resultadoID8,
+        resultadoID8:req.body.resultadoID9,
+        resultadoID8:req.body.resultadoID10,
+        resultadoID8:req.body.resultadoID11,
+        resultadoID8:req.body.resultadoID12,
+
 
      
         resultadoCategoria:req.body.resultadoCategoria,
@@ -65,16 +75,10 @@ productosCtrl.newProductos = async(req,res) => {
         resultadoCategoria6:req.body.resultadoCategoria6,
         resultadoCategoria7:req.body.resultadoCategoria7,
         resultadoCategoria8:req.body.resultadoCategoria8,
-
-
-   
-
-        resultadoCategoria3:req.body.resultadoCategoria3,
-        resultadoCategoria4:req.body.resultadoCategoria4,
-        resultadoCategoria5:req.body.resultadoCategoria5,
-        resultadoCategoria6:req.body.resultadoCategoria6,
-        resultadoCategoria7:req.body.resultadoCategoria7,
-        resultadoCategoria8:req.body.resultadoCategoria8,
+        resultadoCategoria8:req.body.resultadoCategoria9,
+        resultadoCategoria8:req.body.resultadoCategoria10,
+        resultadoCategoria8:req.body.resultadoCategoria11,
+        resultadoCategoria8:req.body.resultadoCategoria12,
 
         resultadoImagen:req.body.resultadoImagen,
         resultadoImagen2:req.body.resultadoImagen2,
@@ -84,6 +88,10 @@ productosCtrl.newProductos = async(req,res) => {
         resultadoImagen6:req.body.resultadoImagen6,        
         resultadoImagen7:req.body.resultadoImagen7,
         resultadoImagen8:req.body.resultadoImagen8,
+        resultadoImagen8:req.body.resultadoImagen9,
+        resultadoImagen8:req.body.resultadoImagen10,
+        resultadoImagen8:req.body.resultadoImagen11,
+        resultadoImagen8:req.body.resultadoImagen12,
         
         
 
@@ -135,8 +143,13 @@ productosCtrl.modificarProducto = async (req,res) => {
         art4:req.body.art4,
         art5:req.body.art5,
         art6:req.body.art6,
-        art7:req.body.art7,
+        art7:req.body.art7,        
         art8:req.body.art8,
+        art8:req.body.art9,
+        art8:req.body.art10,
+        art8:req.body.art11,
+        art8:req.body.art12,
+
 
         resultadoID:req.body.resultadoID,
         resultadoID2:req.body.resultadoID2,
@@ -146,7 +159,13 @@ productosCtrl.modificarProducto = async (req,res) => {
         resultadoID6:req.body.resultadoID6,
         resultadoID7:req.body.resultadoID7,
         resultadoID8:req.body.resultadoID8,
-        posicion:req.body.posicion,
+        resultadoID8:req.body.resultadoID9,
+        resultadoID8:req.body.resultadoID10,
+        resultadoID8:req.body.resultadoID11,
+        resultadoID8:req.body.resultadoID12,
+
+
+     
         resultadoCategoria:req.body.resultadoCategoria,
         resultadoCategoria2:req.body.resultadoCategoria2,
         resultadoCategoria3:req.body.resultadoCategoria3,
@@ -155,6 +174,10 @@ productosCtrl.modificarProducto = async (req,res) => {
         resultadoCategoria6:req.body.resultadoCategoria6,
         resultadoCategoria7:req.body.resultadoCategoria7,
         resultadoCategoria8:req.body.resultadoCategoria8,
+        resultadoCategoria8:req.body.resultadoCategoria9,
+        resultadoCategoria8:req.body.resultadoCategoria10,
+        resultadoCategoria8:req.body.resultadoCategoria11,
+        resultadoCategoria8:req.body.resultadoCategoria12,
 
         resultadoImagen:req.body.resultadoImagen,
         resultadoImagen2:req.body.resultadoImagen2,
@@ -164,8 +187,11 @@ productosCtrl.modificarProducto = async (req,res) => {
         resultadoImagen6:req.body.resultadoImagen6,        
         resultadoImagen7:req.body.resultadoImagen7,
         resultadoImagen8:req.body.resultadoImagen8,
+        resultadoImagen8:req.body.resultadoImagen9,
+        resultadoImagen8:req.body.resultadoImagen10,
+        resultadoImagen8:req.body.resultadoImagen11,
+        resultadoImagen8:req.body.resultadoImagen12,
         
-
                                
 
     };

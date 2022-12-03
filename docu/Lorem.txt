@@ -11,7 +11,7 @@ X5HKqtgCbgCJ
 //instal mongo local
 apt install aptitude 
 
-
+https://github.com/Juandogan/nm.git
 
 
 Centro Cultural

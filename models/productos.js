@@ -28,6 +28,12 @@ const ProductoSchema = new Schema({
   art4:{type: String, required : false},
   art5:{type: String, required : false},
   art6:{type: String, required : false},
+  art7:{type: String, required : false},
+  art8:{type: String, required : false},
+  art9:{type: String, required : false},
+  art10:{type: String, required : false},
+  art11:{type: String, required : false},
+  art12:{type: String, required : false},
   resultadoID:{type: String, required : false},
   resultadoID2:{type: String, required : false},
   resultadoID3:{type: String, required : false},
@@ -36,6 +42,10 @@ const ProductoSchema = new Schema({
   resultadoID6:{type: String, required : false},
   resultadoID7:{type: String, required : false},
   resultadoID8:{type: String, required : false},
+  resultadoID9:{type: String, required : false},
+  resultadoID10:{type: String, required : false},
+  resultadoID11:{type: String, required : false},
+  resultadoID12:{type: String, required : false},
 
   resultadoCategoria:{type: String, required : false},
   resultadoCategoria2:{type: String, required : false},
@@ -45,6 +55,11 @@ const ProductoSchema = new Schema({
   resultadoCategoria6:{type: String, required : false},
   resultadoCategoria7:{type: String, required : false},
   resultadoCategoria8:{type: String, required : false},
+  resultadoCategoria9:{type: String, required : false},
+  resultadoCategoria10:{type: String, required : false},
+  resultadoCategoria11:{type: String, required : false},
+  resultadoCategoria12:{type: String, required : false},
+
 
 
 
@@ -56,6 +71,10 @@ const ProductoSchema = new Schema({
   resultadoImagen6:{type: String, required : false},
   resultadoImagen7:{type: String, required : false},
   resultadoImagen8:{type: String, required : false},
+  resultadoImagen9:{type: String, required : false},
+  resultadoImagen10:{type: String, required : false},
+  resultadoImagen11:{type: String, required : false},
+  resultadoImagen12:{type: String, required : false},
  
   posicion:{type: String, required : false},
   fotografia:{type: String, required : false},

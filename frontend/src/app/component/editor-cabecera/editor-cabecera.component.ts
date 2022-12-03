@@ -10,6 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./editor-cabecera.component.css']
 })
 export class EditorCabeceraComponent implements OnInit {
+  fichaOk = false
   comentarios ="";
   openInputBuscar:Boolean = true;
   openInput:Boolean = true;
@@ -18,6 +19,13 @@ export class EditorCabeceraComponent implements OnInit {
   openInput4:Boolean = true;
   openInput5:Boolean = true;
   openInput6:Boolean = true;
+  openInput7:Boolean = true;
+  openInput8:Boolean = true;
+  openInput9:Boolean = true;
+  openInput10:Boolean = true;
+  openInput11:Boolean = true;
+  openInput12:Boolean = true;
+
   
   public uploadedFiles: Array<File> = [];
   resultadoTitulo:string =""
@@ -28,6 +36,10 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoTitulo6:string =""
   resultadoTitulo7:string =""
   resultadoTitulo8:string =""
+  resultadoTitulo9:string =""
+  resultadoTitulo10:string =""
+  resultadoTitulo11:string =""
+  resultadoTitulo12:string =""
 
   resultadoCategoria:string =""
   resultadoCategoria2:string =""
@@ -37,6 +49,11 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoCategoria6:string =""
   resultadoCategoria7:string =""
   resultadoCategoria8:string =""
+  resultadoCategoria9:string =""
+  resultadoCategoria10:string =""
+  resultadoCategoria11:string =""
+  resultadoCategoria12:string =""
+
 
   resultadoImagen:string =""
   resultadoImagen2:string =""
@@ -46,6 +63,11 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoImagen6:string =""
   resultadoImagen7:string =""
   resultadoImagen8:string =""
+  resultadoImagen9:string =""
+  resultadoImagen10:string =""
+  resultadoImagen11:string =""
+  resultadoImagen12:string =""
+
 
   resultadoID:string =""
   resultadoID2:string =""
@@ -55,6 +77,10 @@ export class EditorCabeceraComponent implements OnInit {
   resultadoID6:string =""
   resultadoID7:string =""
   resultadoID8:string =""
+  resultadoID9:string =""
+  resultadoID10:string =""
+  resultadoID11:string =""
+  resultadoID12:string =""
 
 
   fechaPublicacion = new Date()    ;
@@ -139,6 +165,10 @@ export class EditorCabeceraComponent implements OnInit {
   this.resultadoTitulo6 = this.nota1[0]?.art6
   this.resultadoTitulo7 = this.nota1[0]?.art7
   this.resultadoTitulo8 = this.nota1[0]?.art8
+  this.resultadoTitulo9 = this.nota1[0]?.art9
+  this.resultadoTitulo10 = this.nota1[0]?.art10
+  this.resultadoTitulo11 = this.nota1[0]?.art11
+  this.resultadoTitulo12 = this.nota1[0]?.art12
 //cargo desde el objeto a cada una de las variablen vinculadas a los inputs
 this.resultadoCategoria = this.nota1[0]?.resultadoCategoria 
 this.resultadoCategoria2 = this.nota1[0]?.resultadoCategoria2
@@ -146,6 +176,12 @@ this.resultadoCategoria3 = this.nota1[0]?.resultadoCategoria3
 this.resultadoCategoria4 = this.nota1[0]?.resultadoCategoria4
 this.resultadoCategoria5 = this.nota1[0]?.resultadoCategoria5
 this.resultadoCategoria6 = this.nota1[0]?.resultadoCategoria6
+this.resultadoCategoria7 = this.nota1[0]?.resultadoCategoria7
+this.resultadoCategoria8 = this.nota1[0]?.resultadoCategoria8
+this.resultadoCategoria9 = this.nota1[0]?.resultadoCategoria9
+this.resultadoCategoria10 = this.nota1[0]?.resultadoCategoria10
+this.resultadoCategoria11 = this.nota1[0]?.resultadoCategoria11
+this.resultadoCategoria12 = this.nota1[0]?.resultadoCategoria12
 //cargo desde el objeto a cada una de las variablen vinculadas a los inputs
 this.resultadoImagen = this.nota1[0]?.resultadoImagen
 this.resultadoImagen2 = this.nota1[0]?.resultadoImagen2
@@ -153,6 +189,12 @@ this.resultadoImagen3 = this.nota1[0]?.resultadoImagen3
 this.resultadoImagen4 = this.nota1[0]?.resultadoImagen4
 this.resultadoImagen5 = this.nota1[0]?.resultadoImagen5
 this.resultadoImagen6 = this.nota1[0]?.resultadoImagen6
+this.resultadoImagen7 = this.nota1[0]?.resultadoImagen7
+this.resultadoImagen8 = this.nota1[0]?.resultadoImagen8
+this.resultadoImagen9 = this.nota1[0]?.resultadoImagen9
+this.resultadoImagen10 = this.nota1[0]?.resultadoImagen10
+this.resultadoImagen11 = this.nota1[0]?.resultadoImagen11
+this.resultadoImagen12 = this.nota1[0]?.resultadoImagen12
 
 //cargo desde el objeto a cada una de las variablen vinculadas a los inputs
 this.resultadoID = this.nota1[0]?.resultadoID
@@ -161,6 +203,12 @@ this.resultadoID3 = this.nota1[0]?.resultadoID3
 this.resultadoID4 = this.nota1[0]?.resultadoID4
 this.resultadoID5 = this.nota1[0]?.resultadoID5
 this.resultadoID6 = this.nota1[0]?.resultadoID6
+this.resultadoID7 = this.nota1[0]?.resultadoID7
+this.resultadoID8 = this.nota1[0]?.resultadoID8
+this.resultadoID9 = this.nota1[0]?.resultadoID9
+this.resultadoID10 = this.nota1[0]?.resultadoID10
+this.resultadoID11 = this.nota1[0]?.resultadoID11
+this.resultadoID12 = this.nota1[0]?.resultadoID12
 
 
 
@@ -185,7 +233,25 @@ this.resultadoID6 = this.nota1[0]?.resultadoID6
   if (this.nota1[0]?.art5){
     this.aux = 6
   }
-  
+  if (this.nota1[0]?.art6){
+    this.aux = 7
+  }
+  if (this.nota1[0]?.art7){
+    this.aux = 8
+  }
+  if (this.nota1[0]?.art8){
+    this.aux = 9
+  }
+  if (this.nota1[0]?.art9){
+    this.aux = 10
+  }
+  if (this.nota1[0]?.art10){
+    this.aux = 11
+  }
+  if (this.nota1[0]?.art11){
+    this.aux = 12
+  }
+
 
        
       //  this.crudService.unArticulo.titulo = this.titulo;
@@ -205,6 +271,11 @@ this.resultadoID6 = this.nota1[0]?.resultadoID6
     this.pedirArticulos();
 
 
+}
+fichaChange(x){
+  if (x ==="Ficha"){
+  this.fichaOk =  true
+  }else (this.fichaOk = false)
 }
 
   checkPassword(value){
@@ -303,6 +374,52 @@ return
             return }
   
 
+            if(this.aux === 7){
+              this.resultadoID7 = this.articuloBusqueda?._id
+              this.resultadoTitulo7 = this.articuloBusqueda?.titulo
+              this.resultadoCategoria7 = this.articuloBusqueda?.categoria
+              this.resultadoImagen7 = this.articuloBusqueda?.imagen1
+               this.busqueda = ""  
+              return }
+
+              if(this.aux === 8){
+                this.resultadoID8 = this.articuloBusqueda?._id
+                this.resultadoTitulo8 = this.articuloBusqueda?.titulo
+                this.resultadoCategoria8 = this.articuloBusqueda?.categoria
+                this.resultadoImagen8 = this.articuloBusqueda?.imagen1
+                 this.busqueda = ""  
+                return }
+                if(this.aux === 9){
+                  this.resultadoID9 = this.articuloBusqueda?._id
+                  this.resultadoTitulo9 = this.articuloBusqueda?.titulo
+                  this.resultadoCategoria9 = this.articuloBusqueda?.categoria
+                  this.resultadoImagen9 = this.articuloBusqueda?.imagen1
+                   this.busqueda = ""  
+                  return }
+                  if(this.aux === 10){
+                    this.resultadoID10 = this.articuloBusqueda?._id
+                    this.resultadoTitulo10 = this.articuloBusqueda?.titulo
+                    this.resultadoCategoria10 = this.articuloBusqueda?.categoria
+                    this.resultadoImagen10 = this.articuloBusqueda?.imagen1
+                     this.busqueda = ""  
+                    return }
+                    if(this.aux === 11){
+                      this.resultadoID11 = this.articuloBusqueda?._id
+                      this.resultadoTitulo11 = this.articuloBusqueda?.titulo
+                      this.resultadoCategoria11 = this.articuloBusqueda?.categoria
+                      this.resultadoImagen11 = this.articuloBusqueda?.imagen1
+                       this.busqueda = ""  
+                      return }
+                      if(this.aux === 12){
+                        this.resultadoID12 = this.articuloBusqueda?._id
+                        this.resultadoTitulo12 = this.articuloBusqueda?.titulo
+                        this.resultadoCategoria12 = this.articuloBusqueda?.categoria
+                        this.resultadoImagen12 = this.articuloBusqueda?.imagen1
+                         this.busqueda = ""  
+                        return }
+      
+      
+    
     
    })
  
@@ -346,15 +463,27 @@ agregarPublicacion(){
   this.crudService.unArticulo.art4 = this.resultadoTitulo4
   this.crudService.unArticulo.art5 = this.resultadoTitulo5
   this.crudService.unArticulo.art6 = this.resultadoTitulo6
+  this.crudService.unArticulo.art7 = this.resultadoTitulo7
+  this.crudService.unArticulo.art8 = this.resultadoTitulo8
+  this.crudService.unArticulo.art9 = this.resultadoTitulo9
+  this.crudService.unArticulo.art10 = this.resultadoTitulo10
+  this.crudService.unArticulo.art11 = this.resultadoTitulo11
+  this.crudService.unArticulo.art12 = this.resultadoTitulo12
  
        
   this.crudService.unArticulo.resultadoCategoria = this.resultadoCategoria 
   this.crudService.unArticulo.resultadoCategoria2 = this.resultadoCategoria2
   this.crudService.unArticulo.resultadoCategoria3 = this.resultadoCategoria3
-  console.log("aca se pierde?",this.resultadoCategoria3)
   this.crudService.unArticulo.resultadoCategoria4 = this.resultadoCategoria4
   this.crudService.unArticulo.resultadoCategoria5 = this.resultadoCategoria5
   this.crudService.unArticulo.resultadoCategoria6 = this.resultadoCategoria6
+  this.crudService.unArticulo.resultadoCategoria7 = this.resultadoCategoria7
+  this.crudService.unArticulo.resultadoCategoria8 = this.resultadoCategoria8
+  this.crudService.unArticulo.resultadoCategoria9 = this.resultadoCategoria9
+  this.crudService.unArticulo.resultadoCategoria10 = this.resultadoCategoria10
+  this.crudService.unArticulo.resultadoCategoria11 = this.resultadoCategoria11
+  this.crudService.unArticulo.resultadoCategoria12 = this.resultadoCategoria12
+
   
   this.crudService.unArticulo.resultadoImagen = this.resultadoImagen
   this.crudService.unArticulo.resultadoImagen2 = this.resultadoImagen2
@@ -362,6 +491,12 @@ agregarPublicacion(){
   this.crudService.unArticulo.resultadoImagen4 = this.resultadoImagen4
   this.crudService.unArticulo.resultadoImagen5 = this.resultadoImagen5
   this.crudService.unArticulo.resultadoImagen6 = this.resultadoImagen6
+  this.crudService.unArticulo.resultadoImagen7 = this.resultadoImagen7
+  this.crudService.unArticulo.resultadoImagen8 = this.resultadoImagen8
+  this.crudService.unArticulo.resultadoImagen9 = this.resultadoImagen9
+  this.crudService.unArticulo.resultadoImagen10 = this.resultadoImagen10
+  this.crudService.unArticulo.resultadoImagen11 = this.resultadoImagen11
+  this.crudService.unArticulo.resultadoImagen12 = this.resultadoImagen12
      
 
   this.crudService.unArticulo.resultadoID = this.resultadoID
@@ -370,6 +505,12 @@ agregarPublicacion(){
   this.crudService.unArticulo.resultadoID4 = this.resultadoID4
   this.crudService.unArticulo.resultadoID5 = this.resultadoID5
   this.crudService.unArticulo.resultadoID6 = this.resultadoID6
+  this.crudService.unArticulo.resultadoID7 = this.resultadoID7
+  this.crudService.unArticulo.resultadoID8 = this.resultadoID8
+  this.crudService.unArticulo.resultadoID9 = this.resultadoID9
+  this.crudService.unArticulo.resultadoID10 = this.resultadoID10
+  this.crudService.unArticulo.resultadoID11 = this.resultadoID11
+  this.crudService.unArticulo.resultadoID12 = this.resultadoID12
      
      
      
@@ -431,6 +572,13 @@ this.crudService.unArticulo.art3 = this.resultadoTitulo3
 this.crudService.unArticulo.art4 = this.resultadoTitulo4
 this.crudService.unArticulo.art5 = this.resultadoTitulo5
 this.crudService.unArticulo.art6 = this.resultadoTitulo6
+this.crudService.unArticulo.art7 = this.resultadoTitulo7
+this.crudService.unArticulo.art8 = this.resultadoTitulo8
+this.crudService.unArticulo.art9 = this.resultadoTitulo9
+this.crudService.unArticulo.art10 = this.resultadoTitulo10
+this.crudService.unArticulo.art11 = this.resultadoTitulo11
+this.crudService.unArticulo.art12 = this.resultadoTitulo12
+
 this.posicion = this.crudService.unArticulo.posicion
 
 
