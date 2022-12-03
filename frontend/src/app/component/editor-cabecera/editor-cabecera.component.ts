@@ -138,8 +138,7 @@ export class EditorCabeceraComponent implements OnInit {
 
     this.ruta.data.subscribe((data)=>{
       this.nota1 = Object.entries(data).map(i => i[1]);
-
-    
+console.log('el posta', this.nota1)
   //cargo desde el objeto a cada una de las variablen vinculadas a los inputs
  this.crudService.unArticulo._id = this.nota1[0]?._id
  this.categoria = this.nota1[0]?.categoria
@@ -253,6 +252,9 @@ this.resultadoID12 = this.nota1[0]?.resultadoID12
   }
 
 
+  if(this.categoria   === "Ficha"){
+    this.fichaOk = true
+  }
        
       //  this.crudService.unArticulo.titulo = this.titulo;
       //  this.crudService.unArticulo.tituloAlt = this.tituloAlt;
